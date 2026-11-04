@@ -21,20 +21,19 @@ type Business = {
 export const business: Business = {
   name: "PracticeCareSource",
   legalName: "PracticeCareSource LLC",
-  tagline: "Medical Billing and Revenue Cycle Management Solutions.",
+  tagline: "Medical Billing, Practice Support and AI-Enabled Operations.",
   description:
-    "PracticeCareSource provides medical billing, coding, credentialing, and revenue cycle support to help healthcare practices manage billing operations more efficiently.",
+    "PracticeCareSource supports US healthcare practices with medical billing, revenue cycle management, credentialing, accounts receivable recovery, denial management, medical coding, virtual assistance, and digital marketing support.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://practicecaresource.com",
-  // Placeholders: replace with verified business details before launch.
-  phone: undefined,
-  phoneHref: undefined,
-  email: undefined,
-  emailHref: undefined,
+  phone: "+1 (762) 536-7267",
+  phoneHref: "tel:+17625367267",
+  email: "info@practicecaresource.com",
+  emailHref: "mailto:info@practicecaresource.com",
   address: {
-    line1: undefined,
-    city: undefined,
-    state: undefined,
-    zip: undefined,
+    line1: "123 Baltimore Ave",
+    city: "Baltimore",
+    state: "MD",
+    zip: "21226",
     country: "US",
   },
   hours: undefined,
@@ -50,6 +49,8 @@ export type NavItem = {
 export const servicesNav: NavItem[] = [
   { label: "Medical Billing", href: "/services/medical-billing" },
   { label: "Medical Coding", href: "/services/medical-coding" },
+  { label: "Virtual Assistant", href: "/services/virtual-assistant" },
+  { label: "Marketing & Digital Presence", href: "/services/marketing-digital-presence" },
   { label: "Revenue Cycle Management", href: "/services/revenue-cycle-management" },
   { label: "Credentialing", href: "/services/credentialing" },
   { label: "Accounts Receivable", href: "/services/ar-management" },
@@ -93,6 +94,8 @@ export const footerNav = {
   services: [
     { label: "Medical Billing", href: "/services/medical-billing" },
     { label: "Medical Coding", href: "/services/medical-coding" },
+    { label: "Virtual Assistant", href: "/services/virtual-assistant" },
+    { label: "Marketing & Digital Presence", href: "/services/marketing-digital-presence" },
     { label: "Revenue Cycle Management", href: "/services/revenue-cycle-management" },
     { label: "Credentialing", href: "/services/credentialing" },
     { label: "Accounts Receivable", href: "/services/ar-management" },

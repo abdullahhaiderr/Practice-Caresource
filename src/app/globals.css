@@ -152,3 +152,27 @@ html,body { background:#fff; color:#263b49; }
 @media (max-width: 640px) {
   .hero-shell { background:linear-gradient(145deg,#f2f8f9,#fff 72%); }
 }
+
+/* Final light-theme component tokens: white healthcare surfaces and readable forms. */
+.btn-outline { color:#173b56; background:rgba(255,255,255,.78); border-color:#cbdde2; }
+.btn-outline:hover:not(:disabled) { color:#176f78; background:#fff; border-color:#79b9bd; }
+.field { border-color:#cbdde2; background:#fff; color:#263b49; }
+.field::placeholder { color:#82949d; }
+.field:focus { border-color:#258f8b; box-shadow:0 0 0 3px rgba(37,143,139,.12); }
+.label { color:#29495a; }
+.helper-text { color:#718592; }
+.error-text { color:#b54747; }
+.card { border-color:rgba(188,213,219,.72); background:rgba(255,255,255,.78); box-shadow:0 12px 36px -28px rgba(23,59,86,.24); }
+.card:hover { border-color:rgba(37,143,139,.42); box-shadow:0 22px 48px -30px rgba(23,59,86,.3); }
+.hero-secondary { color:#173b56; background:rgba(255,255,255,.72); border-color:rgba(40,125,163,.24); }
+.hero-secondary:hover:not(:disabled) { color:#176f78; background:#fff; border-color:#79b9bd; }
+.hero-title { max-width: 13ch; }
+.hero-panel { backdrop-filter:blur(22px); }
+@media (max-width: 420px) {
+  .container-x { padding-inline:1rem; }
+  .hero-title { font-size:clamp(2.25rem,10.5vw,2.8rem); }
+  .hero-note { position:relative; right:auto; bottom:auto; margin:1rem 0 0 auto; width:fit-content; max-width:100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-grid,.hero-orb,.hero-ring,.hero-panel,.hero-note,.hero-copy,.hero-work-row { animation:none !important; }
+}

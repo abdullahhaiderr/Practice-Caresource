@@ -1,40 +1,20 @@
+import { BarChart3, LockKeyhole, Workflow } from "lucide-react";
+
+const points = [
+  { icon: BarChart3, title: "Reporting that answers questions", text: "Regular visibility into collections, claim status, denial activity, and accounts receivable." },
+  { icon: Workflow, title: "Processes that work with your systems", text: "We aim to fit into your established practice-management and billing workflows rather than force an unnecessary reset." },
+  { icon: LockKeyhole, title: "Careful information handling", text: "Access, confidentiality, and safeguards are considered as part of the agreed operating process." },
+];
+
 export function Technology() {
-  const points = [
-    {
-      title: "Structured reporting",
-      text: "Regular insight into collections, denials, and AR aging.",
-    },
-    {
-      title: "Payer-specific workflows",
-      text: "Billing processes aligned to each payer\u2019s requirements.",
-    },
-    {
-      title: "Secure information handling",
-      text: "Protected health information handled with appropriate safeguards.",
-    },
-  ];
-
   return (
-    <section className="bg-bg-secondary">
+    <section>
       <div className="container-x section">
-        <div className="text-center mb-12">
-          <span className="eyebrow mb-4 block">Technology and Reporting</span>
-          <h2 className="mb-6">Transparent, structured billing support</h2>
-          <p className="max-w-2xl mx-auto text-lg text-ink-soft">
-            Clear reporting and defined processes give you visibility into your
-            revenue cycle.
-          </p>
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-3">
-          {points.map((point) => (
-            <div key={point.title} className="text-center">
-              <h3 className="mb-2 text-lg font-display font-semibold text-navy">
-                {point.title}
-              </h3>
-              <p className="text-sm text-ink-soft">{point.text}</p>
-            </div>
-          ))}
+        <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
+          <div><span className="eyebrow mb-4 block">Visibility and coordination</span><h2 className="mb-5">Useful information. Clear next steps.</h2><p className="text-base leading-8">Your team should not have to guess where claims stand. We emphasize practical reporting and coordinated workflows that make billing activity easier to follow.</p></div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {points.map(({ icon: Icon, title, text }) => <article key={title} className="rounded-xl border border-border bg-white p-5"><span className="mb-5 grid size-10 place-items-center rounded-xl bg-[#edf5f5] text-teal"><Icon className="size-5" aria-hidden="true" /></span><h3 className="text-base">{title}</h3><p className="mt-2 text-sm leading-6">{text}</p></article>)}
+          </div>
         </div>
       </div>
     </section>

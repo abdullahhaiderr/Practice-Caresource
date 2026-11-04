@@ -144,3 +144,11 @@ html,body { background:#fff; color:#263b49; }
 .cursor-aura { background:radial-gradient(360px circle at var(--cursor-x,50%) var(--cursor-y,50%),rgba(37,143,139,.10),transparent 72%); }
 .card { border-color:#e0eaed; background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(247,251,252,.86)); }
 .card:hover { border-color:rgba(37,143,139,.38); }
+
+.hero-copy > p { color:#526875 !important; }
+.hero-copy .text-slate-300 { color:#526875 !important; }
+.hero-kicker { color:#287d86 !important; }
+.hero-note { color:#173b56; }
+@media (max-width: 640px) {
+  .hero-shell { background:linear-gradient(145deg,#f2f8f9,#fff 72%); }
+}

@@ -4,7 +4,7 @@ import { business, footerNav } from "@/config/business";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-bg-secondary">
+    <footer className="border-t border-white/10 bg-[#06131b]">
       <div className="container-x py-14 lg:py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>

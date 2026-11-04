@@ -399,4 +399,28 @@ export const serviceDetails: ServiceDetail[] = [
       "Practices often know something is leaking but not where. An audit creates a clear picture of error patterns and revenue opportunities before larger process changes are made.",
     related: ["medical-coding", "medical-billing", "denial-management"],
   },
+
+  {
+    id: "virtual-assistant",
+    title: "Virtual Assistant",
+    href: "/services/virtual-assistant",
+    summary: "Flexible administrative support for healthcare practices and day-to-day operations.",
+    intro: ["A reliable virtual assistant can help a practice stay organized by supporting routine administrative tasks and keeping everyday workflows moving.", "Support is scoped around your team's processes, responsibilities, access permissions, and communication preferences."],
+    whatWeHandle: ["Administrative coordination", "Appointment and calendar support", "Inbox and task organization", "Document and spreadsheet organization", "Patient communication support using approved scripts", "Workflow and follow-up coordination"],
+    process: [{ title: "Understand your workflow", text: "We review the tasks, systems, boundaries, and handoffs involved." }, { title: "Define responsibilities", text: "A clear task list and escalation process are agreed before work begins." }, { title: "Coordinate and report", text: "Work is tracked and updates are shared through the agreed communication channel." }],
+    whyItMatters: "Consistent administrative support can reduce routine workload and help practice teams focus attention on patient care and core operations.",
+    related: ["revenue-cycle-management", "credentialing", "medical-billing"],
+  },
+  {
+    id: "marketing-digital-presence",
+    title: "Marketing & Digital Presence",
+    href: "/services/marketing-digital-presence",
+    summary: "Website and digital marketing support to help healthcare practices build a clear and discoverable online presence.",
+    intro: ["A practice's digital presence shapes how prospective patients and referral partners discover and understand its services.", "We help organize practical digital foundations, including website improvements, local search visibility, content planning, and ongoing digital presence support."],
+    whatWeHandle: ["Healthcare website design and improvements", "Local SEO and business profile support", "Website content and service page development", "Content planning and social media support", "Search visibility and website performance reviews", "Digital inquiry and conversion improvements"],
+    process: [{ title: "Review your current presence", text: "We assess the website, service information, search visibility, and current priorities." }, { title: "Build a practical plan", text: "We define improvements based on the practice's goals, audience, and available resources." }, { title: "Improve and measure", text: "Changes are implemented and reviewed using available website and marketing data." }],
+    whyItMatters: "Clear service information, a usable website, and accurate local presence make it easier for people to understand a practice and take the next step.",
+    related: ["medical-billing", "revenue-cycle-management"],
+  },
+
 ];

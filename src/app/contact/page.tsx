@@ -10,12 +10,12 @@ import { breadcrumbJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Request a consultation with PracticeCareSource. Tell us about your practice, current billing workflow, and the services you are interested in.",
+    "Contact PracticeCareSource in Baltimore, Maryland to discuss medical billing, revenue cycle management, credentialing, AR recovery, denial management, coding, virtual assistant, or digital marketing support.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact PracticeCareSource",
     description:
-      "Request a consultation about medical billing, coding, credentialing, AR management, or revenue cycle support.",
+      "Contact our team about medical billing, RCM, credentialing, AR recovery, denial management, coding, virtual assistance, and digital presence services.",
     url: "/contact",
   },
 };

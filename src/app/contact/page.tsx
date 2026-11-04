@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Clock, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, ShieldCheck, Mail, Phone, MapPin } from "lucide-react";
+import { business } from "@/config/business";
 import { PageHero } from "@/components/shared/PageHero";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { ConsultationForm } from "@/components/forms/ConsultationForm";
@@ -46,6 +47,15 @@ export default function ContactPage() {
             </div>
 
             <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
+              <div className="rounded-2xl border border-white/70 bg-white/80 p-6 shadow-[0_18px_50px_-35px_rgba(23,59,86,.28)] backdrop-blur-xl">
+                <h2 className="font-display text-lg font-bold text-navy">Contact our team</h2>
+                <div className="mt-4 space-y-4 text-sm">
+                  <a href={business.emailHref} className="flex items-start gap-3 text-ink-soft hover:text-blue"><Mail className="mt-0.5 size-4 shrink-0 text-teal" />{business.email}</a>
+                  <a href={business.phoneHref} className="flex items-start gap-3 text-ink-soft hover:text-blue"><Phone className="mt-0.5 size-4 shrink-0 text-teal" />{business.phone}</a>
+                  <div className="flex items-start gap-3 text-ink-soft"><MapPin className="mt-0.5 size-4 shrink-0 text-teal" /><span>{business.address.line1}, {business.address.city}, {business.address.state} {business.address.zip}</span></div>
+                </div>
+              </div>
+
               <div className="rounded-xl border border-border bg-bg-secondary p-6">
                 <h2 className="font-display text-lg font-bold text-navy">
                   What happens next

@@ -15,10 +15,10 @@ import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 
 export const metadata = {
   title: {
-    absolute: "Medical Billing and Revenue Cycle Management | PracticeCareSource",
+    absolute: "Medical Billing, RCM & Practice Support | PracticeCareSource",
   },
   description:
-    "PracticeCareSource provides medical billing, coding, credentialing, and revenue cycle support to help healthcare practices manage billing operations more efficiently.",
+    "PracticeCareSource helps US medical practices with medical billing, revenue cycle management, credentialing, AR recovery, denial management, medical coding, virtual assistant support, digital marketing, and responsible AI-enabled workflows.",
   alternates: { canonical: "/" },
 };
 

@@ -1,21 +1,16 @@
 import Link from "next/link";
+import { ArrowUpRight, MessageCircle } from "lucide-react";
 
 export function ConsultationCTA() {
   return (
-    <section className="bg-bg-secondary">
-      <div className="container-x section">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="mb-4 text-2xl font-display font-bold text-navy sm:text-3xl">
-            Ready to simplify your billing?
-          </h2>
-          <p className="mb-8 text-lg text-ink-soft">
-            Tell us about your current billing workflow and where it is getting
-            stuck. We will follow up to discuss whether our services fit your
-            needs.
-          </p>
-          <Link href="/contact" className="btn btn-primary">
-            Request a Consultation
-          </Link>
+    <section className="border-b border-border bg-white">
+      <div className="container-x py-5 sm:py-6">
+        <div className="flex flex-col gap-4 rounded-xl border border-[#dce8eb] bg-[#f7fafb] p-5 sm:flex-row sm:items-center sm:justify-between sm:px-7">
+          <div className="flex items-start gap-3">
+            <span className="mt-0.5 grid size-10 shrink-0 place-items-center rounded-lg bg-white text-teal shadow-card"><MessageCircle className="size-5" aria-hidden="true" /></span>
+            <div><h2 className="text-base font-bold tracking-tight">Not sure where to start?</h2><p className="mt-1 text-sm leading-6">Tell us what is happening in your billing workflow. We’ll help you identify a sensible next step.</p></div>
+          </div>
+          <Link href="/contact" className="btn btn-primary shrink-0">Talk with our team <ArrowUpRight className="size-4" aria-hidden="true" /></Link>
         </div>
       </div>
     </section>

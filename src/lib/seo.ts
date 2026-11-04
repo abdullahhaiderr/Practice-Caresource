@@ -20,11 +20,12 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
 export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "LocalBusiness"],
     name: business.name,
     legalName: business.legalName,
     url: business.url,
     description: business.description,
+    areaServed: { "@type": "Country", name: "United States" },
     ...(business.email ? { email: business.email } : {}),
     ...(business.phone ? { telephone: business.phone } : {}),
     ...(business.address.line1

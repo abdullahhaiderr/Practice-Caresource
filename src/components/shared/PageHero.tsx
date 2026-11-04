@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import { Breadcrumbs, type Crumb } from "@/components/shared/Breadcrumbs";
 
 type PageHeroProps = {

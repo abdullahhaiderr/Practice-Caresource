@@ -1,34 +1,21 @@
-export function TrustHighlights() {
-  const highlights = [
-    {
-      label: "Clean claims",
-      text: "Focused on accurate first-pass claim submission.",
-    },
-    {
-      label: "Specialty-aware",
-      text: "Billing workflows tailored to your practice specialty.",
-    },
-    {
-      label: "Transparent",
-      text: "Clear reporting and open communication.",
-    },
-    {
-      label: "No lock-in",
-      text: "Flexible service arrangements that work for you.",
-    },
-  ];
+import { ClipboardCheck, MessagesSquare, Stethoscope, ChartNoAxesCombined } from "lucide-react";
 
+const highlights = [
+  { icon: ClipboardCheck, label: "Thoughtful claim handling", text: "A process built around accurate preparation, submission, and follow-through." },
+  { icon: Stethoscope, label: "Practice-aware support", text: "Workflows shaped around your specialty, systems, and operating needs." },
+  { icon: ChartNoAxesCombined, label: "Useful visibility", text: "Clear updates on claim activity, denials, and outstanding receivables." },
+  { icon: MessagesSquare, label: "Responsive communication", text: "A practical working relationship with clear points of contact." },
+];
+
+export function TrustHighlights() {
   return (
-    <section className="border-y border-border">
-      <div className="container-x section">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {highlights.map((item) => (
-            <div
-              key={item.label}
-              className="text-center p-4"
-            >
-              <p className="text-sm font-semibold text-navy">{item.label}</p>
-              <p className="text-sm text-ink-soft">{item.text}</p>
+    <section className="border-y border-border bg-white">
+      <div className="container-x py-8 sm:py-10">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {highlights.map(({ icon: Icon, label, text }) => (
+            <div key={label} className="flex items-start gap-3">
+              <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-[#edf5f5] text-teal"><Icon className="size-5" aria-hidden="true" /></span>
+              <div><h2 className="text-sm font-bold tracking-normal">{label}</h2><p className="mt-1 text-sm leading-6">{text}</p></div>
             </div>
           ))}
         </div>

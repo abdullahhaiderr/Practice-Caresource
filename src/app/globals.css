@@ -91,3 +91,22 @@ section:not(.hero-shell) { position: relative; }
 @media(max-width:1023px) { .hero-panel { transform:none; animation:none; } .hero-ring { opacity:.45; } }
 @media(max-width:640px) { .hero-visual { padding-left:.2rem;padding-right:.2rem; } .hero-note { right:0; } .hero-title {font-size:clamp(2.55rem,12vw,3.6rem)} .hero-stage-state {display:none} .hero-ring {display:none} }
 @media(prefers-reduced-motion:reduce) { html {scroll-behavior:auto} *,*::before,*::after {animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important} .cursor-aura {display:none} }
+
+/* Keep legacy utility classes legible within the refreshed dark palette. */
+.text-slate-700,.text-slate-600,.text-slate-500 { color:#b0c3cb !important; }
+.text-slate-400 { color:#8da4af !important; }
+.text-slate-300 { color:#b7cbd2 !important; }
+.bg-\[\#f2f7f8\],.bg-\[\#f7fafb\],.bg-\[\#fbfdfd\] { background-color:#0d2430 !important; }
+.border-\[\#dce8eb\],.border-\[\#e2eaee\] { border-color:rgb(155 205 213 / .16) !important; }
+@supports (animation-timeline: view()) {
+  .section > .container-x > .grid > *, .section > .container-x > .grid > article,
+  .section > .container-x > .grid > a, .section > .container-x > .grid > div.card {
+    animation: section-rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 22%;
+  }
+}
+@keyframes section-rise { from { opacity:.35; transform:translateY(24px) } to { opacity:1; transform:translateY(0) } }
+@media (hover:hover) and (pointer:fine) {
+  .card:hover, article:hover { border-color:rgb(98 214 193 / .34); }
+}

@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SkipLink } from "@/components/shared/SkipLink";
+import { CursorAura } from "@/components/shared/CursorAura";
 import { business } from "@/config/business";
 
 const inter = Inter({
@@ -77,8 +78,8 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#153B58",
-  colorScheme: "light",
+  themeColor: "#081720",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -90,6 +91,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
       <body className="min-h-screen bg-paper text-ink antialiased">
         <SkipLink />
+        <CursorAura />
         <Header />
         <main id="main" tabIndex={-1}>
           {children}

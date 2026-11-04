@@ -78,8 +78,8 @@ export function Header() {
       <header
         className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
           scrolled
-            ? "border-white/10 bg-[#081720]/85 shadow-[0_12px_40px_-20px_rgba(0,0,0,0.65)] backdrop-blur-xl"
-            : "border-white/10 bg-[#081720]/90 backdrop-blur-xl"
+            ? "border-[#dce7eb]/80 bg-white/90 shadow-[0_12px_40px_-20px_rgba(23,59,86,0.16)] backdrop-blur-xl"
+            : "border-[#dce7eb]/80 bg-white/95 backdrop-blur-xl"
         }`}
       >
         <div className="container-x flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]">
@@ -119,11 +119,11 @@ export function Header() {
                     />
                   </button>
                   {openDropdown === item.label && (
-                    <div className="absolute left-0 top-full w-64 bg-[#102a36] border border-white/10 rounded-xl shadow-soft backdrop-blur-xl py-2 z-50">
+                    <div className="absolute left-0 top-full w-64 bg-white border border-[#dce7eb] rounded-xl shadow-soft backdrop-blur-xl py-2 z-50">
                       {item.href !== "#resources" && (
                         <Link
                           href={item.href}
-                          className="block px-4 py-2 text-sm font-semibold text-navy hover:bg-white/5 hover:text-blue transition-colors"
+                          className="block px-4 py-2 text-sm font-semibold text-navy hover:bg-[#f2f7f8] hover:text-blue transition-colors"
                         >
                           All {item.label}
                         </Link>

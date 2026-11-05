@@ -3,7 +3,7 @@ import { ArrowUpRight, MessageCircle } from "lucide-react";
 
 export function FinalCTA() {
   return (
-    <section className="bg-[#f2f7f8]">
+    <section className="final-cta-section">
       <div className="container-x py-16 sm:py-20">
         <div className="relative overflow-hidden rounded-2xl bg-[#173b55] px-6 py-12 text-center sm:px-12 sm:py-16">
           <div className="pointer-events-none absolute -right-20 -top-24 size-80 rounded-full border border-white/10" aria-hidden="true" />

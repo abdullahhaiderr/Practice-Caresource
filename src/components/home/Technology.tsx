@@ -1,4 +1,4 @@
-import { BarChart3, BrainCircuit, LockKeyhole, Sparkles, Workflow } from "lucide-react";
+import { BarChart3, BrainCircuit, Sparkles, Workflow } from "lucide-react";
 
 const points = [
   { icon: BarChart3, title: "Reporting that answers questions", text: "Practical visibility into claim status, denial activity, collections, and accounts receivable." },
@@ -17,8 +17,19 @@ export function Technology() {
             <p className="text-base leading-8">We are building a modern service model that combines experienced operational support with carefully selected automation and AI capabilities. Technology should make work clearer, not replace sound judgment or personal service.</p>
             <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-teal/20 bg-white/80 px-4 py-2 text-sm font-semibold text-teal shadow-sm"><Sparkles className="size-4" /> Human-led. Technology-enabled.</div>
           </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {points.map(({ icon: Icon, title, text }) => <article key={title} className="rounded-2xl border border-white/80 bg-white/75 p-5 shadow-[0_18px_50px_-35px_rgba(23,59,86,.28)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:shadow-soft"><span className="mb-5 grid size-10 place-items-center rounded-xl bg-[#edf5f5] text-teal"><Icon className="size-5" aria-hidden="true" /></span><h3 className="text-base">{title}</h3><p className="mt-2 text-sm leading-6">{text}</p></article>)}
+          <div className="grid items-start gap-4 sm:grid-cols-3">
+            {points.map(({ icon: Icon, title, text }) => (
+              <article
+                key={title}
+                className="technology-card rounded-2xl border border-[#dce7eb] bg-white p-5 shadow-card transition duration-300 sm:p-6"
+              >
+                <span className="mb-5 grid size-10 place-items-center rounded-xl bg-[#edf5f5] text-teal">
+                  <Icon className="size-5" aria-hidden="true" />
+                </span>
+                <h3 className="text-base leading-snug">{title}</h3>
+                <p className="mt-3 text-sm leading-6">{text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </div>

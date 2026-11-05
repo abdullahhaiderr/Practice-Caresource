@@ -23,7 +23,7 @@ export const business: Business = {
   legalName: "PracticeCareSource LLC",
   tagline: "Medical Billing, Practice Support and AI-Enabled Operations.",
   description:
-    "PracticeCareSource supports US healthcare practices with medical billing, revenue cycle management, credentialing, accounts receivable recovery, denial management, medical coding, virtual assistance, and digital marketing support.",
+    "PracticeCareSource works exclusively with US healthcare practices, providing medical billing, revenue cycle management, credentialing, accounts receivable recovery, denial management, medical coding, virtual assistance, and digital marketing support.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://practicecaresource.com",
   phone: "+1 (762) 536-7267",
   phoneHref: "tel:+17625367267",
@@ -93,16 +93,11 @@ export const ctaNav = {
 export const footerNav = {
   services: [
     { label: "Medical Billing", href: "/services/medical-billing" },
-    { label: "Medical Coding", href: "/services/medical-coding" },
-    { label: "Virtual Assistant", href: "/services/virtual-assistant" },
-    { label: "Marketing & Digital Presence", href: "/services/marketing-digital-presence" },
     { label: "Revenue Cycle Management", href: "/services/revenue-cycle-management" },
-    { label: "Credentialing", href: "/services/credentialing" },
-    { label: "Accounts Receivable", href: "/services/ar-management" },
+    { label: "Credentialing & Enrollment", href: "/services/credentialing" },
+    { label: "Accounts Receivable Recovery", href: "/services/ar-management" },
     { label: "Denial Management", href: "/services/denial-management" },
-    { label: "Eligibility & Prior Auth", href: "/services/eligibility-prior-authorization" },
-    { label: "Payment Posting & Reporting", href: "/services/payment-posting-reporting" },
-    { label: "Medical Billing Audits", href: "/services/medical-billing-audits" },
+    { label: "Medical Coding", href: "/services/medical-coding" },
   ],
   specialties: [
     { label: "Family Practice", href: "/specialties/family-practice" },

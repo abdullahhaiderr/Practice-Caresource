@@ -106,7 +106,7 @@ section:not(.hero-shell) { position: relative; }
     animation-range: entry 0% entry 22%;
   }
 }
-@keyframes section-rise { from { opacity:.35; transform:translateY(24px) } to { opacity:1; transform:translateY(0) } }
+@keyframes section-rise { from { opacity:.35; translate:0 24px } to { opacity:1; translate:0 0 } }
 @media (hover:hover) and (pointer:fine) {
   .card:hover, article:hover { border-color:rgb(98 214 193 / .34); }
 }
@@ -164,6 +164,26 @@ html,body { background:#fff; color:#263b49; }
 .error-text { color:#b54747; }
 .card { border-color:rgba(188,213,219,.72); background:rgba(255,255,255,.78); box-shadow:0 12px 36px -28px rgba(23,59,86,.24); }
 .card:hover { border-color:rgba(37,143,139,.42); box-shadow:0 22px 48px -30px rgba(23,59,86,.3); }
+.service-overview-card { transition:translate 220ms ease,border-color 220ms ease,box-shadow 220ms ease,background-color 220ms ease; }
+.service-overview-card:hover,.service-overview-card:focus-visible { translate:0 -4px; border-color:#79b9bd; background-color:#fbfdfd; box-shadow:0 18px 36px -24px rgba(23,59,86,.32); }
+.consultation-cta-card { background:linear-gradient(135deg,#f6fafb,#eef6f7); }
+.final-cta-section { background:#f2f7f8 !important; }
+@media (hover:hover) and (pointer:fine) {
+  main :is(article,.card,a[class*="rounded-xl"][class*="border"],div[class*="rounded-xl"][class*="border"]) {
+    transform-style:preserve-3d;
+    transition:transform 240ms cubic-bezier(.2,.7,.2,1),border-color 240ms ease,box-shadow 240ms ease,background-color 240ms ease;
+  }
+  main :is(article,.card,a[class*="rounded-xl"][class*="border"],div[class*="rounded-xl"][class*="border"]):hover {
+    transform:perspective(900px) rotateX(1.2deg) translateY(-4px) scale(1.006);
+    border-color:rgba(37,143,139,.42);
+    box-shadow:0 20px 42px -28px rgba(23,59,86,.32);
+  }
+}
+main :is(a[class*="rounded-xl"][class*="border"],.card):focus-visible {
+  transform:perspective(900px) rotateX(1deg) translateY(-3px);
+  border-color:rgba(37,143,139,.5);
+  box-shadow:0 18px 38px -26px rgba(23,59,86,.3);
+}
 .hero-secondary { color:#173b56; background:rgba(255,255,255,.72); border-color:rgba(40,125,163,.24); }
 .hero-secondary:hover:not(:disabled) { color:#176f78; background:#fff; border-color:#79b9bd; }
 .hero-title { max-width: 13ch; }

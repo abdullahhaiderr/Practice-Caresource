@@ -19,7 +19,7 @@ export function ServicesOverview() {
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => {
             const Icon = serviceIcons[index % serviceIcons.length];
-            return <Link key={service.id} href={service.href} className="group flex min-h-52 flex-col rounded-xl border border-border bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:border-[#b8d0d8] hover:shadow-hover">
+            return <Link key={service.id} href={service.href} className="service-overview-card group flex min-h-52 flex-col rounded-xl border border-border bg-white p-6">
               <span className="mb-5 grid size-11 place-items-center rounded-xl bg-[#edf5f5] text-teal"><Icon className="size-5" aria-hidden="true" /></span>
               <h3 className="text-lg tracking-tight group-hover:text-blue">{service.title}</h3>
               <p className="mt-2 flex-1 text-sm leading-6">{service.summary}</p>

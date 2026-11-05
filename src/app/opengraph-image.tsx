@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "PracticeCareSource — medical billing and revenue cycle management";
+  "PracticeCareSource. Medical billing and revenue cycle management";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

@@ -175,7 +175,7 @@ Vercel keeps immutable deployments. To roll back:
 2. Select the last known good deployment.
 3. Choose **Promote to Production**.
 
-If the issue is configuration-related, revert the environment variable change and redeploy. Database migrations are not part of this site.
+If the issue is configuration-related, revert the environment variable change and redeploy.
 
 ## 10. Maintenance
 

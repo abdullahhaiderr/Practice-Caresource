@@ -16,7 +16,7 @@ import { breadcrumbJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "About PracticeCareSource",
   description:
-    "Learn how PracticeCareSource approaches medical billing, coding, and revenue cycle support for healthcare practices across the United States.",
+    "Learn how PracticeCareSource supports healthcare practices in the United States with medical billing, coding, and revenue cycle services.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About PracticeCareSource",
@@ -55,7 +55,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About"
         title="A billing partner focused on process and visibility"
-        description="PracticeCareSource provides medical billing, coding, credentialing, and revenue cycle support to healthcare practices across the United States. Our work is built around clear ownership, consistent follow-up, and honest reporting."
+        description="PracticeCareSource works exclusively with healthcare practices in the United States, providing medical billing, coding, credentialing, and revenue cycle support with clear ownership, consistent follow-up, and honest reporting."
         breadcrumbs={[{ label: "About" }]}
       />
 
@@ -125,8 +125,8 @@ export default function AboutPage() {
                   <div>
                     <dt className="font-semibold text-navy">Who we work with</dt>
                     <dd className="mt-1 text-ink-soft">
-                      Healthcare practices and healthcare organizations in the
-                      United States.
+                      Healthcare practices and organizations in the United
+                      States only.
                     </dd>
                   </div>
                   <div>

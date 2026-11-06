@@ -25,7 +25,8 @@ export async function generateMetadata({
 
   return {
     title,
-    description: specialty.summary,
+    description: "Contact PracticeCareSource to confirm current specialty support.",
+    robots: { index: false, follow: true },
     alternates: { canonical: specialty.href },
     openGraph: {
       title: `${title} | PracticeCareSource`,

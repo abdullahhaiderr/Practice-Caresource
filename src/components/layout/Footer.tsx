@@ -13,7 +13,7 @@ const companyLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#0F1B24] text-white">
+    <footer id="site-footer" className="border-t border-white/10 bg-[#0F1B24] text-white">
       <div className="container-x py-12 sm:py-14">
         <div className="grid gap-10 border-b border-white/15 pb-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr] lg:gap-12">
           <div className="flex flex-col items-start">

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { business, primaryNav, ctaNav, type NavItem } from "@/config/business";
+import { primaryNav, ctaNav, type NavItem } from "@/config/business";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -224,26 +224,7 @@ export function Header() {
                     {ctaNav.label}
                   </Link>
                 </li>
-                <li className="mt-4 space-y-3 pb-8 text-sm text-ink-soft">
-                  {business.phoneHref && business.phone ? (
-                    <a
-                      href={business.phoneHref}
-                      className="flex items-center gap-2 transition hover:text-blue"
-                    >
-                      <Phone className="size-4" aria-hidden="true" />
-                      {business.phone}
-                    </a>
-                  ) : null}
-                  {business.emailHref && business.email ? (
-                    <a
-                      href={business.emailHref}
-                      className="flex items-center gap-2 transition hover:text-blue"
-                    >
-                      <Mail className="size-4" aria-hidden="true" />
-                      {business.email}
-                    </a>
-                  ) : null}
-                </li>
+                <li className="pb-8" />
               </ul>
             </div>
           </div>

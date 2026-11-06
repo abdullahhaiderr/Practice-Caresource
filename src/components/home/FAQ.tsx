@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Accordion } from "@/components/shared/Accordion";
 
-export function HomepageFAQ() {
 export const homepageFaqs = [
     {
       question: "What services does PracticeCareSource provide?",
@@ -25,6 +24,7 @@ export const homepageFaqs = [
     },
   ];
 
+export function HomepageFAQ() {
   return (
     <section>
       <div className="container-x section">

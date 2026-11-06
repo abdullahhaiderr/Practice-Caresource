@@ -13,7 +13,7 @@ This checklist separates repository work from business, legal, and hosting actio
 - [ ] Confirm current GitHub Actions checks pass on the exact main commit.
 - [ ] Run browser-based responsive and accessibility checks.
 - [ ] Test mailto behavior on desktop and mobile devices with configured email applications.
-- [ ] Review every public page, service claim, metadata field, structured data item, and internal link.
+- [ ] Review every public page, service claim, metadata field, structured data item, and internal link.\n- [ ] Create and approve a 1200x630 Open Graph image and Apple touch icon.\n- [ ] Confirm the original logo treatment and approve any palette adjustment.\n- [ ] Complete viewport screenshots, 200%/400% zoom, axe, keyboard, screen reader, and Lighthouse checks.
 
 ## Business inputs still required
 

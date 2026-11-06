@@ -80,7 +80,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 border-b transition-colors duration-180 ${
+        className={`sticky top-0 z-50 border-b transition-colors duration-200 ${
           scrolled
             ? "border-border bg-white shadow-none"
             : "border-border bg-white"

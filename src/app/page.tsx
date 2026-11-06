@@ -5,6 +5,7 @@ import { ServicesOverview } from "@/components/home/ServicesOverview";
 import { Workflow } from "@/components/home/Workflow";
 import { HomepageFAQ } from "@/components/home/FAQ";
 import { FinalCTA } from "@/components/home/FinalCTA";
+import { PracticeApproach } from "@/components/home/PracticeApproach";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 
@@ -22,6 +23,7 @@ export default function HomePage() {
       <BillingChallenges />
       <ServicesOverview />
       <Workflow />
+      <PracticeApproach />
       <HomepageFAQ />
       <FinalCTA />
       <JsonLd data={organizationJsonLd()} />

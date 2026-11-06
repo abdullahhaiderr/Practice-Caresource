@@ -13,9 +13,9 @@ export const homepageFaqs = [
         "System compatibility and access requirements are reviewed during the initial discussion. We confirm what can be supported and agree on responsibilities before an engagement begins.",
     },
     {
-      question: "How do you protect patient information?",
+      question: "Can I send patient information through this website?",
       answer:
-        "This public website is for business enquiries only and should not receive patient health information. Any client PHI handling, access controls, and required agreements must be assessed and agreed before work begins.",
+        "No. The public website and ordinary email are for business enquiries only. Any future client PHI exchange requires a separately assessed and agreed channel, safeguards, and contractual arrangements.",
     },
     {
       question: "How long does onboarding take?",

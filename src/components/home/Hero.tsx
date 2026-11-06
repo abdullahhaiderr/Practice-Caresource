@@ -23,7 +23,7 @@ export function Hero() {
       <div className="container-x relative z-10 grid items-center gap-12 py-16 sm:py-20 lg:min-h-[740px] lg:grid-cols-[.94fr_1.06fr] lg:gap-10 lg:py-24">
         <div className="hero-copy max-w-2xl">
           <div className="hero-kicker mb-7"><span className="hero-kicker-dot" />MEDICAL BILLING · PRACTICE OPERATIONS · SMARTER TECHNOLOGY</div>
-          <h1 className="hero-title max-w-[720px] flex items-center">Everything your practice needs to <span>run, grow and get paid.</span></h1>
+          <h1 className="hero-title max-w-[720px]">Everything your practice needs to <span>run, grow and get paid.</span></h1>
           <p className="mt-7 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
             From medical billing and revenue cycle management to AI-enabled workflows, virtual assistance, and digital growth support, we help your practice operate with greater clarity while your team stays focused on patient care.
           </p>

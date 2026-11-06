@@ -5,7 +5,6 @@ import { BillingChallenges } from "@/components/home/BillingChallenges";
 import { ServicesOverview } from "@/components/home/ServicesOverview";
 import { Workflow } from "@/components/home/Workflow";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
-import { Specialties } from "@/components/home/Specialties";
 import { Onboarding } from "@/components/home/Onboarding";
 import { Technology } from "@/components/home/Technology";
 import { HomepageFAQ } from "@/components/home/FAQ";
@@ -32,7 +31,6 @@ export default function HomePage() {
       <ServicesOverview />
       <Workflow />
       <WhyChooseUs />
-      <Specialties />
       <Onboarding />
       <Technology />
       <HomepageFAQ />

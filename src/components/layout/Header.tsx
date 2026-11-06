@@ -224,7 +224,6 @@ export function Header() {
                     {ctaNav.label}
                   </Link>
                 </li>
-                <li className="pb-8" />
               </ul>
             </div>
           </div>

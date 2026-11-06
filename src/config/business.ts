@@ -37,6 +37,8 @@ export const resourcesNav: NavItem[] = [
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
   { label: "How It Works", href: "/how-it-works" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Billing Glossary", href: "/glossary" },
 ];
 
 export const primaryNav: NavItem[] = [

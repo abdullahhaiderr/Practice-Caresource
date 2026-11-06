@@ -94,14 +94,14 @@ export function ConsultationForm() {
       </div>
 
       {warning ? (
-        <div role="alert" className="flex items-start gap-3 rounded-lg border border-[#E4BDBB] bg-[#FBF3F2] p-4 text-sm text-[#8A3B38]">
+        <div role="alert" className="flex items-start gap-3 rounded-lg border border-[#A15C00] bg-bg-secondary p-4 text-sm text-[#A15C00]">
           <AlertCircle className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
           <span>{warning}</span>
         </div>
       ) : null}
 
       {notice ? (
-        <div role="status" aria-live="polite" className="rounded-lg border border-[#b8d9c8] bg-[#f0f7f2] p-4 text-sm text-[#245b3c]">
+        <div role="status" aria-live="polite" className="rounded-lg border border-pine bg-pale-pine p-4 text-sm text-pine">
           {notice}
           <p className="mt-2"><a className="font-semibold underline underline-offset-2" href={`mailto:${CONTACT_EMAIL}`}>Email {CONTACT_EMAIL}</a></p>
         </div>
@@ -109,22 +109,22 @@ export function ConsultationForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="fullName" className="label">Full name <span className="text-[#C0504D]">*</span></label>
+          <label htmlFor="fullName" className="label">Full name <span className="text-[#B3261E]">*</span></label>
           <input id="fullName" type="text" autoComplete="name" className="field" aria-invalid={Boolean(errors.fullName)} aria-describedby={errors.fullName ? "fullName-error" : undefined} {...register("fullName")} />
           <FieldError id="fullName-error" message={errors.fullName?.message} />
         </div>
         <div>
-          <label htmlFor="email" className="label">Business email <span className="text-[#C0504D]">*</span></label>
+          <label htmlFor="email" className="label">Business email <span className="text-[#B3261E]">*</span></label>
           <input id="email" type="email" autoComplete="email" className="field" aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? "email-error" : undefined} {...register("email")} />
           <FieldError id="email-error" message={errors.email?.message} />
         </div>
         <div>
-          <label htmlFor="practiceName" className="label">Practice name <span className="text-[#C0504D]">*</span></label>
+          <label htmlFor="practiceName" className="label">Practice name <span className="text-[#B3261E]">*</span></label>
           <input id="practiceName" type="text" autoComplete="organization" className="field" aria-invalid={Boolean(errors.practiceName)} aria-describedby={errors.practiceName ? "practiceName-error" : undefined} {...register("practiceName")} />
           <FieldError id="practiceName-error" message={errors.practiceName?.message} />
         </div>
         <div>
-          <label htmlFor="specialty" className="label">Specialty <span className="text-[#C0504D]">*</span></label>
+          <label htmlFor="specialty" className="label">Specialty <span className="text-[#B3261E]">*</span></label>
           <input id="specialty" type="text" autoComplete="off" placeholder="Enter your practice specialty" className="field" aria-invalid={Boolean(errors.specialty)} aria-describedby={errors.specialty ? "specialty-error" : undefined} {...register("specialty")} />
           <FieldError id="specialty-error" message={errors.specialty?.message} />
         </div>
@@ -148,7 +148,7 @@ export function ConsultationForm() {
         <div className="grid gap-2 sm:grid-cols-2">
           {serviceOptions.map((service) => (
             <label key={service} className="flex items-start gap-2.5 rounded-lg border border-border bg-paper px-3.5 py-3 text-sm text-ink-soft transition-colors hover:border-blue/50">
-              <input type="checkbox" value={service} className="mt-0.5 size-4 shrink-0 accent-[#176B91]" {...register("services")} />
+              <input type="checkbox" value={service} className="mt-0.5 size-4 shrink-0 accent-[#0F5C4D]" {...register("services")} />
               {service}
             </label>
           ))}
@@ -156,21 +156,21 @@ export function ConsultationForm() {
       </fieldset>
 
       <div>
-        <label htmlFor="message" className="label">What would you like help with? <span className="text-[#C0504D]">*</span></label>
+        <label htmlFor="message" className="label">What would you like help with? <span className="text-[#B3261E]">*</span></label>
         <textarea id="message" rows={5} maxLength={2000} className="field resize-y" placeholder="Tell us about your current billing workflow and what support you are looking for." aria-invalid={Boolean(errors.message)} aria-describedby={errors.message ? "message-error" : "message-help"} {...register("message")} />
         {errors.message ? <FieldError id="message-error" message={errors.message.message} /> : <p id="message-help" className="helper-text">Do not include patient information. 2,000 characters maximum.</p>}
       </div>
 
       <div>
         <label className="flex items-start gap-3 text-sm text-ink-soft">
-          <input type="checkbox" className="mt-0.5 size-4 shrink-0 accent-[#176B91]" aria-invalid={Boolean(errors.consent)} aria-describedby={errors.consent ? "consent-error" : undefined} {...register("consent")} />
-          <span>I have read the <Link href="/privacy-policy" className="font-medium text-blue underline underline-offset-2">Privacy Policy</Link> and understand that this form is for business enquiries only. <span className="text-[#C0504D]">*</span></span>
+          <input type="checkbox" className="mt-0.5 size-4 shrink-0 accent-[#0F5C4D]" aria-invalid={Boolean(errors.consent)} aria-describedby={errors.consent ? "consent-error" : undefined} {...register("consent")} />
+          <span>I have read the <Link href="/privacy-policy" className="font-medium text-blue underline underline-offset-2">Privacy Policy</Link> and understand that this form is for business enquiries only. <span className="text-[#B3261E]">*</span></span>
         </label>
         <FieldError id="consent-error" message={errors.consent?.message} />
       </div>
 
       <div className="flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-xs text-muted">Fields marked <span className="text-[#C0504D]">*</span> are required.</p>
+        <p className="text-xs text-muted">Fields marked <span className="text-[#B3261E]">*</span> are required.</p>
         <button type="submit" className="btn btn-primary w-full sm:w-auto">
           <Mail className="size-4" aria-hidden="true" />
           Prepare email enquiry

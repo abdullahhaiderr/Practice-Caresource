@@ -153,10 +153,14 @@ export async function POST(request: NextRequest) {
       );
     }
   } else {
-    // Email delivery is not configured yet. The submission is logged so the
-    // form can be tested locally; configure RESEND_API_KEY and
-    // CONTACT_TO_EMAIL before launch.
-    console.info("Consultation request (email delivery not configured)", submission);
+    // Fail closed: never log personal or practice inquiry data to application logs.
+    return NextResponse.json(
+      {
+        ok: false,
+        message: "The contact form is temporarily unavailable. Please email info@practicecaresource.com.",
+      },
+      { status: 503 },
+    );
   }
 
   return NextResponse.json({ ok: true });

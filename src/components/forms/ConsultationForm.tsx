@@ -35,7 +35,7 @@ export function ConsultationForm() {
   const onSubmit = handleSubmit((values) => {
     setNotice(null);
     setWarning(null);
-    if (containsLikelyPhi([values.practiceName, values.message].join(" "))) {
+    if (containsLikelyPhi([values.fullName, values.email, values.practiceName, values.message].join(" "))) {
       setWarning("Please remove patient identifiers or health information. This form is for business enquiries only.");
       return;
     }

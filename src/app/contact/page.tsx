@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHero eyebrow="Contact" title="Request a consultation" description="Share a few details about your practice and the billing support you are considering. Your email application will prepare the enquiry for you to review and send." breadcrumbs={[{ label: "Contact" }]} />
+      <PageHero eyebrow="Contact" title="Schedule a consultation" description="Share a few details about your practice and the billing support you are considering. Your email application will prepare the enquiry for you to review and send." breadcrumbs={[{ label: "Contact" }]} />
       <section className="section">
         <div className="container-x grid gap-12 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-16">
           <div className="min-w-0">

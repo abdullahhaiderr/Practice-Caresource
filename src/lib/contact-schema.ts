@@ -1,17 +1,5 @@
 import { z } from "zod";
 
-export const specialtyOptions = [
-  "Family Practice",
-  "Internal Medicine",
-  "Cardiology",
-  "Orthopedics",
-  "Dermatology",
-  "Behavioral Health",
-  "Physical Therapy",
-  "Pain Management",
-  "Other",
-] as const;
-
 export const providerOptions = [
   "1 provider",
   "2–5 providers",

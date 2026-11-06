@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   formatDetection: { email: false, address: false, telephone: false },
   alternates: { canonical: "/" },
   openGraph: { type: "website", locale: "en_US", url: business.url, siteName: business.name, title: "Medical Billing and Revenue Cycle Management", description: business.description },
-  twitter: { card: "summary_large_image", title: "Medical Billing and Revenue Cycle Management", description: business.description },
+  twitter: { card: "summary", title: "Medical Billing and Revenue Cycle Management", description: business.description },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
   category: "Healthcare business services",
 };

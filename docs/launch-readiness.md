@@ -2,42 +2,55 @@
 
 Last reviewed: November 7, 2026
 
-This checklist separates repository work from business, legal, and hosting actions. A successful build does not mean the business is ready to launch.
+This checklist separates repository implementation from business, legal, hosting, and final QA. Repository completion does not itself authorize a production release.
 
-## Repository and application
+## Implemented in the repository
 
-- [x] Public contact email configured as info@practicecaresource.com.
-- [x] Contact form no longer depends on a server API or Resend.
-- [x] Contact form prepares an email draft and does not claim the message was sent.
-- [x] Unverified phone and street-address details are not intentionally published.
-- [ ] Confirm current GitHub Actions checks pass on the exact main commit.
-- [ ] Run browser-based responsive and accessibility checks.
-- [ ] Test mailto behavior on desktop and mobile devices with configured email applications.
-- [ ] Review every public page, service claim, metadata field, structured data item, and internal link.\n- [ ] Create and approve a 1200x630 Open Graph image and Apple touch icon.\n- [ ] Confirm the original logo treatment and approve any palette adjustment.\n- [ ] Complete viewport screenshots, 200%/400% zoom, axe, keyboard, screen reader, and Lighthouse checks.
+- [x] Public email set to info@practicecaresource.com.
+- [x] Contact API route and Resend integration removed.
+- [x] Shortened contact form to name, business email, practice or organization, and message.
+- [x] Contact form opens an email draft and explains that the visitor must press Send.
+- [x] No false success confirmation or server-side lead storage.
+- [x] No unverified public phone number, street address, or social links.
+- [x] Removed specialty page until supported specialties are confirmed.
+- [x] No fabricated team profiles, testimonials, certifications, or performance statistics.
+- [x] Eight homepage sections: hero, engagement principles, billing challenges, services index, workflow timeline, working approach, FAQs, and final CTA.
+- [x] Paper, pine, ink, terracotta and deep-ink flat visual system.
+- [x] Newsreader and Public Sans loaded through next/font.
+- [x] Ruled list for billing challenges, semantic service index table, and horizontal process timeline.
+- [x] Structured data includes Organization, WebSite, Service, BreadcrumbList, FAQPage, and Article where applicable.
+- [x] Pricing and glossary pages included in navigation and sitemap.
+- [x] Metadata uses the Vercel fallback until the custom domain is verified.
+- [x] Privacy, cookie, terms, and HIPAA/security copy updated to match the actual contact workflow and known business facts.
+
+## Still required before owner QA sign-off
+
+- [ ] Confirm GitHub Actions lint, typecheck, and build pass on the exact main commit.
+- [ ] Run a fresh local production build in a Node.js environment.
+- [ ] Test all routes and internal links.
+- [ ] Test responsive layouts at 320, 360, 390, 430, 768, 1024, 1280, 1440, and 1920 pixels.
+- [ ] Test keyboard navigation, focus order, form errors, screen-reader labels, and 200%/400% zoom.
+- [ ] Run axe or equivalent accessibility scans.
+- [ ] Run Lighthouse on representative mobile and desktop pages.
+- [ ] Verify WebAIM contrast ratios for all foreground/background pairs, including hover, focus, warning, success, and error states.
+- [ ] Test the mailto form on desktop and mobile with configured email applications, including the direct email fallback.
+- [ ] Check final browser rendering of logo, favicon, font loading, table overflow, timeline, and mobile navigation.
+- [ ] Create or approve a real 1200x630 social preview image and Apple touch icon if required; none is currently verified in the repository.
+- [ ] Validate structured data with Google's Rich Results Test and Schema Markup Validator.
 
 ## Business inputs still required
 
-- [ ] Confirm the registered legal entity name.
-- [ ] Confirm the exact supported medical specialties.
-- [ ] Confirm the final service catalogue and service descriptions.
-- [ ] Supply a verified business phone number only if it should be public.
-- [ ] Supply a verified mailing or office address only if it should be public.
-- [ ] Confirm business hours if they will be displayed.
-- [ ] Confirm the preferred primary host (www or non-www) after domain setup.
+- [ ] Confirm registered legal entity name and governing jurisdiction.
+- [ ] Confirm exact supported medical specialties.
+- [ ] Approve final service catalogue and service descriptions.
+- [ ] Confirm the actual percentage pricing rate and commercial terms privately; do not publish until approved.
+- [ ] Supply verified staff names, roles, credentials, and permission to publish, if a team section is desired.
+- [ ] Supply genuine client proof, testimonials, case studies, and permission to publish, if available.
+- [ ] Supply a verified business phone, address, or business hours only if these should be public.
 - [ ] Confirm that info@practicecaresource.com is active and monitored.
-- [ ] Confirm final primary CTA wording.
+- [ ] Confirm preferred primary host (www or non-www) after domain setup.
 
-Unverified business facts must remain unpublished.
-
-## Email and form operations
-
-- [x] Remove the contact API route and Resend implementation.
-- [x] Remove Resend environment variable instructions.
-- [ ] Test that the visitor's email application opens with the prepared message.
-- [ ] Test the direct email fallback link.
-- [ ] Confirm who monitors and responds to incoming enquiries.
-
-The website cannot verify that a visitor sent a mailto draft or that it reached the inbox.
+Unverified business facts must remain unpublished. Do not create placeholder profiles or fake proof to fill these gaps.
 
 ## Domain and hosting
 
@@ -53,17 +66,11 @@ The current canonical fallback is https://practice-caresource.vercel.app.
 ## Legal and privacy review
 
 - [ ] Have qualified counsel review the Privacy Policy, Terms and Conditions, and Cookie Policy.
-- [ ] Confirm the legal entity, governing-law state, venue, and liability clauses with counsel.
+- [ ] Confirm legal entity, governing law, venue, and liability clauses with counsel.
 - [ ] Review actual vendors, data flows, retention practices, and privacy disclosures.
 - [ ] Keep the website enquiry form limited to business enquiries and maintain a clear warning not to submit PHI.
 - [ ] Do not claim HIPAA certification or blanket compliance.
 
-## Final release gates
+## Current release safety
 
-A release is ready for owner review only when:
-1. GitHub CI passes on the exact proposed commit.
-2. Browser, responsive, and accessibility checks have been completed and recorded.
-3. Contact mailto behavior has been tested on supported browsers and devices.
-4. Business and legal placeholders have been resolved or intentionally kept unpublished.
-5. Domain and hosting configuration have been verified.
-6. The project owner explicitly approves deployment.
+The Vercel production ignore-build safeguard remains in place. Recent main-branch production deployment attempts were canceled by that safeguard. The Vercel status check also reports an account build-limit/upgrade response. Do not remove the safeguard or promote a deployment until the owner completes QA and explicitly approves release.

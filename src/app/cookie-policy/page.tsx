@@ -50,7 +50,7 @@ export default function CookiePolicyPage() {
       <section>
         <h2>Contact form</h2>
         <p>
-          The consultation form prepares an email draft in your device's configured
+          The consultation form prepares an email draft in your device&apos;s configured
           email application. The Site does not submit the form to a server-side
           contact endpoint or store the enquiry in a website database. You must
           review the draft and press Send. Your email providers may then process

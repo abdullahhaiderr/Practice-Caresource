@@ -46,7 +46,7 @@ const differentiators = [
   {
     icon: Lock,
     title: "Security treated as part of the process",
-    text: "Access is limited to the people who need it, confidentiality requirements are documented, and a Business Associate Agreement is used where applicable.",
+    text: "Access permissions, confidentiality requirements, and any required Business Associate Agreement should be reviewed and documented before protected information is shared.",
   },
   {
     icon: MessagesSquare,

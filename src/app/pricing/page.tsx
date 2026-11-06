@@ -31,7 +31,7 @@ export default function PricingPage() {
       <PageHero
         eyebrow="Pricing"
         title="A clear scope before a pricing proposal"
-        description="Medical billing support is scoped around the practice, its workflows, and the work requested. We do not publish unverified rates or imply that one pricing model fits every engagement."
+        description="The intended pricing approach is percentage-based. The applicable percentage depends on the agreed service scope and must be confirmed in writing before an engagement begins. No percentage rate is published here."
         breadcrumbs={[{ label: "Pricing" }]}
       />
       <section className="section">
@@ -42,7 +42,7 @@ export default function PricingPage() {
             </span>
             <h2 className="mt-5 text-2xl">What goes into a quote?</h2>
             <p className="mt-4 leading-7">A useful proposal starts with a practical understanding of the current billing process and the responsibilities the practice wants to delegate. The final scope and commercial terms must be agreed in writing before work begins.</p>
-            <Link href="/contact" className="btn btn-primary mt-7">Request a consultation <ArrowRight className="size-4" aria-hidden="true" /></Link>
+            <Link href="/contact" className="btn btn-primary mt-7">Request a Consultation <ArrowRight className="size-4" aria-hidden="true" /></Link>
           </div>
           <div className="divide-y divide-border border-y border-border">
             {factors.map(([title, description], index) => (
@@ -58,7 +58,7 @@ export default function PricingPage() {
         <div className="container-x max-w-3xl">
           <h2>What to prepare</h2>
           <p className="mt-4 leading-7">For an initial discussion, it is helpful to know your provider count, specialty, approximate claim volume, practice management system, payer mix, current billing workflow, and the tasks you want support with. Do not send patient names, records, claim documents, or other protected health information through the public enquiry form.</p>
-          <p className="mt-4 leading-7">Specific pricing models, rates, minimums, and contract terms have not been confirmed for publication. They will remain unpublished until the business approves them.</p>
+          <p className="mt-4 leading-7">The percentage-based approach is the current pricing direction. The exact percentage, any minimums, and contract terms remain subject to business approval and written agreement.</p>
         </div>
       </section>
       <CTASection title="Discuss the right scope for your practice" description="Share a high-level description of your practice and the billing support you are considering." />

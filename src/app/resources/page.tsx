@@ -54,6 +54,20 @@ const resourceCards = [
   },
   {
     icon: Sparkles,
+    title: "Pricing",
+    description: "How service scope and practice requirements inform a pricing discussion. No unverified rates or pricing models are published.",
+    href: "/pricing",
+    label: "Understand pricing",
+  },
+  {
+    icon: BookOpen,
+    title: "Billing Glossary",
+    description: "Plain-language explanations of common medical billing, claims, payment, and revenue cycle terms.",
+    href: "/glossary",
+    label: "Explore terms",
+  },
+  {
+    icon: Sparkles,
     title: "Why Choose Us",
     description:
       "How we approach scope, reporting, denials, security, and honest communication about outcomes.",

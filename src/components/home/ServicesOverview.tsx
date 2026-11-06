@@ -14,15 +14,27 @@ export function ServicesOverview() {
           </div>
           <Link href="/services" className="btn btn-outline w-fit">View service details <ArrowUpRight className="size-4" aria-hidden="true" /></Link>
         </div>
-        <div className="border-y border-rule">
-          {services.map((service, index) => (
-            <Link key={service.id} href={service.href} className="group grid gap-2 border-b border-rule py-5 last:border-b-0 sm:grid-cols-[3rem_minmax(12rem,.75fr)_1.25fr_auto] sm:items-center sm:gap-5">
-              <span className="font-display text-lg text-terracotta">{String(index + 1).padStart(2, "0")}</span>
-              <span className="font-semibold text-ink group-hover:text-pine">{service.title}</span>
-              <span className="text-sm leading-6 text-muted">{service.summary}</span>
-              <span className="inline-flex items-center gap-1 text-sm font-semibold text-pine">Details <ArrowUpRight className="size-4" aria-hidden="true" /></span>
-            </Link>
-          ))}
+        <div className="overflow-x-auto border-y border-rule">
+          <table className="w-full min-w-[42rem] border-collapse text-left">
+            <thead>
+              <tr className="border-b border-rule text-xs uppercase tracking-wider text-muted">
+                <th scope="col" className="w-16 py-4 pr-4 font-semibold">No.</th>
+                <th scope="col" className="py-4 pr-6 font-semibold">Service</th>
+                <th scope="col" className="py-4 pr-6 font-semibold">Scope overview</th>
+                <th scope="col" className="py-4 font-semibold"><span className="sr-only">Details</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              {services.map((service, index) => (
+                <tr key={service.id} className="border-b border-rule last:border-b-0">
+                  <td className="py-5 pr-4 font-display text-lg text-terracotta">{String(index + 1).padStart(2, "0")}</td>
+                  <th scope="row" className="py-5 pr-6 font-semibold text-ink"><Link href={service.href} className="hover:text-pine">{service.title}</Link></th>
+                  <td className="py-5 pr-6 text-sm leading-6 text-muted">{service.summary}</td>
+                  <td className="py-5 text-right"><Link href={service.href} aria-label={`View ${service.title} details`} className="inline-flex items-center gap-1 text-sm font-semibold text-pine underline underline-offset-4">Details <ArrowUpRight className="size-4" aria-hidden="true" /></Link></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </section>

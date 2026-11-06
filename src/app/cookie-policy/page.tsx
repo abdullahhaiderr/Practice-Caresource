@@ -13,7 +13,7 @@ export default function CookiePolicyPage() {
     <LegalPage
       title="Cookie Policy"
       description="How cookies and similar technologies are used on this website."
-      lastUpdated="November 4, 2026"
+      lastUpdated="November 7, 2026"
       breadcrumb="Cookie Policy"
     >
       <p>
@@ -50,10 +50,11 @@ export default function CookiePolicyPage() {
       <section>
         <h2>Contact form</h2>
         <p>
-          The consultation form submits information you enter to our server. The
-          Site does not use cookies to store the contents of the form. If email
-          delivery is configured, your submission is sent to our email delivery
-          provider so we can respond to your inquiry.
+          The consultation form prepares an email draft in your device's configured
+          email application. The Site does not submit the form to a server-side
+          contact endpoint or store the enquiry in a website database. You must
+          review the draft and press Send. Your email providers may then process
+          the message under their own policies.
         </p>
       </section>
 
@@ -74,10 +75,10 @@ export default function CookiePolicyPage() {
       <section>
         <h2>Third-party services</h2>
         <p>
-          The Site may rely on service providers for hosting and email delivery.
-          Those providers process data under their own terms and privacy policies.
-          We do not permit them to use information from this Site for their own
-          advertising.
+          The Site is hosted by Vercel. If you choose to send an enquiry, the email
+          providers involved may process the message under their own terms and
+          privacy policies. Ordinary email is not presented as a secure channel
+          for protected health information.
         </p>
       </section>
 

@@ -80,9 +80,9 @@ export function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
+        className={`sticky top-0 z-50 border-b transition-colors duration-180 ${
           scrolled
-            ? "border-border bg-white shadow-sm"
+            ? "border-border bg-white shadow-none"
             : "border-border bg-white"
         }`}
       >
@@ -143,7 +143,7 @@ export function Header() {
                       {item.href !== "#resources" && (
                         <Link
                           href={item.href}
-                          className="block px-4 py-2 text-sm font-semibold text-navy hover:bg-[#f2f7f8] hover:text-blue transition-colors"
+                          className="block px-4 py-2 text-sm font-semibold text-navy hover:bg-pale-pine hover:text-blue transition-colors"
                         >
                           All {item.label}
                         </Link>

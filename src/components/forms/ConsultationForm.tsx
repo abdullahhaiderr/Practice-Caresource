@@ -104,7 +104,7 @@ export function ConsultationForm() {
 
       <div className="flex flex-col gap-3 border-t border-rule pt-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-muted">Required fields are marked with an asterisk.</p>
-        <button type="submit" disabled={prepared} className="btn btn-primary w-full sm:w-auto"><Mail className="size-4" aria-hidden="true" />{prepared ? "Email draft prepared" : "Request a Consultation"}</button>
+        <button type="submit" disabled={prepared} className="btn btn-primary w-full sm:w-auto"><Mail className="size-4" aria-hidden="true" />{prepared ? "Email draft prepared" : "Schedule a Consultation"}</button>
       </div>
       <p className="text-xs leading-relaxed text-muted">The form opens your email application. Your message is sent only after you review it and press Send. You can also email <a className="font-semibold underline" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> directly.</p>
     </form>

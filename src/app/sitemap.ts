@@ -15,6 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/hipaa-security", priority: 0.6, changeFrequency: "yearly" },
     { path: "/faq", priority: 0.7, changeFrequency: "monthly" },
     { path: "/resources", priority: 0.6, changeFrequency: "monthly" },
+    { path: "/pricing", priority: 0.6, changeFrequency: "yearly" },
+    { path: "/glossary", priority: 0.7, changeFrequency: "monthly" },
     { path: "/blog", priority: 0.8, changeFrequency: "weekly" },
     { path: "/contact", priority: 0.8, changeFrequency: "yearly" },
     { path: "/privacy-policy", priority: 0.3, changeFrequency: "yearly" },

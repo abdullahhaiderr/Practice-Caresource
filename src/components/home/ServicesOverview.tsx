@@ -17,7 +17,7 @@ export function ServicesOverview() {
           <Link href="/services" className="btn btn-outline w-fit">Explore all services <ArrowUpRight className="size-4" aria-hidden="true" /></Link>
         </div>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => {
+          {services.map((service) => {
             const Icon = serviceIcons[service.id as keyof typeof serviceIcons] ?? ClipboardList;
             return <Link key={service.id} href={service.href} className="service-overview-card group flex min-h-52 flex-col rounded-xl border border-border bg-white p-6">
               <span className="mb-5 grid size-11 place-items-center rounded-xl bg-pale-pine text-teal"><Icon className="size-5" aria-hidden="true" /></span>

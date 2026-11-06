@@ -8,9 +8,10 @@ import { specialtyDetails } from "@/data/specialty-details";
 import { breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Specialties We Serve",
+  title: "Specialties",
+  robots: { index: false, follow: true },
   description:
-    "Medical billing support for family practice, internal medicine, cardiology, orthopedics, dermatology, behavioral health, physical therapy, and pain management.",
+    "Contact PracticeCareSource to discuss your practice billing requirements.",
   alternates: { canonical: "/specialties" },
   openGraph: {
     title: "Specialties We Serve | PracticeCareSource",

@@ -22,12 +22,12 @@ export const faqGroups: FAQGroup[] = [
       {
         question: "Do you work with our existing EHR or practice management system?",
         answer:
-          "We work within the systems your practice already uses. During onboarding, we discuss secure access, workflow responsibilities, and how information will be exchanged.",
+          "System compatibility, access requirements, and responsibilities are reviewed with each practice before an engagement begins. No specific platform is represented as supported until confirmed.",
       },
       {
         question: "How is pricing structured?",
         answer:
-          "Pricing depends on the services requested, claim volume, and the complexity of the workflow. We discuss service arrangements during the consultation and provide details in writing before any agreement is signed.",
+          "The intended pricing approach is percentage-based. The applicable percentage and scope must be discussed and confirmed in writing before an agreement is signed; no rate is published on this website.",
       },
     ],
   },
@@ -38,7 +38,7 @@ export const faqGroups: FAQGroup[] = [
       {
         question: "What coding systems do you support?",
         answer:
-          "Our coding support covers ICD-10-CM diagnosis coding, CPT procedure coding, and HCPCS coding for services and supplies. We also review modifiers and documentation consistency.",
+          "ICD-10-CM, CPT, and HCPCS are commonly used coding systems in U.S. medical billing. The specific coding tasks and review responsibilities available from PracticeCareSource must be confirmed in the agreed service scope.",
       },
       {
         question: "Can you help reduce coding-related denials?",
@@ -69,7 +69,7 @@ export const faqGroups: FAQGroup[] = [
       {
         question: "Can you help with CAQH?",
         answer:
-          "Yes. We can support CAQH profile updates and the documentation needed to keep the profile current.",
+          "CAQH-related tasks can be discussed during the consultation. Any included profile maintenance or application support must be confirmed in the written service scope.",
       },
     ],
   },
@@ -122,7 +122,7 @@ export const faqGroups: FAQGroup[] = [
       {
         question: "What does onboarding involve?",
         answer:
-          "Onboarding generally includes an initial consultation, a review of the current billing workflow, scope and workflow planning, secure access arrangements, implementation, and ongoing support.",
+          "A proposed onboarding discussion can cover the current workflow, scope, responsibilities, system compatibility, access requirements, and reporting. Actual steps and safeguards must be confirmed before work begins.",
       },
       {
         question: "How long does onboarding take?",
@@ -164,12 +164,12 @@ export const faqGroups: FAQGroup[] = [
       {
         question: "How is patient information protected?",
         answer:
-          "We follow HIPAA-aligned administrative and technical safeguards, including access controls, confidentiality requirements, and workforce training. A Business Associate Agreement is used where applicable.",
+          "The actual safeguards, access controls, subcontractors, and contractual responsibilities must be reviewed before any protected health information is shared. A Business Associate Agreement may be required depending on the parties and services. This website does not claim HIPAA certification or guarantee compliance.",
       },
       {
         question: "Is PracticeCareSource HIPAA certified?",
         answer:
-          "No. HIPAA does not create a certification program for covered entities or business associates. We describe our safeguards accurately and do not claim HIPAA certification.",
+          "No. PracticeCareSource does not claim HIPAA certification. HIPAA compliance depends on the applicable legal roles, actual safeguards, and contractual arrangements; this website is not proof of compliance.",
       },
       {
         question: "Can we submit patient information through this website?",
@@ -195,7 +195,7 @@ export const faqGroups: FAQGroup[] = [
       {
         question: "How do we get started?",
         answer:
-          "Use the consultation form or contact page to share a few details about your practice. A member of our team will follow up to discuss next steps.",
+          "Use the contact form to prepare an email addressed to info@practicecaresource.com. Review the draft in your email application and press Send. The website cannot confirm delivery.",
       },
     ],
   },

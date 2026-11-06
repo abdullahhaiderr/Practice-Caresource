@@ -5,12 +5,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AlertCircle, Mail } from "lucide-react";
-import {
-  contactSchema,
-  providerOptions,
-  serviceOptions,
-  type ContactFormValues,
-} from "@/lib/contact-schema";
+import { contactSchema, type ContactFormValues } from "@/lib/contact-schema";
 
 const CONTACT_EMAIL = "info@practicecaresource.com";
 
@@ -31,156 +26,87 @@ export function ConsultationForm() {
   const [notice, setNotice] = useState<string | null>(null);
   const [warning, setWarning] = useState<string | null>(null);
   const [prepared, setPrepared] = useState(false);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<ContactFormValues>({
+  const { register, handleSubmit, formState: { errors } } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
     mode: "onTouched",
-    defaultValues: {
-      fullName: "",
-      email: "",
-      phone: "",
-      practiceName: "",
-      specialty: "",
-      providers: "",
-      services: [],
-      message: "",
-      consent: false,
-    },
+    defaultValues: { fullName: "", email: "", practiceName: "", message: "", consent: false },
   });
 
   const onSubmit = handleSubmit((values) => {
     setNotice(null);
     setWarning(null);
-
-    const freeText = [values.practiceName, values.specialty, values.message].join(" ");
-    if (containsLikelyPhi(freeText)) {
+    if (containsLikelyPhi([values.practiceName, values.message].join(" "))) {
       setWarning("Please remove patient identifiers or health information. This form is for business enquiries only.");
       return;
     }
 
-    const lines = [
+    const body = [
       "New PracticeCareSource business enquiry",
       "",
       `Name: ${values.fullName}`,
       `Business email: ${values.email}`,
-      `Phone: ${values.phone || "Not provided"}`,
-      `Practice: ${values.practiceName}`,
-      `Specialty: ${values.specialty}`,
-      `Number of providers: ${values.providers || "Not provided"}`,
-      `Services of interest: ${values.services?.length ? values.services.join(", ") : "Not specified"}`,
+      `Practice or organization: ${values.practiceName}`,
       "",
       "Message:",
       values.message,
       "",
-      "This enquiry was prepared using the PracticeCareSource website contact form.",
-    ];
-
-    const subject = `PracticeCareSource enquiry: ${values.practiceName}`;
-    const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
+      "Prepared using the PracticeCareSource website. Please review before sending.",
+    ].join("\n");
+    const subject = "PracticeCareSource consultation enquiry";
+    const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     setPrepared(true);
-    setNotice("Your email app should open with the enquiry prepared. Review it and press Send to deliver it to PracticeCareSource. If no email app opens, use the email link below.");
+    setNotice("Your email application should open with the enquiry prepared. Review the message and press Send. If it does not open, use the direct email link below.");
     window.location.href = mailto;
   });
 
   return (
     <form onSubmit={onSubmit} noValidate className="space-y-6">
-      <div className="rounded-lg border-l-4 border-teal bg-bg-secondary p-4 sm:p-5">
-        <p className="text-sm font-semibold text-navy">Please do not include patient health information.</p>
-        <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-          Do not submit patient names, dates of birth, medical record numbers, claim documents, or insurance card details. This form is for business enquiries only. The browser checks are a basic precaution and cannot identify every type of sensitive information.
-        </p>
+      <div className="border-l-4 border-warning bg-pale-pine p-4">
+        <p className="text-sm font-semibold text-ink">Business enquiries only. Do not include patient health information.</p>
+        <p className="mt-1 text-sm leading-6 text-muted">Do not enter patient names, dates of birth, medical record numbers, claim details, insurance identifiers, or other protected health information. Browser checks are limited and cannot detect every sensitive detail.</p>
       </div>
 
-      {warning ? (
-        <div role="alert" className="flex items-start gap-3 rounded-lg border border-[#A15C00] bg-bg-secondary p-4 text-sm text-[#A15C00]">
-          <AlertCircle className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
-          <span>{warning}</span>
-        </div>
-      ) : null}
-
-      {notice ? (
-        <div role="status" aria-live="polite" className="rounded-lg border border-pine bg-pale-pine p-4 text-sm text-pine">
-          {notice}
-          <p className="mt-2"><a className="font-semibold underline underline-offset-2" href={`mailto:${CONTACT_EMAIL}`}>Email {CONTACT_EMAIL}</a></p>
-        </div>
-      ) : null}
+      {warning ? <div role="alert" className="flex items-start gap-3 border border-warning bg-pale-pine p-4 text-sm text-warning"><AlertCircle className="mt-0.5 size-4 shrink-0" aria-hidden="true" /><span>{warning}</span></div> : null}
+      {notice ? <div role="status" aria-live="polite" className="border border-success bg-pale-pine p-4 text-sm text-success">{notice}<p className="mt-2"><a className="font-semibold underline underline-offset-2" href={`mailto:${CONTACT_EMAIL}`}>Email {CONTACT_EMAIL}</a></p></div> : null}
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="fullName" className="label">Full name <span className="text-[#B3261E]">*</span></label>
+          <label htmlFor="fullName" className="label">Full name <span className="text-error">*</span></label>
           <input id="fullName" type="text" autoComplete="name" className="field" aria-invalid={Boolean(errors.fullName)} aria-describedby={errors.fullName ? "fullName-error" : undefined} {...register("fullName")} />
           <FieldError id="fullName-error" message={errors.fullName?.message} />
         </div>
         <div>
-          <label htmlFor="email" className="label">Business email <span className="text-[#B3261E]">*</span></label>
+          <label htmlFor="email" className="label">Business email <span className="text-error">*</span></label>
           <input id="email" type="email" autoComplete="email" className="field" aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? "email-error" : undefined} {...register("email")} />
           <FieldError id="email-error" message={errors.email?.message} />
         </div>
-        <div>
-          <label htmlFor="practiceName" className="label">Practice name <span className="text-[#B3261E]">*</span></label>
+        <div className="sm:col-span-2">
+          <label htmlFor="practiceName" className="label">Practice or organization <span className="text-error">*</span></label>
           <input id="practiceName" type="text" autoComplete="organization" className="field" aria-invalid={Boolean(errors.practiceName)} aria-describedby={errors.practiceName ? "practiceName-error" : undefined} {...register("practiceName")} />
           <FieldError id="practiceName-error" message={errors.practiceName?.message} />
         </div>
-        <div>
-          <label htmlFor="specialty" className="label">Specialty <span className="text-[#B3261E]">*</span></label>
-          <input id="specialty" type="text" autoComplete="off" placeholder="Enter your practice specialty" className="field" aria-invalid={Boolean(errors.specialty)} aria-describedby={errors.specialty ? "specialty-error" : undefined} {...register("specialty")} />
-          <FieldError id="specialty-error" message={errors.specialty?.message} />
-        </div>
-        <div>
-          <label htmlFor="phone" className="label">Phone <span className="text-muted">(optional)</span></label>
-          <input id="phone" type="tel" autoComplete="tel" className="field" aria-invalid={Boolean(errors.phone)} aria-describedby={errors.phone ? "phone-error" : undefined} {...register("phone")} />
-          <FieldError id="phone-error" message={errors.phone?.message} />
-        </div>
-        <div>
-          <label htmlFor="providers" className="label">Number of providers <span className="text-muted">(optional)</span></label>
-          <select id="providers" className="field" defaultValue="" aria-invalid={Boolean(errors.providers)} aria-describedby={errors.providers ? "providers-error" : undefined} {...register("providers")}>
-            <option value="">Select number of providers</option>
-            {providerOptions.map((option) => <option key={option} value={option}>{option}</option>)}
-          </select>
-          <FieldError id="providers-error" message={errors.providers?.message} />
-        </div>
-      </div>
-
-      <fieldset>
-        <legend className="label">Services of interest <span className="text-muted">(optional)</span></legend>
-        <div className="grid gap-2 sm:grid-cols-2">
-          {serviceOptions.map((service) => (
-            <label key={service} className="flex items-start gap-2.5 rounded-lg border border-border bg-paper px-3.5 py-3 text-sm text-ink-soft transition-colors hover:border-blue/50">
-              <input type="checkbox" value={service} className="mt-0.5 size-4 shrink-0 accent-[#0F5C4D]" {...register("services")} />
-              {service}
-            </label>
-          ))}
-        </div>
-      </fieldset>
-
-      <div>
-        <label htmlFor="message" className="label">What would you like help with? <span className="text-[#B3261E]">*</span></label>
-        <textarea id="message" rows={5} maxLength={2000} className="field resize-y" placeholder="Tell us about your current billing workflow and what support you are looking for." aria-invalid={Boolean(errors.message)} aria-describedby={errors.message ? "message-error" : "message-help"} {...register("message")} />
-        {errors.message ? <FieldError id="message-error" message={errors.message.message} /> : <p id="message-help" className="helper-text">Do not include patient information. 2,000 characters maximum.</p>}
       </div>
 
       <div>
-        <label className="flex items-start gap-3 text-sm text-ink-soft">
-          <input type="checkbox" className="mt-0.5 size-4 shrink-0 accent-[#0F5C4D]" aria-invalid={Boolean(errors.consent)} aria-describedby={errors.consent ? "consent-error" : undefined} {...register("consent")} />
-          <span>I have read the <Link href="/privacy-policy" className="font-medium text-blue underline underline-offset-2">Privacy Policy</Link> and understand that this form is for business enquiries only. <span className="text-[#B3261E]">*</span></span>
+        <label htmlFor="message" className="label">How can we help? <span className="text-error">*</span></label>
+        <textarea id="message" rows={4} maxLength={1500} className="field resize-y" aria-invalid={Boolean(errors.message)} aria-describedby={errors.message ? "message-error" : "message-help"} {...register("message")} />
+        {errors.message ? <FieldError id="message-error" message={errors.message.message} /> : <p id="message-help" className="helper-text">Describe the business need only. Do not include patient details. 1,500 characters maximum.</p>}
+      </div>
+
+      <div>
+        <label className="flex items-start gap-3 text-sm text-muted">
+          <input type="checkbox" className="mt-1 size-4 shrink-0 accent-pine" aria-invalid={Boolean(errors.consent)} aria-describedby={errors.consent ? "consent-error" : undefined} {...register("consent")} />
+          <span>I have read the <Link href="/privacy-policy" className="font-semibold text-pine underline underline-offset-2">Privacy Policy</Link> and understand that this is a business enquiry channel. <span className="text-error">*</span></span>
         </label>
         <FieldError id="consent-error" message={errors.consent?.message} />
       </div>
 
-      <div className="flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-xs text-muted">Fields marked <span className="text-[#B3261E]">*</span> are required.</p>
-        <button type="submit" disabled={prepared} className="btn btn-primary w-full sm:w-auto">
-          <Mail className="size-4" aria-hidden="true" />
-          {prepared ? "Email draft prepared" : "Prepare email enquiry"}
-        </button>
+      <div className="flex flex-col gap-3 border-t border-rule pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-xs text-muted">Required fields are marked with an asterisk.</p>
+        <button type="submit" disabled={prepared} className="btn btn-primary w-full sm:w-auto"><Mail className="size-4" aria-hidden="true" />{prepared ? "Email draft prepared" : "Request a Consultation"}</button>
       </div>
-      <p className="text-xs leading-relaxed text-muted">
-        Your email application sends the message only after you review it and press Send. If you do not have an email application configured, contact us directly at <a className="font-semibold underline" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Do not send protected health information.
-      </p>
+      <p className="text-xs leading-relaxed text-muted">The form opens your email application. Your message is sent only after you review it and press Send. You can also email <a className="font-semibold underline" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> directly.</p>
     </form>
   );
 }

@@ -1,21 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Newsreader, Public_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SkipLink } from "@/components/shared/SkipLink";
-import { CursorAura } from "@/components/shared/CursorAura";
 import { business } from "@/config/business";
 
-const inter = Inter({
+const newsreader = Newsreader({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-display",
   display: "swap",
 });
 
-const manrope = Manrope({
+const publicSans = Public_Sans({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -30,40 +29,27 @@ export const metadata: Metadata = {
   keywords: [
     "medical billing",
     "revenue cycle management",
-    "medical coding",
     "physician credentialing",
     "denial management",
     "accounts receivable management",
-    "healthcare billing",
-    "medical billing company USA",
-    "revenue cycle management for medical practices",
-    "medical billing and coding services",
-    "medical credentialing and payer enrollment",
-    "accounts receivable recovery medical billing",
-    "medical billing denial management",
+    "healthcare billing support",
   ],
   authors: [{ name: business.name }],
   creator: business.name,
   publisher: business.name,
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  alternates: {
-    canonical: "/",
-  },
+  formatDetection: { email: false, address: false, telephone: false },
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: business.url,
     siteName: business.name,
-    title: "Medical Billing and Revenue Cycle Management Solutions",
+    title: "Medical Billing and Revenue Cycle Management",
     description: business.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Medical Billing and Revenue Cycle Management Solutions",
+    title: "Medical Billing and Revenue Cycle Management",
     description: business.description,
   },
   robots: {
@@ -83,24 +69,17 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#ffffff",
+  themeColor: "#F7F5F0",
   colorScheme: "light",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
+    <html lang="en" className={`${newsreader.variable} ${publicSans.variable}`}>
       <body className="min-h-screen bg-paper text-ink antialiased">
         <SkipLink />
-        <CursorAura />
         <Header />
-        <main id="main" tabIndex={-1}>
-          {children}
-        </main>
+        <main id="main" tabIndex={-1}>{children}</main>
         <Footer />
       </body>
     </html>

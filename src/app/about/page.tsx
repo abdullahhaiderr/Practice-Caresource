@@ -40,7 +40,7 @@ const principles = [
   {
     icon: ShieldCheck,
     title: "Protected information handled carefully",
-    text: "We use HIPAA-aligned administrative and technical safeguards, access controls, confidentiality requirements, and Business Associate Agreements where applicable.",
+    text: "Security responsibilities, access controls, and any required Business Associate Agreement must be assessed and agreed before a client shares protected health information. This website does not claim HIPAA certification or guarantee compliance.",
   },
   {
     icon: HeartPulse,

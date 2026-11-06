@@ -3,8 +3,7 @@ import { LegalPage } from "@/components/shared/LegalPage";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description:
-    "How PracticeCareSource handles information submitted through this website, including business contact details and consultation requests.",
+  description: "How PracticeCareSource handles website visits and explains the email-draft contact process.",
   alternates: { canonical: "/privacy-policy" },
 };
 
@@ -12,139 +11,142 @@ export default function PrivacyPolicyPage() {
   return (
     <LegalPage
       title="Privacy Policy"
-      description="How information submitted through this website is collected, used, and protected."
-      lastUpdated="November 4, 2026"
+      description="How this website handles technical information and how the contact email draft works."
+      lastUpdated="November 7, 2026"
       breadcrumb="Privacy Policy"
     >
       <p>
-        This Privacy Policy describes how PracticeCareSource (&ldquo;we,&rdquo;
-        &ldquo;us,&rdquo; or &ldquo;our&rdquo;) handles information collected
-        through practicecaresource.com (the &ldquo;Site&rdquo;). It applies to
-        business inquiries submitted through the Site. It does not describe how
-        protected health information is handled in client engagements, which is
-        governed by separate agreements, including a Business Associate
-        Agreement where applicable.
+        This Privacy Policy describes the public PracticeCareSource website
+        (&ldquo;Site&rdquo;). It is intended for business enquiries. It does not
+        describe information handling during a client engagement, which must be
+        addressed separately in the applicable contract and, where required, a
+        Business Associate Agreement.
       </p>
 
       <section>
-        <h2>Information we collect</h2>
+        <h2>Contact form and information you enter</h2>
         <p>
-          When you submit the consultation form, we collect the information you
-          provide: full name, business email address, phone number, practice
-          name, specialty, number of providers, services of interest, your
-          message, and your consent to this policy.
+          The contact form validates the information in your browser and prepares
+          an email draft addressed to info@practicecaresource.com using your
+          device's configured email application. You must review the draft and
+          press Send. The Site does not submit the form to a contact API, store
+          the enquiry in a website database, or verify that the email was sent
+          or delivered.
         </p>
         <p>
-          We may also receive standard technical information through our hosting
-          provider, such as IP address, browser type, and request timestamps, to
-          operate the Site, maintain security, and prevent abuse. We do not use
-          this information to identify individual visitors for advertising.
-        </p>
-      </section>
-
-      <section>
-        <h2>Information we do not want through this Site</h2>
-        <p>
-          The Site is not designed to receive protected health information. Do
-          not submit patient names, dates of birth, medical record numbers, claim
-          documents, insurance card details, or other patient information
-          through the form or by email before a Business Associate Agreement is
-          in place.
-        </p>
-        <p>
-          If patient information is submitted accidentally, contact us so it can
-          be addressed promptly.
+          If your device has no configured email application, you can contact us
+          directly at <a href="mailto:info@practicecaresource.com">info@practicecaresource.com</a>.
+          Once you send the message, your email provider and our receiving email
+          provider may process and retain the message under their own terms and
+          policies.
         </p>
       </section>
 
       <section>
-        <h2>How we use information</h2>
+        <h2>Information we ask you not to send</h2>
+        <p>
+          Do not enter patient names, dates of birth, medical record numbers,
+          Social Security numbers, insurance identifiers, claim documents, or
+          other protected health information (PHI) into the form or ordinary
+          email. This is a business enquiry channel, not a patient intake or
+          secure PHI exchange system.
+        </p>
+        <p>
+          The browser performs limited checks for a few obvious identifier
+          patterns. Those checks are incomplete and cannot guarantee that PHI
+          will be detected or blocked.
+        </p>
+      </section>
+
+      <section>
+        <h2>Technical information</h2>
+        <p>
+          Our hosting provider may process standard technical information
+          needed to deliver and secure the Site, such as IP address, browser
+          information, request time, and diagnostic logs. The exact information
+          and retention periods depend on the hosting provider's configuration
+          and policies.
+        </p>
+      </section>
+
+      <section>
+        <h2>How information may be used</h2>
         <ul>
-          <li>To review and respond to your consultation request.</li>
-          <li>To communicate with you about services you asked about.</li>
-          <li>To operate, secure, and improve the Site.</li>
-          <li>To detect spam, abuse, and fraudulent submissions.</li>
+          <li>To operate, maintain, and secure the Site.</li>
+          <li>To respond to an email you choose to send to our business inbox.</li>
+          <li>To investigate technical issues or misuse.</li>
           <li>To comply with applicable legal obligations.</li>
         </ul>
         <p>
-          We do not sell personal information. We do not use consultation form
-          submissions for unrelated marketing.
+          We do not sell personal information. The Site does not collect contact
+          form submissions through a server-side lead database.
         </p>
       </section>
 
       <section>
-        <h2>How we share information</h2>
+        <h2>Service providers and third parties</h2>
         <p>
-          We may share information with service providers who help operate the
-          Site or deliver email, such as our hosting provider and email delivery
-          provider. These providers process information on our behalf and are
-          expected to protect it.
-        </p>
-        <p>
-          We may also disclose information if required by law, legal process, or
-          to protect the rights, safety, and security of our business, users, or
-          others. If our business is involved in a merger, acquisition, or sale
-          of assets, information may be transferred as part of that transaction.
+          The Site is hosted by Vercel. When you choose to send an email, the
+          email providers involved may process the message. Their privacy
+          policies, security practices, and retention rules apply to the services
+          they provide. We do not represent that ordinary email is suitable for
+          PHI.
         </p>
       </section>
 
       <section>
-        <h2>Data retention</h2>
+        <h2>Retention</h2>
         <p>
-          We retain consultation inquiries for as long as needed to respond and
-          to maintain business records, unless a longer period is required by
-          law. Retention periods may differ for information that becomes part of
-          a client engagement.
+          The Site does not retain contact form submissions because it does not
+          receive them. Messages you send by email may be retained in the sender
+          and recipient mailboxes according to the relevant email providers'
+          settings and the recipient's business record practices.
         </p>
       </section>
 
       <section>
         <h2>Security</h2>
         <p>
-          We use administrative and technical measures intended to protect
-          information submitted through the Site, including access controls and
-          encrypted transmission over HTTPS. No method of transmission or storage
-          is completely secure, so we cannot guarantee absolute security.
+          The Site uses HTTPS and configured hosting security controls. No
+          website or email transmission can be guaranteed completely secure.
+          Do not use the public contact form or ordinary email to exchange
+          patient information or other sensitive records.
         </p>
       </section>
 
       <section>
-        <h2>Your choices and rights</h2>
+        <h2>Your choices and privacy requests</h2>
         <p>
-          Depending on where you live, you may have rights to access, correct,
-          delete, or limit the use of personal information we hold about you. To
-          make a request, use the{" "}
-          <a href="/contact">contact form</a> and describe the request. We may
-          need to verify your identity before responding.
-        </p>
-        <p>
-          You can also ask us to stop sending follow-up communications at any
-          time.
+          For questions about this policy or a privacy request relating to
+          information we hold, email <a href="mailto:info@practicecaresource.com">info@practicecaresource.com</a>.
+          We may need to verify your identity before responding. Do not include
+          patient information in the request.
         </p>
       </section>
 
       <section>
-        <h2>Children&rsquo;s privacy</h2>
+        <h2>Children's privacy</h2>
         <p>
           The Site is intended for healthcare business professionals and is not
-          directed to children under 13. We do not knowingly collect personal
-          information from children through the Site.
+          directed to children under 13.
         </p>
       </section>
 
       <section>
         <h2>Changes to this policy</h2>
         <p>
-          We may update this Privacy Policy from time to time. The updated
-          version will be posted on this page with a new last-updated date.
+          This policy may be updated as the Site or its data practices change.
+          The date at the top of this page indicates the latest revision.
         </p>
       </section>
 
       <section>
         <h2>Contact</h2>
         <p>
-          Questions about this Privacy Policy can be sent through the{" "}
-          <a href="/contact">contact form</a>.
+          Questions about this policy can be sent to
+          {" "}<a href="mailto:info@practicecaresource.com">info@practicecaresource.com</a>.
+          This page is an informational draft and should be reviewed by
+          qualified counsel before launch.
         </p>
       </section>
     </LegalPage>

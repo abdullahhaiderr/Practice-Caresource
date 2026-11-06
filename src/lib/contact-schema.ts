@@ -36,12 +36,12 @@ export const contactSchema = z.object({
   phone: z
     .string()
     .trim()
-    .min(7, "Please enter a phone number.")
     .max(25, "Please keep the phone number under 25 characters.")
     .regex(
-      /^[0-9+()\-.\s]+$/,
+      /^[0-9+()\-.\s]*$/,
       "Please use digits, spaces, and standard phone symbols only.",
-    ),
+    )
+    .optional(),
   practiceName: z
     .string()
     .trim()

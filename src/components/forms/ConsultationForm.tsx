@@ -153,7 +153,7 @@ export function ConsultationForm() {
 
         <div>
           <label htmlFor="phone" className="label">
-            Phone <span className="text-[#C0504D]">*</span>
+            Phone <span className="text-muted">(optional)</span>
           </label>
           <input
             id="phone"

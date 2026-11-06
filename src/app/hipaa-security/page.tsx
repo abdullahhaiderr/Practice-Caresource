@@ -1,52 +1,42 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  AlertTriangle,
-  ArrowRight,
-  Database,
-  FileLock2,
-  Lock,
-  ShieldCheck,
-  UserCheck,
-} from "lucide-react";
+import { AlertTriangle, ArrowUpRight, FileText, Lock, Mail, ShieldCheck } from "lucide-react";
 import { PageHero } from "@/components/shared/PageHero";
 import { CTASection } from "@/components/shared/CTASection";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "HIPAA & Data Security",
-  description:
-    "How PracticeCareSource approaches protected health information, access controls, Business Associate Agreements, and data security for medical billing services.",
+  title: "HIPAA and Data Security Considerations",
+  description: "Important information about protected health information, business associate agreements, and reviewing medical billing vendor security before sharing patient data.",
   alternates: { canonical: "/hipaa-security" },
   openGraph: {
-    title: "HIPAA & Data Security | PracticeCareSource",
-    description:
-      "Our approach to protected health information, access controls, Business Associate Agreements, and data security in medical billing.",
+    title: "HIPAA and Data Security | PracticeCareSource",
+    description: "Review important questions about PHI, vendor safeguards, and business associate agreements before sharing patient information.",
     url: "/hipaa-security",
   },
 };
 
-const safeguards = [
+const reviewItems = [
   {
     icon: Lock,
-    title: "Access controls",
-    text: "System access is limited to team members who need it for their assigned work. Credentials are individual, and access is adjusted when responsibilities change.",
+    title: "Access and permissions",
+    text: "Confirm which people need access, which systems are involved, what permissions are appropriate, and how access is reviewed and removed.",
   },
   {
-    icon: FileLock2,
-    title: "Confidentiality requirements",
-    text: "Team members working with protected health information are subject to confidentiality requirements and are expected to follow documented handling procedures.",
+    icon: FileText,
+    title: "Written agreements",
+    text: "Determine whether the service provider is acting as a business associate and whether a Business Associate Agreement is required before PHI is shared.",
   },
   {
-    icon: Database,
-    title: "Minimum necessary use",
-    text: "Protected health information is used for the billing and revenue cycle tasks within the agreed scope. It is not used for unrelated purposes.",
+    icon: ShieldCheck,
+    title: "Safeguards and incident response",
+    text: "Review the actual administrative, physical, and technical safeguards, incident reporting process, subcontractors, and contractual responsibilities.",
   },
   {
-    icon: UserCheck,
-    title: "Business Associate Agreements",
-    text: "Where PracticeCareSource acts as a business associate, a Business Associate Agreement is used to define permitted uses, safeguards, and reporting obligations.",
+    icon: Mail,
+    title: "Approved communication channels",
+    text: "Confirm which channels are approved for sensitive information. Do not assume ordinary email or a public website form is appropriate for PHI.",
   },
 ];
 
@@ -54,172 +44,52 @@ export default function HipaaSecurityPage() {
   return (
     <>
       <PageHero
-        eyebrow="HIPAA & security"
-        title="Handling protected health information carefully"
-        description="Medical billing involves protected health information. This page explains the safeguards we describe, what our website does not collect, and where the limits of any billing vendor's role begin."
+        eyebrow="HIPAA and security"
+        title="Review data protection before sharing patient information"
+        description="Medical billing may involve protected health information. This page is a starting point for vendor due diligence, not a security certification, legal opinion, or guarantee about a particular engagement."
         breadcrumbs={[{ label: "HIPAA & Security" }]}
       />
-
       <section className="section">
-        <div className="container-x">
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-16">
-            <div className="min-w-0">
-              <div className="rounded-xl border-l-4 border-teal bg-bg-secondary p-6 sm:p-7">
-                <div className="flex items-start gap-4">
-                  <AlertTriangle
-                    className="mt-1 size-6 shrink-0 text-teal"
-                    aria-hidden="true"
-                  />
-                  <div>
-                    <h2 className="font-display text-lg font-bold text-navy">
-                      We do not claim HIPAA certification
-                    </h2>
-                    <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                      HIPAA does not create a certification program for covered
-                      entities or business associates. Any vendor claiming to be
-                      &ldquo;HIPAA certified&rdquo; is using that phrase loosely.
-                      We describe our safeguards and contractual obligations
-                      accurately instead.
-                    </p>
-                  </div>
-                </div>
+        <div className="container-x max-w-4xl">
+          <div className="rounded-lg border-l-4 border-[#A15C00] bg-bg-secondary p-6">
+            <div className="flex items-start gap-4">
+              <AlertTriangle className="mt-1 size-6 shrink-0 text-[#A15C00]" aria-hidden="true" />
+              <div>
+                <h2 className="text-xl">Do not submit PHI through this website</h2>
+                <p className="mt-2 text-sm leading-7">The public enquiry form prepares an ordinary email draft addressed to info@practicecaresource.com. It is not a secure patient intake system. Do not enter patient names, dates of birth, medical record numbers, claim details, insurance identifiers, or other protected health information. Basic browser checks are incomplete and cannot guarantee detection.</p>
               </div>
-
-              <h2 className="mt-12 text-2xl font-display font-bold text-navy sm:text-3xl">
-                Safeguards we describe
-              </h2>
-              <p className="mt-3 leading-relaxed text-ink-soft">
-                The specific administrative, technical, and physical safeguards
-                used for an engagement depend on the services, systems, and
-                information involved. These are the core practices we apply.
-              </p>
-              <div className="mt-8 grid gap-5 sm:grid-cols-2">
-                {safeguards.map((item) => (
-                  <div key={item.title} className="card">
-                    <item.icon
-                      className="size-6 text-teal"
-                      aria-hidden="true"
-                      strokeWidth={1.75}
-                    />
-                    <h3 className="mt-4 font-display text-lg font-semibold text-navy">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                      {item.text}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <h2 className="mt-14 text-2xl font-display font-bold text-navy sm:text-3xl">
-                This website does not collect patient information
-              </h2>
-              <div className="mt-4 space-y-4 leading-relaxed text-ink-soft">
-                <p>
-                  The consultation form on this site asks for business contact
-                  information only: your name, business email, phone, practice
-                  name, specialty, number of providers, services of interest, and
-                  a message about your billing needs.
-                </p>
-                <p>
-                  Please do not include patient names, dates of birth, medical
-                  record numbers, claim documents, insurance card images, or any
-                  other protected health information in the form or in email
-                  correspondence with us before a Business Associate Agreement is
-                  in place.
-                </p>
-                <p>
-                  If patient information is submitted to this website
-                  accidentally, contact us so it can be addressed promptly.
-                </p>
-              </div>
-
-              <h2 className="mt-14 text-2xl font-display font-bold text-navy sm:text-3xl">
-                Working with your systems
-              </h2>
-              <div className="mt-4 space-y-4 leading-relaxed text-ink-soft">
-                <p>
-                  We work within the EHR, practice management, clearinghouse, and
-                  payer portal systems your practice already uses. Access should
-                  be provisioned by your organization with the permissions
-                  appropriate to the agreed scope.
-                </p>
-                <p>
-                  Your organization remains responsible for its own HIPAA
-                  compliance program, policies, and risk analysis. Our role is to
-                  support billing operations within the boundaries defined by the
-                  agreement and applicable law.
-                </p>
-              </div>
-
-              <h2 className="mt-14 text-2xl font-display font-bold text-navy sm:text-3xl">
-                Questions about security
-              </h2>
-              <p className="mt-3 leading-relaxed text-ink-soft">
-                If your practice has specific security requirements, vendor
-                questionnaires, or system access policies, raise them during the
-                consultation. These should be reviewed before an engagement
-                begins, not after.
-              </p>
             </div>
+          </div>
 
-            <aside className="lg:sticky lg:top-28 lg:self-start">
-              <div className="rounded-xl border border-border bg-paper p-6 shadow-card">
-                <ShieldCheck className="size-7 text-teal" aria-hidden="true" />
-                <h2 className="mt-4 font-display text-lg font-bold text-navy">
-                  Security questions?
-                </h2>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                  Ask about access controls, Business Associate Agreements, and
-                  data handling before you share systems access.
-                </p>
-                <Link href="/contact" className="btn btn-primary mt-5 w-full">
-                  Contact us
-                </Link>
-              </div>
+          <h2 className="mt-12">Questions to resolve before an engagement</h2>
+          <p className="mt-3 leading-7">The correct requirements depend on the parties' roles, the services being performed, the information involved, and the actual data flow. Review these items with qualified privacy or legal counsel before any PHI is shared.</p>
+          <div className="mt-8 divide-y divide-border border-y border-border">
+            {reviewItems.map(({ icon: Icon, title, text }) => (
+              <article key={title} className="grid gap-3 py-6 sm:grid-cols-[3rem_1fr]">
+                <span className="grid size-11 place-items-center rounded-md bg-pale-pine text-pine"><Icon className="size-5" aria-hidden="true" /></span>
+                <div><h3 className="text-lg">{title}</h3><p className="mt-2 text-sm leading-7">{text}</p></div>
+              </article>
+            ))}
+          </div>
 
-              <div className="mt-6 rounded-xl border border-border bg-bg-secondary p-6">
-                <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-navy">
-                  Related pages
-                </h2>
-                <ul className="mt-4 space-y-2.5 text-sm">
-                  {[
-                    { label: "Privacy Policy", href: "/privacy-policy" },
-                    { label: "Terms and Conditions", href: "/terms-and-conditions" },
-                    { label: "Cookie Policy", href: "/cookie-policy" },
-                    { label: "How It Works", href: "/how-it-works" },
-                  ].map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="group flex items-center justify-between gap-2 text-ink-soft transition-colors hover:text-blue"
-                      >
-                        {link.label}
-                        <ArrowRight
-                          className="size-3.5 text-muted-soft transition-transform group-hover:translate-x-0.5"
-                          aria-hidden="true"
-                        />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </aside>
+          <h2 className="mt-12">HIPAA certification</h2>
+          <p className="mt-3 leading-7">PracticeCareSource does not claim HIPAA certification. HIPAA obligations are based on applicable law, the parties' roles, and the actual safeguards and contractual arrangements. Do not treat this website or its content as proof of compliance.</p>
+
+          <h2 className="mt-12">Authoritative information</h2>
+          <ul className="mt-4 space-y-3 text-sm">
+            <li><a className="inline-flex items-center gap-2 font-semibold underline underline-offset-4" href="https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html" target="_blank" rel="noreferrer">HHS: Summary of the HIPAA Privacy Rule <ArrowUpRight className="size-4" /></a></li>
+            <li><a className="inline-flex items-center gap-2 font-semibold underline underline-offset-4" href="https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html" target="_blank" rel="noreferrer">HHS: Guidance on de-identification <ArrowUpRight className="size-4" /></a></li>
+          </ul>
+
+          <div className="mt-12 rounded-lg border border-border bg-paper p-6">
+            <h2 className="text-xl">Have vendor security requirements?</h2>
+            <p className="mt-2 text-sm leading-7">Raise them during an initial business discussion using high-level, non-identifying information. Do not attach patient records or security-sensitive documents to the public contact form.</p>
+            <Link href="/contact" className="btn btn-primary mt-5">Request a consultation</Link>
           </div>
         </div>
       </section>
-
-      <CTASection
-        title="Review security requirements with us"
-        description="Tell us about your practice and any vendor security requirements. We will follow up to discuss the engagement."
-      />
-
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: "Home", path: "/" },
-          { name: "HIPAA & Security", path: "/hipaa-security" },
-        ])}
-      />
+      <CTASection title="Discuss your practice's requirements" description="Start with a business enquiry and keep patient information out of the public form." />
+      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "HIPAA & Security", path: "/hipaa-security" }])} />
     </>
   );
 }

@@ -62,7 +62,7 @@ export default function HipaaSecurityPage() {
           </div>
 
           <h2 className="mt-12">Questions to resolve before an engagement</h2>
-          <p className="mt-3 leading-7">The correct requirements depend on the parties' roles, the services being performed, the information involved, and the actual data flow. Review these items with qualified privacy or legal counsel before any PHI is shared.</p>
+          <p className="mt-3 leading-7">The correct requirements depend on the parties&apos; roles, the services being performed, the information involved, and the actual data flow. Review these items with qualified privacy or legal counsel before any PHI is shared.</p>
           <div className="mt-8 divide-y divide-border border-y border-border">
             {reviewItems.map(({ icon: Icon, title, text }) => (
               <article key={title} className="grid gap-3 py-6 sm:grid-cols-[3rem_1fr]">

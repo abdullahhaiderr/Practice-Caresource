@@ -1,47 +1,31 @@
-# Deployment guide — PracticeCareSource
+# Deployment guide: PracticeCareSource
 
 Last reviewed: November 7, 2026
 
-This guide describes the release process. It does not authorize a deployment. Do not merge, deploy, attach a domain, or change Vercel settings without explicit approval from the project owner.
+This guide does not authorize a deployment. Do not merge, deploy, attach a domain, or change Vercel settings without explicit approval from the project owner.
 
 ## 1. Prerequisites
 
-- Node.js 20.9 or newer and npm.
-- A verified Vercel project connected to this repository.
-- DNS access for the intended production domain.
-- A Resend account and verified sender domain if the consultation form should deliver email.
+1. Node.js 20.9 or newer and npm.
+2. The correct Vercel project connected to this repository.
+3. DNS access for the intended production domain.
+4. Explicit project-owner approval for a production release.
 
-## 2. Environment variables
+## 2. Environment configuration
 
-| Variable | Required | Purpose |
-| --- | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Yes for a release | Canonical origin used by metadata, sitemap, robots, and JSON-LD. |
-| `RESEND_API_KEY` | For email delivery | Server-side Resend API key. Never expose it with a `NEXT_PUBLIC_` prefix. |
-| `CONTACT_TO_EMAIL` | For email delivery | Monitored inbox that receives consultation requests. |
-| `CONTACT_FROM_EMAIL` | Recommended | Sender identity verified with Resend. |
+The contact form does not require environment variables or an email API. The form opens the visitor's configured email application with a prepared message addressed to info@practicecaresource.com. The visitor must review and send it.
 
-The repository fallback is currently `https://practice-caresource.vercel.app`. Keep this value until `practicecaresource.com` has been verified in DNS and Vercel. Do not set the official domain merely because it is the intended brand domain.
+The optional `NEXT_PUBLIC_SITE_URL` variable controls the canonical origin used by metadata, sitemap, robots, and JSON-LD. Until practicecaresource.com is verified in DNS and Vercel, the code falls back to https://practice-caresource.vercel.app.
 
-Example local environment:
-
-```bash
-NEXT_PUBLIC_SITE_URL=https://practice-caresource.vercel.app
-RESEND_API_KEY=re_xxxxxxxxxxxxxxxxx
-CONTACT_TO_EMAIL=info@practicecaresource.com
-CONTACT_FROM_EMAIL="PracticeCareSource <website@verified-sending-domain.com>"
-```
-
-Use the actual verified sender address provided by Resend. Store secrets in local environment files or the hosting provider's secret manager. Never commit them or paste them into chat.
+No Resend API key, contact recipient variable, sender variable, database, or contact backend is required.
 
 ## 3. Contact form behavior
 
-The API validates form submissions and sends email through Resend only when `RESEND_API_KEY` and `CONTACT_TO_EMAIL` are configured. If either is missing, the endpoint returns HTTP 503 and directs the visitor to `info@practicecaresource.com`. Inquiry contents are not written to application logs.
+The contact form validates required business enquiry fields in the browser and prepares a mailto message to info@practicecaresource.com. It does not send in the background, and the website cannot verify that the visitor pressed Send or that the message reached the inbox.
 
-A successful API response means the email provider accepted the message; it does not prove that the recipient inbox delivered or reviewed it. Test delivery using a monitored inbox before launch.
+If no email application is configured, the visitor can use the direct email link. The inbox should be monitored and tested from an external email account.
 
-The form requests business information and includes a free-text field. It warns users not to submit patient information or PHI, but cannot technically guarantee that free-text content contains no PHI.
-
-The current rate limiter uses in-memory process state and is not shared across Vercel instances. Add Vercel WAF rate limiting or a durable shared store before relying on it as production-grade protection.
+The form is not for patient information or protected health information. Browser-side identifier checks are incomplete and cannot guarantee detection.
 
 ## 4. Local verification
 
@@ -53,7 +37,7 @@ npm run build
 npm start
 ```
 
-GitHub Actions runs lint, typecheck, and build for pull requests and pushes. Review the workflow result for the exact commit before considering the code verified.
+Review GitHub Actions for the exact commit before considering code verification complete.
 
 ## 5. Vercel release procedure
 
@@ -61,31 +45,29 @@ Only follow this section after explicit project-owner approval.
 
 1. Confirm the intended commit and successful CI checks.
 2. Confirm the Vercel project is linked to the intended repository and branch.
-3. Review Production, Preview, and Development environment variables.
-4. Configure the email variables and test the form on a preview deployment.
-5. Confirm the official domain is attached and its DNS records match Vercel's instructions.
-6. Choose the canonical www or non-www host and configure the alternate-host redirect.
-7. Set `NEXT_PUBLIC_SITE_URL` to the verified canonical origin.
+3. Verify the official domain in DNS and Vercel.
+4. Choose one canonical host, www or non-www.
+5. Set `NEXT_PUBLIC_SITE_URL` to the verified canonical origin if needed.
+6. Verify canonical tags, sitemap, robots.txt, JSON-LD, HTTPS and security headers.
+7. Test the contact mailto flow on desktop and mobile browsers.
 8. Deploy only after approval.
-9. Verify HTTPS, canonical tags, sitemap, robots.txt, metadata, security headers, and form delivery on the live host.
 
-No DNS, domain, or production settings should be changed as part of ordinary code review.
+No DNS, domain, production alias, or production environment settings should be changed as part of ordinary code review.
 
 ## 6. Post-release verification
 
-- Homepage, navigation, footer, and all published service pages load.
-- Resources, FAQ, blog, contact, and legal routes load.
-- Unconfirmed specialty pages remain excluded from search indexing until reviewed.
-- Unknown routes return the custom 404 response.
-- `/robots.txt` references the correct sitemap.
-- `/sitemap.xml` uses the verified canonical host and excludes noindex or private routes.
-- Canonical tags and Open Graph URLs use the same canonical host.
-- Contact form validation works and successful submissions reach the monitored inbox.
-- Missing email configuration produces a clear failure rather than silent success.
-- No secrets are exposed in client bundles.
-- Security headers and HTTPS behavior are verified on the live deployment.
-- Responsive and accessibility checks are repeated at mobile, tablet, and desktop widths.
+1. Homepage, navigation, footer, and all published service pages load.
+2. Resources, FAQ, blog, contact, and legal routes load.
+3. Unconfirmed specialties remain unpublished until reviewed.
+4. Unknown routes return the custom 404 response.
+5. robots.txt references the correct sitemap.
+6. sitemap.xml uses the verified canonical host and excludes noindex or private routes.
+7. Canonical tags and Open Graph URLs use the same canonical host.
+8. Contact form validation works and opens a draft addressed to info@practicecaresource.com.
+9. The visitor is told to press Send and is never shown a false sent confirmation.
+10. Security headers and HTTPS behavior are verified on the live deployment.
+11. Responsive and accessibility checks are repeated at mobile, tablet, and desktop widths.
 
 ## 7. Rollback
 
-If an approved production deployment causes a regression, use the Vercel deployment history to restore the last known-good deployment. Confirm the active environment variables and canonical URL after rollback. Do not change or promote deployments without project-owner approval.
+If an approved production deployment causes a regression, use Vercel deployment history to restore the last known-good deployment. Do not change or promote deployments without project-owner approval.

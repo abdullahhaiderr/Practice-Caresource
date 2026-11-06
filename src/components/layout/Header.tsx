@@ -82,8 +82,8 @@ export function Header() {
       <header
         className={`sticky top-0 z-50 border-b transition-colors duration-300 ${
           scrolled
-            ? "border-[#dce7eb]/80 bg-white/90 shadow-[0_12px_40px_-20px_rgba(23,59,86,0.16)] backdrop-blur-xl"
-            : "border-[#dce7eb]/80 bg-white/95 backdrop-blur-xl"
+            ? "border-border bg-white shadow-sm"
+            : "border-border bg-white"
         }`}
       >
         <div className="container-x flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]">

@@ -83,7 +83,7 @@ export default function HipaaSecurityPage() {
           <div className="mt-12 rounded-lg border border-border bg-paper p-6">
             <h2 className="text-xl">Have vendor security requirements?</h2>
             <p className="mt-2 text-sm leading-7">Raise them during an initial business discussion using high-level, non-identifying information. Do not attach patient records or security-sensitive documents to the public contact form.</p>
-            <Link href="/contact" className="btn btn-primary mt-5">Request a consultation</Link>
+            <Link href="/contact" className="btn btn-primary mt-5">Request a Consultation</Link>
           </div>
         </div>
       </section>

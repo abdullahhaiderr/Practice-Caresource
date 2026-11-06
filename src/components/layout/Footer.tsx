@@ -31,7 +31,7 @@ export function Footer() {
               Medical billing, credentialing, and revenue cycle support
               for healthcare practices in the United States only.
             </p>
-            <span className="mt-5 inline-flex items-center rounded-full border border-[#77cfc4]/30 bg-[#77cfc4]/10 px-3 py-1.5 text-xs font-semibold text-white">
+            <span className="mt-5 text-sm text-white/75">
               Serving U.S. healthcare practices
             </span>
 
@@ -46,7 +46,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[#c2d2db] transition-colors hover:text-[#9be0d5]"
+                    className="text-sm text-white/75 transition-colors hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -64,7 +64,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[#c2d2db] transition-colors hover:text-[#9be0d5]"
+                    className="text-sm text-white/75 transition-colors hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -77,7 +77,7 @@ export function Footer() {
             <h3 className="mb-5 font-display text-sm font-semibold uppercase tracking-[.12em] text-white">
               Get in touch
             </h3>
-            <ul className="space-y-4 text-sm text-[#c2d2db]">
+            <ul className="space-y-4 text-sm text-white/75">
               {business.emailHref && business.email ? (
                 <li className="flex items-start gap-2">
                   <Mail className="mt-0.5 size-4 shrink-0 text-white" aria-hidden="true" />
@@ -89,7 +89,7 @@ export function Footer() {
             </ul>
             <Link
               href="/contact"
-              className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-lg bg-pine px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#0B493E]"
+              className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-lg bg-pine px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-pine"
             >
               Request a Consultation
               <ArrowUpRight className="size-4" aria-hidden="true" />
@@ -107,7 +107,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[#b3c5cf] transition-colors hover:text-white"
+                    className="text-white/65 transition-colors hover:text-white"
                   >
                     {link.label}
                   </Link>

@@ -11,7 +11,7 @@ const steps = [
 
 export function Workflow() {
   return (
-    <section className="bg-[#173b55]">
+    <section className="bg-[#0F1B24]">
       <div className="container-x section">
         <div className="mx-auto mb-14 max-w-2xl text-center">
           <span className="eyebrow mb-4 block !text-[#a8d7d1]">How the work moves</span>
@@ -20,7 +20,7 @@ export function Workflow() {
         </div>
         <div className="grid gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/15 sm:grid-cols-2 lg:grid-cols-3">
           {steps.map(({ step, title, text, icon: Icon }) => (
-            <article key={step} className="bg-[#1b465f] p-6 sm:p-7">
+            <article key={step} className="bg-[#14212B] p-6 sm:p-7">
               <div className="mb-7 flex items-center justify-between"><span className="text-xs font-bold tracking-[.18em] text-[#9ccac8]">{step}</span><Icon className="size-5 text-[#9ccac8]" aria-hidden="true" /></div>
               <h3 className="text-lg !text-white">{title}</h3><p className="mt-2 text-sm leading-6 !text-slate-300">{text}</p>
             </article>

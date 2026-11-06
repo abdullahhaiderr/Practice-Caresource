@@ -57,7 +57,7 @@ export function ConsultationForm() {
 
     setPrepared(true);
     setNotice("Your email application should open with the enquiry prepared. Review the message and press Send. If it does not open, use the direct email link below.");
-    window.location.href = mailto;
+    window.location.assign(mailto);
   });
 
   return (

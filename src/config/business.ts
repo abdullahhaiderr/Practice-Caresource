@@ -1,3 +1,5 @@
+import { serviceDetails } from "@/data/service-details";
+
 type Business = {
   name: string;
   tagline: string;
@@ -12,7 +14,7 @@ export const business: Business = {
   name: "PracticeCareSource",
   tagline: "Medical Billing and Revenue Cycle Support.",
   description: "Medical billing and revenue cycle support for healthcare practices in the United States.",
-  // Temporary Vercel host until the official domain is connected and verified.
+  // Keep the temporary Vercel host until the official domain is verified and approved.
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://practice-caresource.vercel.app",
   email: "info@practicecaresource.com",
   emailHref: "mailto:info@practicecaresource.com",
@@ -26,17 +28,10 @@ export type NavItem = {
   dropdown?: NavItem[];
 };
 
-export const servicesNav: NavItem[] = [
-  { label: "Medical Billing", href: "/services/medical-billing" },
-  { label: "Revenue Cycle Management", href: "/services/revenue-cycle-management" },
-  { label: "Credentialing", href: "/services/credentialing" },
-  { label: "Accounts Receivable", href: "/services/ar-management" },
-  { label: "Denial Management", href: "/services/denial-management" },
-  { label: "Medical Coding", href: "/services/medical-coding" },
-  { label: "Eligibility & Prior Auth", href: "/services/eligibility-prior-authorization" },
-  { label: "Payment Posting & Reporting", href: "/services/payment-posting-reporting" },
-  { label: "Medical Billing Audits", href: "/services/medical-billing-audits" },
-];
+export const servicesNav: NavItem[] = serviceDetails.map((service) => ({
+  label: service.title,
+  href: service.href,
+}));
 
 export const resourcesNav: NavItem[] = [
   { label: "Blog", href: "/blog" },
@@ -53,19 +48,15 @@ export const primaryNav: NavItem[] = [
 ];
 
 export const ctaNav = {
-  label: "Request Free Consultation",
+  label: "Request a Consultation",
   href: "/contact",
 } as const;
 
 export const footerNav = {
-  services: [
-    { label: "Medical Billing", href: "/services/medical-billing" },
-    { label: "Revenue Cycle Management", href: "/services/revenue-cycle-management" },
-    { label: "Credentialing & Enrollment", href: "/services/credentialing" },
-    { label: "Accounts Receivable Recovery", href: "/services/ar-management" },
-    { label: "Denial Management", href: "/services/denial-management" },
-    { label: "Medical Coding", href: "/services/medical-coding" },
-  ],
+  services: serviceDetails.slice(0, 6).map((service) => ({
+    label: service.title,
+    href: service.href,
+  })),
   specialties: [],
   resources: [
     { label: "Blog", href: "/blog" },

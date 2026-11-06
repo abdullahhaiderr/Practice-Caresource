@@ -14,7 +14,6 @@ export const metadata: Metadata = {
   title: { default: "Medical Billing and Revenue Cycle Management | PracticeCareSource", template: "%s | PracticeCareSource" },
   description: business.description,
   applicationName: business.name,
-  keywords: ["medical billing", "revenue cycle management", "physician credentialing", "denial management", "accounts receivable management", "healthcare billing support"],
   authors: [{ name: business.name }],
   creator: business.name,
   publisher: business.name,

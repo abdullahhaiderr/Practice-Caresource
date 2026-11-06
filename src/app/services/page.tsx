@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Medical Billing Services | PracticeCareSource",
     description:
-      "Explore medical billing and RCM, credentialing, accounts receivable recovery, denial management, medical coding, virtual assistant, and digital presence support.",
+      "Explore medical billing, revenue cycle management, credentialing, accounts receivable, denial management, medical coding, and related billing support.",
     url: "/services",
   },
 };

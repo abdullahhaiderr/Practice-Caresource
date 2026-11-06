@@ -19,12 +19,12 @@ export function Footer() {
         <div className="grid gap-10 border-b border-white/15 pb-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr] lg:gap-12">
           <div className="flex flex-col items-start">
             <Link href="/" aria-label="PracticeCareSource home" className="shrink-0">
-            <img
+            <Image
               src="/footer-logo.png"
               alt="PracticeCareSource"
               className="h-12 w-auto"
-              width="240"
-              height="48"
+              width={240}
+              height={48}
             />
           </Link>
             <p className="mt-4 max-w-sm text-sm leading-7 text-[#c2d2db]">

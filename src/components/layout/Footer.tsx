@@ -1,10 +1,5 @@
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  Mail,
-  MapPin,
-  Phone,
-} from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { business, footerNav } from "@/config/business";
 
 const socialLinks = [
@@ -110,14 +105,6 @@ export function Footer() {
               Get in touch
             </h3>
             <ul className="space-y-4 text-sm text-[#c2d2db]">
-              {business.phoneHref && business.phone ? (
-                <li className="flex items-start gap-2">
-                  <Phone className="mt-0.5 size-4 shrink-0 text-[#79d4c7]" aria-hidden="true" />
-                  <a href={business.phoneHref} className="transition-colors hover:text-white">
-                    {business.phone}
-                  </a>
-                </li>
-              ) : null}
               {business.emailHref && business.email ? (
                 <li className="flex items-start gap-2">
                   <Mail className="mt-0.5 size-4 shrink-0 text-[#79d4c7]" aria-hidden="true" />
@@ -126,21 +113,12 @@ export function Footer() {
                   </a>
                 </li>
               ) : null}
-              {business.address.line1 ? (
-                <li className="flex items-start gap-2">
-                  <MapPin className="mt-0.5 size-4 shrink-0 text-[#79d4c7]" aria-hidden="true" />
-                  <span>
-                    {business.address.line1}, {business.address.city},{" "}
-                    {business.address.state} {business.address.zip}
-                  </span>
-                </li>
-              ) : null}
             </ul>
             <Link
               href="/contact"
               className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-lg bg-[#79d4c7] px-4 py-2.5 text-sm font-bold text-[#102f45] transition-colors hover:bg-[#a0e5d9]"
             >
-              Request a consultation
+              Schedule a Consultation
               <ArrowUpRight className="size-4" aria-hidden="true" />
             </Link>
           </div>
@@ -149,7 +127,7 @@ export function Footer() {
         <div className="flex flex-col gap-5 pt-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <p className="text-xs text-[#b3c5cf]">
-              © {new Date().getFullYear()} {business.legalName}. All rights reserved.
+              © {new Date().getFullYear()} {business.name}. All rights reserved.
             </p>
             <ul className="flex flex-wrap gap-x-5 gap-y-2 text-xs">
               {footerNav.legal.map((link) => (

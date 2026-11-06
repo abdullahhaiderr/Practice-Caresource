@@ -94,7 +94,19 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const data = parsed.data;\n\n  const freeText = [data.practiceName, data.specialty, data.message].join(" ");\n  if (containsLikelyPhi(freeText)) {\n    return NextResponse.json(\n      { ok: false, message: "Please remove patient identifiers or health information and submit a business inquiry only." },\n      { status: 400 },\n    );\n  }
+  const data = parsed.data;
+
+  const freeText = [data.practiceName, data.specialty, data.message].join(" ");
+  if (containsLikelyPhi(freeText)) {
+    return NextResponse.json(
+      {
+        ok: false,
+        message:
+          "Please remove patient identifiers or health information and submit a business inquiry only.",
+      },
+      { status: 400 },
+    );
+  }
 
   // Silently accept obvious bots so they do not retry.
   if (data.website) {

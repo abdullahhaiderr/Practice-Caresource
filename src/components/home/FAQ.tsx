@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Accordion } from "@/components/shared/Accordion";
 
 export function HomepageFAQ() {
-  const faqs = [
+export const homepageFaqs = [
     {
       question: "What services does PracticeCareSource provide?",
       answer:
@@ -37,7 +37,7 @@ export function HomepageFAQ() {
         </div>
 
         <div className="mx-auto max-w-3xl">
-          <Accordion items={faqs} />
+          <Accordion items={homepageFaqs} />
         </div>
 
         <div className="mt-12 text-center">

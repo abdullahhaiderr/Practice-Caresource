@@ -4,8 +4,6 @@ import { serviceDetails } from "@/data/service-details";
 import { blogPosts } from "@/data/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-
   const staticRoutes: MetadataRoute.Sitemap = [
     { path: "/", priority: 1.0, changeFrequency: "weekly" },
     { path: "/about", priority: 0.7, changeFrequency: "monthly" },
@@ -24,14 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/cookie-policy", priority: 0.3, changeFrequency: "yearly" },
   ].map((route) => ({
     url: new URL(route.path, business.url).toString(),
-    lastModified: now,
     changeFrequency: route.changeFrequency as MetadataRoute.Sitemap[number]["changeFrequency"],
     priority: route.priority,
   }));
 
   const serviceRoutes: MetadataRoute.Sitemap = serviceDetails.map((service) => ({
     url: new URL(service.href, business.url).toString(),
-    lastModified: now,
     changeFrequency: "monthly",
     priority: 0.8,
   }));

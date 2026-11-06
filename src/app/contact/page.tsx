@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Clock, ShieldCheck, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, ShieldCheck, Mail } from "lucide-react";
 import { business } from "@/config/business";
 import { PageHero } from "@/components/shared/PageHero";
 import { JsonLd } from "@/components/shared/JsonLd";
@@ -10,12 +10,12 @@ import { breadcrumbJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Contact PracticeCareSource in Baltimore, Maryland to discuss medical billing, revenue cycle management, credentialing, AR recovery, denial management, coding, virtual assistant, or digital marketing support.",
+    "Contact PracticeCareSource to discuss medical billing and revenue cycle support for your healthcare practice.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact PracticeCareSource",
     description:
-      "Contact our team about medical billing, RCM, credentialing, AR recovery, denial management, coding, virtual assistance, and digital presence services.",
+      "Contact our team about medical billing and revenue cycle support.",
     url: "/contact",
   },
 };
@@ -51,8 +51,6 @@ export default function ContactPage() {
                 <h2 className="font-display text-lg font-bold text-navy">Contact our team</h2>
                 <div className="mt-4 space-y-4 text-sm">
                   <a href={business.emailHref} className="flex items-start gap-3 text-ink-soft hover:text-blue"><Mail className="mt-0.5 size-4 shrink-0 text-teal" />{business.email}</a>
-                  <a href={business.phoneHref} className="flex items-start gap-3 text-ink-soft hover:text-blue"><Phone className="mt-0.5 size-4 shrink-0 text-teal" />{business.phone}</a>
-                  <div className="flex items-start gap-3 text-ink-soft"><MapPin className="mt-0.5 size-4 shrink-0 text-teal" /><span>{business.address.line1}, {business.address.city}, {business.address.state} {business.address.zip}</span></div>
                 </div>
               </div>
 

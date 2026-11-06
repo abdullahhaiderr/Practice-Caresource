@@ -55,7 +55,7 @@ export default function FAQPage() {
                   Still have a question? Ask it directly during a consultation.
                 </p>
                 <Link href="/contact" className="btn btn-primary mt-4 w-full text-sm">
-                  Contact us
+                  Request a Consultation
                 </Link>
               </div>
             </nav>
@@ -84,7 +84,7 @@ export default function FAQPage() {
                   mix, we will say so rather than give a generic response.
                 </p>
                 <Link href="/contact" className="btn btn-primary mt-5">
-                  Request a consultation
+                  Request a Consultation
                   <ArrowRight className="size-4" aria-hidden="true" />
                 </Link>
               </div>

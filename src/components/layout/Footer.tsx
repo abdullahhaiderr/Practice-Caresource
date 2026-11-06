@@ -91,7 +91,7 @@ export function Footer() {
               href="/contact"
               className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-lg bg-pine px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#0B493E]"
             >
-              Schedule a Consultation
+              Request a Consultation
               <ArrowUpRight className="size-4" aria-hidden="true" />
             </Link>
           </div>

@@ -1,61 +1,61 @@
-# Implementation report — PracticeCareSource
+# Implementation report: PracticeCareSource
 
 Last reviewed: November 7, 2026
 
 ## Scope
 
-The repository contains a Next.js App Router marketing website for PracticeCareSource, a medical billing and revenue-cycle support business. The implementation includes a homepage, company information, service overview and detail pages, resource and blog content, consultation form, legal-page drafts, metadata, sitemap, robots rules, and shared responsive components.
-
-The project has been developed in stages. This report distinguishes historical verification from the current review so that old test results are not mistaken for a fresh run against the current commit.
+PracticeCareSource is a Next.js App Router marketing website for medical billing and revenue-cycle support. It includes a homepage, company information, service overview and detail pages, resources, blog content, a contact page, legal-page drafts, metadata, sitemap, robots rules, and shared responsive components.
 
 ## Current repository facts
 
-- Repository: `abdullahhaiderr/Practice-Caresource`.
-- Default branch: `main`.
-- Current application stack in `package.json`: Next.js 16, React 19, TypeScript 5.9, Tailwind CSS 4, React Hook Form, Zod, and Lucide React.
-- Public contact email configured in `src/config/business.ts`: `info@practicecaresource.com`.
-- Canonical URL fallback: `https://practice-caresource.vercel.app`.
+- Repository: abdullahhaiderr/Practice-Caresource.
+- Default branch: main.
+- Stack: Next.js 16, React 19, TypeScript 5.9, Tailwind CSS 4, React Hook Form, Zod, and Lucide React.
+- Public contact address: info@practicecaresource.com.
+- Canonical URL fallback: https://practice-caresource.vercel.app.
 - The official domain is not assumed to be configured until DNS and Vercel settings are verified.
-- The contact endpoint sends through Resend only when the required server environment variables exist. Otherwise it returns HTTP 503 without logging inquiry contents.
+- The contact form uses a mailto draft. There is no contact API route, Resend integration, server-side email delivery, or contact database.
 - No database, authentication system, or patient portal is part of the marketing-site scope.
 
-## Implemented application areas
+## Recent implementation changes
 
-- Shared site shell, navigation, footer, typography, colors, and responsive layout.
-- Homepage sections and reusable page components.
-- Medical billing and revenue-cycle service pages.
-- Resources, FAQs, and blog pages.
-- Contact page with client/server validation, honeypot, minimum-time check, and best-effort in-memory rate limiting.
-- Privacy, terms, cookie, and HIPAA/security information pages.
-- Metadata, canonical URL helper, JSON-LD helpers, sitemap, robots.txt, favicon, and Open Graph image.
-- Documentation for content review, SEO, competitors, deployment, and launch readiness.
+1. Replaced the contact API submission with a browser email draft addressed to info@practicecaresource.com.
+2. Removed the Resend API route and server-side contact delivery dependency.
+3. Removed the thank-you route that implied an enquiry had been received.
+4. Made phone, provider count, and services of interest optional.
+5. Added basic browser-side checks for a few obvious patient identifier patterns.
+6. Replaced the homepage hero dashboard illustration with a clearer medical billing support proposition.
+7. Consolidated global styles around the approved paper, pine, ink, and terracotta palette.
+8. Applied Newsreader and Public Sans through next/font.
+9. Removed the decorative cursor effect.
+10. Updated README.md, SECURITY.md, deployment guidance, launch checklist, and the implementation audit.
+
+## Important contact form limitation
+
+The form opens the visitor's configured email application with a prepared message addressed to info@practicecaresource.com. The visitor must review the draft and press Send. The website cannot verify that the visitor sent the message or that it reached the inbox. If the visitor has no email application configured, they can use the direct email link.
+
+The form is for business enquiries only. Browser-side identifier checks are incomplete and do not guarantee detection of PHI. Never describe the form or website as HIPAA compliant or certified.
 
 ## Data and claims controls
 
-The site must not publish unverified phone numbers, street addresses, business hours, legal entity details, specialties, customer counts, financial outcomes, testimonials, certifications, or guarantees.
-
-The public email address is configured. Specialty details are not to be treated as an approved list until the business confirms them; specialty routes are intentionally excluded from indexing where applicable.
-
-The consultation form does not request patient data and displays a PHI warning. Its free-text field means the implementation cannot guarantee that a visitor will not submit PHI. The site must not claim that the form technically blocks all PHI.
+Do not publish unverified phone numbers, street addresses, business hours, legal entity details, specialties, customer counts, financial outcomes, testimonials, certifications, or guarantees.
 
 Legal pages are drafts and require qualified counsel review before launch.
 
 ## Verification record
 
-A previous implementation report recorded local lint, TypeScript, build, route, API, browser, and security-header checks on November 4, 2026. Those results are historical and were produced before subsequent changes to the business configuration, specialty handling, contact API, and related pages.
-
-No fresh local execution of `npm ci`, `npm run lint`, `npm run typecheck`, or `npm run build` is claimed in this report. The current branch must pass the GitHub Actions workflow and browser checks before merge approval.
+No fresh local execution of npm ci, npm run lint, npm run typecheck, or npm run build is claimed in this report. GitHub Actions and browser checks must be reviewed for the exact current commit before the code is considered verified.
 
 ## Known limitations and launch blockers
 
-1. Email delivery requires Resend configuration and an end-to-end test.
-2. The in-memory rate limiter is per process and is not durable or shared across serverless instances.
-3. Official-domain DNS and Vercel domain configuration must be verified before changing the canonical origin.
-4. The legal entity and governing-law state require confirmation and legal review.
-5. Specialty list and any specialty-specific marketing claims require business confirmation.
+1. The mailto flow needs browser and device testing with configured email applications.
+2. The monitored inbox must be verified and actively checked.
+3. Official-domain DNS and Vercel configuration must be verified before changing the canonical origin.
+4. Legal identity, governing-law state, and public business details require confirmation.
+5. The final service catalogue and specialties require business confirmation.
 6. Legal pages require qualified counsel review.
-7. Responsive, accessibility, and browser checks must be repeated against the final reviewed branch.
-8. No production deployment is authorized by this implementation report.
+7. Responsive, accessibility, and browser checks must be completed against the reviewed branch.
+8. No production deployment is authorized by this report.
 
 ## Verification commands
 
@@ -66,8 +66,6 @@ npm run typecheck
 npm run build
 ```
 
-The repository CI workflow runs the three project checks for pull requests and pushes. A passing workflow is required evidence for the exact commit being reviewed.
-
 ## Handoff
 
-Use `docs/launch-readiness.md` as the authoritative list of remaining business, legal, email, domain, and release actions. Keep the no-invented-claims standard in `docs/content-review.md` in force.
+Use docs/launch-readiness.md for remaining business, legal, email, domain, and release actions. Keep the no-invented-claims standard in docs/content-review.md in force.

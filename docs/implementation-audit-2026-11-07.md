@@ -46,7 +46,7 @@ This implementation does not send mail in the background. It opens the visitor's
 4. Review legal policies with qualified counsel.
 5. Verify custom-domain ownership and Vercel domain configuration before changing canonical URLs.
 6. Run lint, typecheck, production build, browser screenshots, accessibility scans and Lighthouse after checkout in a full Node.js environment.
-7. Review all remaining pages, service detail content, structured data, metadata, favicon and social sharing assets against the master specification.
+7. Review all remaining pages and service copy against the approved business scope.\n8. Create or approve a 1200x630 Open Graph image and an Apple touch icon. The repository currently has an App Router SVG icon and existing header/footer logo files, but no verified Open Graph image or Apple touch PNG.\n9. Complete per-page Twitter metadata, final metadata image checks, and validate structured data with Google's Rich Results Test and Schema Markup Validator.\n10. Run automated tests, browser screenshots, axe accessibility checks, Lighthouse, responsive checks, and a real mailto browser test. These have not been run in this editing environment.
 8. No claim of HIPAA compliance or complete PHI detection is made.
 
 ## Release safety

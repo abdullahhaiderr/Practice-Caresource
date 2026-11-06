@@ -31,17 +31,17 @@ const differentiators = [
   {
     icon: Workflow,
     title: "One connected workflow",
-    text: "Eligibility, authorization, coding, submission, posting, and follow-up are managed as connected stages. That makes it easier to find the source of a problem instead of only treating the symptom.",
+    text: "An engagement can connect eligibility, authorization, coding, submission, posting, and follow-up in one agreed workflow. The exact responsibilities are defined in the written scope.",
   },
   {
     icon: FileSearch,
     title: "Denials used as information",
-    text: "Denials are categorized by cause and reviewed for patterns. The goal is to fix the upstream issue as well as work the individual claim.",
+    text: "Denial categorization and pattern review can be included in the agreed scope, alongside the handling of individual claims.",
   },
   {
     icon: BarChart3,
     title: "Reporting you can review",
-    text: "Charges, payments, adjustments, denials, and AR aging are summarized in a consistent format so the practice can see what changed and what still needs attention.",
+    text: "The reporting scope can define which items are summarized, such as charges, payments, adjustments, denials, and AR aging, and how often updates are provided.",
   },
   {
     icon: Lock,
@@ -51,7 +51,7 @@ const differentiators = [
   {
     icon: MessagesSquare,
     title: "Direct communication",
-    text: "Questions and issues are raised as they come up. We would rather explain a delay or a payer limitation clearly than let it surface at the end of a reporting period.",
+    text: "Communication expectations and escalation paths should be agreed at the start, including how payer delays and unresolved items are raised.",
   },
   {
     icon: CheckCircle2,

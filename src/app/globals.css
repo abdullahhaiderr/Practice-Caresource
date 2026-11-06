@@ -43,7 +43,7 @@
   --rule: #DDD8CC;
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; box-shadow: none !important; }
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;

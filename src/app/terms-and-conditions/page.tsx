@@ -13,14 +13,15 @@ export default function TermsPage() {
     <LegalPage
       title="Terms and Conditions"
       description="The terms that apply to your use of this website and its content."
-      lastUpdated="November 4, 2026"
+      lastUpdated="November 7, 2026"
       breadcrumb="Terms and Conditions"
     >
       <p>
-        These Terms and Conditions (&ldquo;Terms&rdquo;) govern your use of
-        practicecaresource.com (the &ldquo;Site&rdquo;), operated by
-        PracticeCareSource. By using the Site, you agree to these Terms. If you do
-        not agree, do not use the Site.
+        These Terms and Conditions (&ldquo;Terms&rdquo;) describe the intended rules for
+        using the PracticeCareSource website (&ldquo;Site&rdquo;). The operating
+        legal entity and governing jurisdiction have not been published here.
+        This page is an informational draft and must be reviewed and completed
+        by qualified counsel before it is relied upon as a binding legal notice.
       </p>
 
       <section>
@@ -79,12 +80,9 @@ export default function TermsPage() {
       <section>
         <h2>Intellectual property</h2>
         <p>
-          The Site and its content, including text, design, graphics, and logos,
-          are owned by or licensed to PracticeCareSource and are protected by
-          applicable intellectual property laws. You may view and share links to
-          the Site for legitimate business purposes. You may not reproduce,
-          modify, distribute, or create derivative works from Site content
-          without written permission.
+          Site materials may be protected by intellectual property laws. Do not
+          reproduce or republish website materials without permission from the
+          relevant rights holder.
         </p>
       </section>
 
@@ -133,11 +131,10 @@ export default function TermsPage() {
       <section>
         <h2>Governing law</h2>
         <p>
-          These Terms are governed by the laws of the United States and the state
-          in which PracticeCareSource is organized, without regard to
-          conflict-of-law principles. Any dispute will be handled in the
-          appropriate courts for that jurisdiction, unless applicable law requires
-          otherwise.
+          The governing law, venue, and dispute process have not been specified
+          because the operating legal entity and jurisdiction have not been
+          confirmed for publication. Qualified counsel should complete this
+          section before launch.
         </p>
       </section>
 

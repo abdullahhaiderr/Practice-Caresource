@@ -145,7 +145,7 @@ export default function AboutPage() {
                   </div>
                 </dl>
                 <Link href="/contact" className="btn btn-primary mt-6 w-full">
-                  Request a consultation
+                  Request a Consultation
                 </Link>
               </div>
             </aside>
@@ -216,7 +216,7 @@ export default function AboutPage() {
                 would like to improve. There is no obligation to continue.
               </p>
               <Link href="/contact" className="btn btn-primary mt-6">
-                Request a consultation
+                Request a Consultation
                 <ArrowRight className="size-4" aria-hidden="true" />
               </Link>
             </div>

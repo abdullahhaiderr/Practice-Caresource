@@ -145,7 +145,7 @@ export default async function BlogPostRoute({ params }: BlogPostRouteProps) {
                 Back to all articles
               </Link>
               <Link href="/contact" className="btn btn-primary">
-                Request a consultation
+                Request a Consultation
                 <ArrowRight className="size-4" aria-hidden="true" />
               </Link>
             </div>

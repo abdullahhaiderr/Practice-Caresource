@@ -34,7 +34,6 @@ export default function NotFound() {
         </div>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
           {[
-            { label: "Specialties", href: "/specialties" },
             { label: "Blog", href: "/blog" },
             { label: "FAQ", href: "/faq" },
             { label: "Contact", href: "/contact" },

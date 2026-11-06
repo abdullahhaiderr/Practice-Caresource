@@ -20,7 +20,7 @@ export function ServicesOverview() {
           {services.map((service, index) => {
             const Icon = serviceIcons[service.id as keyof typeof serviceIcons] ?? ClipboardList;
             return <Link key={service.id} href={service.href} className="service-overview-card group flex min-h-52 flex-col rounded-xl border border-border bg-white p-6">
-              <span className="mb-5 grid size-11 place-items-center rounded-xl bg-[#edf5f5] text-teal"><Icon className="size-5" aria-hidden="true" /></span>
+              <span className="mb-5 grid size-11 place-items-center rounded-xl bg-pale-pine text-teal"><Icon className="size-5" aria-hidden="true" /></span>
               <h3 className="text-lg tracking-tight group-hover:text-blue">{service.title}</h3>
               <p className="mt-2 flex-1 text-sm leading-6">{service.summary}</p>
               <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue">Learn about this service <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" /></span>

@@ -1,17 +1,6 @@
 # PracticeCareSource website
 
-PracticeCareSource is a Next.js marketing website for medical billing and revenue-cycle support. The repository contains the public marketing pages, service information, resources, consultation form, legal-page drafts, and search metadata.
-
-## Current project status
-
-- The working production baseline is the `main` branch.
-- Changes in this handoff are isolated on `chore/complete-site-handoff` for review.
-- The official domain, `practicecaresource.com`, must not be treated as live until its DNS and Vercel domain configuration are verified.
-- Until then, the site URL falls back to `https://practice-caresource.vercel.app`.
-- The consultation API returns HTTP 503 when email delivery is not configured. It does not write inquiry contents to application logs.
-- No production deployment, domain change, or Vercel configuration change is part of this work.
-
-See `docs/launch-readiness.md` for the remaining launch blockers and owner actions.
+PracticeCareSource is a Next.js marketing website for medical billing and revenue cycle support.
 
 ## Stack
 
@@ -20,7 +9,6 @@ See `docs/launch-readiness.md` for the remaining launch blockers and owner actio
 - Tailwind CSS v4
 - React Hook Form and Zod
 - Lucide React
-- Optional Resend HTTP API for consultation email delivery
 
 ## Local development
 
@@ -28,17 +16,10 @@ Requirements: Node.js 20.9 or newer and npm.
 
 ```bash
 npm ci
-cp .env.example .env.local
 npm run dev
 ```
 
-On Windows PowerShell, copy the example with:
-
-```powershell
-Copy-Item .env.example .env.local
-```
-
-Open `http://localhost:3000`.
+Open http://localhost:3000.
 
 ## Verification
 
@@ -48,57 +29,20 @@ npm run typecheck
 npm run build
 ```
 
-The GitHub Actions workflow runs these checks for pushes and pull requests. A green workflow is the required evidence for CI verification; do not infer that tests passed merely because a commit or pull request exists.
+## Contact form
 
-## Environment variables
+The form prepares an email addressed to **info@practicecaresource.com** using the visitor's configured email application. The visitor must review the draft and press Send. There is no contact API route, Resend integration, server-side email service, or contact database.
 
-| Variable | Purpose |
-| --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Public canonical origin used by metadata, sitemap, robots, and JSON-LD. Keep the temporary Vercel URL until the official domain is verified. |
-| `RESEND_API_KEY` | Server-only Resend API key. |
-| `CONTACT_TO_EMAIL` | Monitored inbox for consultation requests. |
-| `CONTACT_FROM_EMAIL` | Verified sender identity for Resend. |
+If the visitor has no email application configured, they can email info@practicecaresource.com directly. The website cannot verify delivery or show a genuine sent confirmation because the sending occurs outside the website.
 
-The public inquiry address currently shown by the site is `info@practicecaresource.com`. The email-delivery recipient and sender environment variables still need to be configured and tested separately.
+The form is for business enquiries only. Do not submit patient information or protected health information (PHI). Basic browser checks are incomplete and are not a guarantee that PHI will be detected.
 
-Never commit `.env.local`, API keys, or other secrets.
+## Business information
 
-## Contact form and data handling
+The public working brand is PracticeCareSource. Do not invent or publish unverified legal entity details, physical address, phone number, staff credentials, specialties, testimonials, client names, certifications, performance metrics, or guaranteed financial outcomes.
 
-The form requests business contact information and includes a free-text message field. It warns visitors not to submit patient information or protected health information (PHI); because visitors control free-text input, do not describe the form as technically preventing PHI submission.
-
-The API validates the payload, applies a best-effort in-memory rate limit and bot checks, and sends a notification through Resend only when the required server environment variables are present. If delivery is not configured, it returns HTTP 503 with the public contact email and does not log the submitted inquiry.
-
-The in-memory rate limiter is not shared across serverless instances. Add a durable edge or shared-store rate limit before relying on it as production-grade abuse protection.
-
-## Project structure
-
-```text
-src/
-  app/                 Routes, metadata, API route, sitemap, robots
-  components/          Layout, home, service, shared, and form components
-  config/business.ts   Brand, public contact email, navigation, canonical URL
-  data/                Service, FAQ, blog, and supporting content
-  lib/                 Contact validation and SEO helpers
-public/                Brand assets and static files
-docs/                  Research, content review, deployment, and launch notes
-```
-
-## Content and claims
-
-Do not add unverified phone numbers, street addresses, business hours, specialties, client results, testimonials, certifications, legal entity details, or guaranteed financial outcomes. The specialty pages remain unpublished from search indexing until the business confirms the exact supported specialties.
-
-Legal pages are drafts and require review by qualified counsel before launch. Website copy is not legal, medical, coding, or compliance advice.
-
-## Documentation
-
-- `docs/competitor-analysis.md` — competitor and positioning research.
-- `docs/seo-strategy.md` — keyword mapping and technical SEO plan.
-- `docs/content-review.md` — claims policy and content verification notes.
-- `docs/deployment-guide.md` — environment, hosting, email, and release guidance.
-- `docs/implementation-report.md` — implementation history and verification caveats.
-- `docs/launch-readiness.md` — current blockers before public launch.
+The official domain practicecaresource.com must not be treated as connected to Vercel until DNS and domain verification are completed. The current canonical URL falls back to https://practice-caresource.vercel.app.
 
 ## Release policy
 
-Do not merge this pull request, deploy to production, attach domains, or change Vercel settings without explicit approval from the project owner.
+Changes are committed directly to main as requested. Automatic production deployments remain paused through the existing Vercel ignore-build safeguard. Do not remove that safeguard or promote a deployment without explicit approval.

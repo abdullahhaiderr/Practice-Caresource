@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { ArrowUpRight, BadgeCheck, ClipboardList, FileCheck2, FileSearch, HandCoins, ShieldCheck, Stethoscope } from "lucide-react";
+import { ArrowUpRight, BadgeCheck, ClipboardList, FileCheck2, FileSearch, HandCoins, ShieldCheck, Stethoscope, Activity } from "lucide-react";
 import { services } from "@/data/services";
 
-const serviceIcons = [FileCheck2, ClipboardList, Stethoscope, BadgeCheck, HandCoins, ShieldCheck, FileSearch];
+const serviceIcons = {\n  "medical-billing": FileCheck2,\n  "revenue-cycle-management": Activity,\n  credentialing: BadgeCheck,\n  "ar-management": HandCoins,\n  "denial-management": ShieldCheck,\n  "medical-coding": ClipboardList,\n  "eligibility-prior-authorization": Stethoscope,\n  "payment-posting-reporting": FileSearch,\n  "medical-billing-audits": ClipboardList,\n} as const;
 
 export function ServicesOverview() {
   return (
@@ -18,7 +18,7 @@ export function ServicesOverview() {
         </div>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => {
-            const Icon = serviceIcons[index % serviceIcons.length];
+            const Icon = serviceIcons[service.id as keyof typeof serviceIcons] ?? ClipboardList;
             return <Link key={service.id} href={service.href} className="service-overview-card group flex min-h-52 flex-col rounded-xl border border-border bg-white p-6">
               <span className="mb-5 grid size-11 place-items-center rounded-xl bg-[#edf5f5] text-teal"><Icon className="size-5" aria-hidden="true" /></span>
               <h3 className="text-lg tracking-tight group-hover:text-blue">{service.title}</h3>

@@ -3,10 +3,12 @@ import Link from "next/link";
 import {
   ArrowRight,
   BookOpen,
+  BookMarked,
   HelpCircle,
   ListChecks,
   ShieldCheck,
   Sparkles,
+  Receipt,
 } from "lucide-react";
 import { PageHero } from "@/components/shared/PageHero";
 import { CTASection } from "@/components/shared/CTASection";
@@ -53,14 +55,14 @@ const resourceCards = [
     label: "See the process",
   },
   {
-    icon: Sparkles,
+    icon: Receipt,
     title: "Pricing",
     description: "How service scope and practice requirements inform a pricing discussion. No unverified rates or pricing models are published.",
     href: "/pricing",
     label: "Understand pricing",
   },
   {
-    icon: BookOpen,
+    icon: BookMarked,
     title: "Billing Glossary",
     description: "Plain-language explanations of common medical billing, claims, payment, and revenue cycle terms.",
     href: "/glossary",

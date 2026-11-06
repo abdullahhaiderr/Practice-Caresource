@@ -11,7 +11,7 @@ export function Workflow() {
     <section className="bg-deep-ink" aria-labelledby="workflow-heading">
       <div className="container-x section">
         <div className="mb-12 max-w-2xl">
-          <span className="eyebrow mb-4 block !text-[#C9DDD5]">How the work moves</span>
+          <span className="eyebrow mb-4 block !text-white/75">How the work moves</span>
           <h2 id="workflow-heading" className="mb-5 !text-white">A practical process, agreed before work begins.</h2>
           <p className="!text-white/75">The exact tasks, access requirements, handoffs, and reporting are defined with each practice rather than assumed.</p>
         </div>

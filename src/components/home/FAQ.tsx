@@ -32,7 +32,7 @@ export function HomepageFAQ() {
           <span className="eyebrow mb-4 block">Frequently Asked Questions</span>
           <h2 className="mb-6">Common questions</h2>
           <p className="mx-auto max-w-2xl text-lg text-ink-soft">
-            Answers to questions we hear most from healthcare practices.
+            Clear answers about services, scope, security considerations, and next steps.
           </p>
         </div>
 

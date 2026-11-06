@@ -84,9 +84,13 @@ export function Header() {
       >
         <div className="container-x flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]">
           <Link href="/" aria-label="PracticeCareSource home" className="shrink-0">
-            <span className="font-display text-xl sm:text-2xl font-bold text-navy tracking-tight">
-              PracticeCareSource
-            </span>
+            <img
+              src="/header-logo.svg"
+              alt="PracticeCareSource"
+              className="h-8 sm:h-10 w-auto"
+              width="200"
+              height="40"
+            />
           </Link>
 
           <nav

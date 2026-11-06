@@ -1,0 +1,99 @@
+Attached Element Context from Integrated Browser
+
+Element: a.text-sm.text-[#c2d2db].transition-colors.hover:text-[#9be0d5]
+
+URL: http://localhost:3000/
+
+HTML Path: footer.border-t.border-white/10.bg-[#102f45].text-white > div.container-x.py-12.sm:py-14 > div.grid.gap-10.border-b.border-white/15.pb-10.sm:grid-cols-2.lg:grid-cols-[1.4fr_1fr_1fr_1.1fr].lg:gap-12 > nav > ul.space-y-3 > li > a.text-sm.text-[#c2d2db].transition-colors.hover:text-[#9be0d5]
+
+Outer HTML:
+```html
+<a class="text-sm text-[#c2d2db] transition-colors hover:text-[#9be0d5]" href="/services/credentialing">Credentialing &amp; Enrollment</a>
+```
+
+Dimensions:
+- top: 340px
+- left: 484px
+- width: 175px
+- height: 17px
+
+CSS:
+```css
+*, :after, :before, ::backdrop { box-sizing: border-box;
+    border: 0 solid;
+    margin: 0;
+    padding: 0; }
+* { box-sizing: border-box; }
+a { color: inherit;
+    -webkit-text-decoration: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit; }
+a { color: #287da3;
+    transition: color .18s; }
+a:hover { color: #197873; }
+.text-sm { font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height)); }
+.text-\[\#c2d2db\] { color: #c2d2db; }
+.transition-colors { transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration)); }
+.hover\:text-\[\#9be0d5\]:hover { color: #9be0d5; }
+
+/* Pseudo-elements */
+::selection { color: #173b56;
+    background: #ccebe7; }
+
+/* Inherited */
+ol, ul, menu { list-style: none }
+.text-white { color: var(--color-white) }
+body { color: #263b49; font-family: var(--font-sans); line-height: 1.65 }
+.text-ink { color: var(--color-ink) }
+html, body { color: #263b49 }
+.text-ink, .text-ink-soft { color: #b0c3cb !important }
+.text-ink { color: #263b49 !important }
+html, :host { tab-size: 4; line-height: 1.5; font-family: var(--default-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"); font-feature-settings: var(--default-font-feature-settings, normal) }
+
+/* Resolved values */
+margin: 0px;
+padding: 0px;
+border: 0px solid rgb(155, 224, 213);
+text-decoration: rgb(155, 224, 213);
+background-attachment: scroll;
+background-clip: border-box;
+background-color: rgba(0, 0, 0, 0);
+background-image: none;
+background-origin: padding-box;
+background-position-x: 0%;
+background-position-y: 0%;
+background-repeat: repeat;
+background-size: auto;
+box-sizing: border-box;
+color: rgb(155, 224, 213);
+cursor: pointer /*UA*/;
+display: inline;
+font-family: Inter, "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
+font-feature-settings: normal;
+font-size: 14px;
+height: auto;
+line-height: 20px;
+list-style-image: none;
+list-style-position: outside;
+list-style-type: none;
+tab-size: 4;
+transition-behavior: normal;
+transition-delay: 0s;
+transition-duration: 0.15s;
+transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+width: auto;
+
+/* CSS variables */
+--default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+--color-ink: #263b49;
+--text-sm: .875rem;
+--color-white: #fff;
+--font-sans: "Inter", "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
+--text-sm--line-height: calc(1.25 / .875);
+--default-font-family: "Inter", "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
+--default-transition-duration: .15s;
+```

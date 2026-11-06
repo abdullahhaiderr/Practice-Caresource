@@ -27,12 +27,15 @@ export function Footer() {
       <div className="container-x py-12 sm:py-14">
         <div className="grid gap-10 border-b border-white/15 pb-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr] lg:gap-12">
           <div className="flex flex-col items-start">
-            <Link
-              href="/"
-              className="font-display text-xl font-bold tracking-tight text-white"
-            >
-              PracticeCareSource
-            </Link>
+            <Link href="/" aria-label="PracticeCareSource home" className="shrink-0">
+            <img
+              src="/footer-logo.svg"
+              alt="PracticeCareSource"
+              className="h-8 w-auto"
+              width="200"
+              height="40"
+            />
+          </Link>
             <p className="mt-4 max-w-sm text-sm leading-7 text-[#c2d2db]">
               Medical billing, coding, credentialing, and revenue cycle support
               for healthcare practices in the United States only.

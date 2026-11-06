@@ -13,7 +13,7 @@ const companyLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#102f45] text-white">
+    <footer className="border-t border-white/10 bg-[#0F1B24] text-white">
       <div className="container-x py-12 sm:py-14">
         <div className="grid gap-10 border-b border-white/15 pb-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr] lg:gap-12">
           <div className="flex flex-col items-start">
@@ -27,7 +27,7 @@ export function Footer() {
             />
           </Link>
             <p className="mt-4 max-w-sm text-sm leading-7 text-[#c2d2db]">
-              Medical billing, coding, credentialing, and revenue cycle support
+              Medical billing, credentialing, and revenue cycle support
               for healthcare practices in the United States only.
             </p>
             <span className="mt-5 inline-flex items-center rounded-full border border-[#77cfc4]/30 bg-[#77cfc4]/10 px-3 py-1.5 text-xs font-semibold text-[#9be0d5]">

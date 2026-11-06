@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { business } from "@/config/business";
 import { serviceDetails } from "@/data/service-details";
-import { specialtyDetails } from "@/data/specialty-details";
 import { blogPosts } from "@/data/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -11,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/", priority: 1.0, changeFrequency: "weekly" },
     { path: "/about", priority: 0.7, changeFrequency: "monthly" },
     { path: "/services", priority: 0.9, changeFrequency: "monthly" },
-    { path: "/specialties", priority: 0.8, changeFrequency: "monthly" },
     { path: "/why-choose-us", priority: 0.7, changeFrequency: "monthly" },
     { path: "/how-it-works", priority: 0.7, changeFrequency: "monthly" },
     { path: "/hipaa-security", priority: 0.6, changeFrequency: "yearly" },
@@ -36,15 +34,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const specialtyRoutes: MetadataRoute.Sitemap = specialtyDetails.map(
-    (specialty) => ({
-      url: new URL(specialty.href, business.url).toString(),
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    }),
-  );
-
   const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: new URL(`/blog/${post.slug}`, business.url).toString(),
     lastModified: new Date(`${post.date}T00:00:00Z`),
@@ -52,5 +41,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...specialtyRoutes, ...blogRoutes];
+  return [...staticRoutes, ...serviceRoutes, ...blogRoutes];
 }

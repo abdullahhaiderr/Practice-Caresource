@@ -9,9 +9,9 @@ type CTASectionProps = {
 };
 
 export function CTASection({
-  title = "Request a Consultation",
+  title = "Schedule a Consultation",
   description = "Share your practice and billing requirements. We can review the enquiry and discuss possible next steps.",
-  buttonLabel = "Request a Consultation",
+  buttonLabel = "Schedule a Consultation",
   buttonHref = "/contact",
 }: CTASectionProps) {
   return (

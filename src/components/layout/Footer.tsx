@@ -29,11 +29,11 @@ export function Footer() {
           <div className="flex flex-col items-start">
             <Link href="/" aria-label="PracticeCareSource home" className="shrink-0">
             <img
-              src="/footer-logo.svg"
+              src="/footer-logo.png"
               alt="PracticeCareSource"
-              className="h-8 w-auto"
-              width="200"
-              height="40"
+              className="h-12 w-auto"
+              width="240"
+              height="48"
             />
           </Link>
             <p className="mt-4 max-w-sm text-sm leading-7 text-[#c2d2db]">

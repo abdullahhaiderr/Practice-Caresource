@@ -80,7 +80,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm text-[#c2d2db]">
               {business.emailHref && business.email ? (
                 <li className="flex items-start gap-2">
-                  <Mail className="mt-0.5 size-4 shrink-0 text-pine" aria-hidden="true" />
+                  <Mail className="mt-0.5 size-4 shrink-0 text-white" aria-hidden="true" />
                   <a href={business.emailHref} className="break-all transition-colors hover:text-white">
                     {business.email}
                   </a>

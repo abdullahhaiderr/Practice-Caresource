@@ -21,8 +21,8 @@
   --color-navy: #14212B;
   --color-navy-dark: #0F1B24;
   --color-success: #1F7A4D;
-  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-display), Georgia, serif;
+  --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-newsreader), Georgia, serif;
   --shadow-soft: 0 14px 36px -28px rgb(20 33 43 / .22);
   --shadow-card: 0 8px 24px -22px rgb(20 33 43 / .2);
   --shadow-hover: 0 16px 34px -26px rgb(20 33 43 / .24);
@@ -51,7 +51,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -59,7 +59,7 @@ body {
 }
 h1,h2,h3,h4,h5,h6 {
   color: var(--ink);
-  font-family: var(--font-display), Georgia, serif;
+  font-family: var(--font-newsreader), Georgia, serif;
   letter-spacing: -.025em;
   line-height: 1.16;
 }

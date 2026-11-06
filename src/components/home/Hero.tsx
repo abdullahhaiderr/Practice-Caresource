@@ -22,7 +22,7 @@ export function Hero() {
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Link href={ctaNav.href} className="btn btn-primary">
-              Request a consultation <ArrowUpRight className="size-4" aria-hidden="true" />
+              Request a Consultation <ArrowUpRight className="size-4" aria-hidden="true" />
             </Link>
             <Link href="/services" className="btn btn-outline">Explore services</Link>
           </div>

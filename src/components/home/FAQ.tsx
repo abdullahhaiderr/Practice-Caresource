@@ -11,12 +11,12 @@ export function HomepageFAQ() {
     {
       question: "Do you work with my existing EHR or practice management system?",
       answer:
-        "Yes. We work with the systems you already use and can coordinate secure access to your practice management and billing systems.",
+        "System compatibility and access requirements are reviewed during the initial discussion. We confirm what can be supported and agree on responsibilities before an engagement begins.",
     },
     {
       question: "How do you protect patient information?",
       answer:
-        "We follow HIPAA-aligned security practices, including access controls, confidentiality requirements, and Business Associate Agreements where applicable. This marketing site does not collect patient health information.",
+        "This public website is for business enquiries only and should not receive patient health information. Any client PHI handling, access controls, and required agreements must be assessed and agreed before work begins.",
     },
     {
       question: "How long does onboarding take?",

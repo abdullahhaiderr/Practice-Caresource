@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Mail } from "lucide-react";
 import { business, footerNav } from "@/config/business";
 

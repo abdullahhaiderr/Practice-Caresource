@@ -60,9 +60,9 @@ export default function ContactPage() {
                 </h2>
                 <ol className="mt-4 space-y-4">
                   {[
-                    "We review the details you submit.",
-                    "We follow up to discuss your current workflow.",
-                    "If there is a fit, we outline scope and next steps.",
+                    "Your email application opens with your enquiry prepared.",
+                    "You review the message and press Send to email our team.",
+                    "Our team can then review your enquiry and discuss possible next steps.",
                   ].map((step, index) => (
                     <li key={step} className="flex items-start gap-3 text-sm">
                       <span className="grid size-6 shrink-0 place-items-center rounded-full bg-paper font-display text-xs font-bold text-blue">

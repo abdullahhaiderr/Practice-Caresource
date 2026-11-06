@@ -7,7 +7,8 @@ import { HomepageFAQ } from "@/components/home/FAQ";
 import { FinalCTA } from "@/components/home/FinalCTA";
 import { PracticeApproach } from "@/components/home/PracticeApproach";
 import { JsonLd } from "@/components/shared/JsonLd";
-import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
+import { organizationJsonLd, websiteJsonLd, faqJsonLd } from "@/lib/seo";
+import { homepageFaqs } from "@/components/home/FAQ";
 
 export const metadata = {
   title: { absolute: "Medical Billing and Revenue Cycle Management | PracticeCareSource" },
@@ -28,6 +29,7 @@ export default function HomePage() {
       <FinalCTA />
       <JsonLd data={organizationJsonLd()} />
       <JsonLd data={websiteJsonLd()} />
+      <JsonLd data={faqJsonLd(homepageFaqs)} />
     </>
   );
 }

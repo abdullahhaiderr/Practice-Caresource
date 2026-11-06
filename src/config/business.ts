@@ -50,7 +50,7 @@ export const primaryNav: NavItem[] = [
 ];
 
 export const ctaNav = {
-  label: "Request a Consultation",
+  label: "Request Free Consultation",
   href: "/contact",
 } as const;
 

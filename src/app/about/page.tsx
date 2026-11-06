@@ -101,9 +101,9 @@ export default function AboutPage() {
                 </p>
                 <p>
                   What we can describe is how we work: defined scope, documented
-                  workflows, secure access to the systems you already use,
-                  routine reporting, and direct communication about issues as they
-                  arise.
+                  workflows, agreed reporting expectations, and clear communication
+                  about issues and payer-dependent decisions. System compatibility
+                  and access arrangements are confirmed before work begins.
                 </p>
               </div>
             </div>
@@ -132,8 +132,8 @@ export default function AboutPage() {
                   <div>
                     <dt className="font-semibold text-navy">Systems</dt>
                     <dd className="mt-1 text-ink-soft">
-                      We work within the EHR and practice management systems your
-                      practice already uses.
+                      System compatibility and access requirements are reviewed
+                      with each practice before a platform is confirmed as supported.
                     </dd>
                   </div>
                   <div>

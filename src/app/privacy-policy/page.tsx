@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
         <p>
           The contact form validates the information in your browser and prepares
           an email draft addressed to info@practicecaresource.com using your
-          device's configured email application. You must review the draft and
+          device&apos;s configured email application. You must review the draft and
           press Send. The Site does not submit the form to a contact API, store
           the enquiry in a website database, or verify that the email was sent
           or delivered.
@@ -64,7 +64,7 @@ export default function PrivacyPolicyPage() {
           Our hosting provider may process standard technical information
           needed to deliver and secure the Site, such as IP address, browser
           information, request time, and diagnostic logs. The exact information
-          and retention periods depend on the hosting provider's configuration
+          and retention periods depend on the hosting provider&apos;s configuration
           and policies.
         </p>
       </section>
@@ -99,8 +99,8 @@ export default function PrivacyPolicyPage() {
         <p>
           The Site does not retain contact form submissions because it does not
           receive them. Messages you send by email may be retained in the sender
-          and recipient mailboxes according to the relevant email providers'
-          settings and the recipient's business record practices.
+          and recipient mailboxes according to the relevant email providers&apos;
+          settings and the recipient&apos;s business record practices.
         </p>
       </section>
 
@@ -125,7 +125,7 @@ export default function PrivacyPolicyPage() {
       </section>
 
       <section>
-        <h2>Children's privacy</h2>
+        <h2>Children&apos;s privacy</h2>
         <p>
           The Site is intended for healthcare business professionals and is not
           directed to children under 13.

@@ -1,188 +1,91 @@
-# Deployment Guide — PracticeCareSource
+# Deployment guide — PracticeCareSource
 
-Last updated: November 4, 2026
+Last reviewed: November 7, 2026
+
+This guide describes the release process. It does not authorize a deployment. Do not merge, deploy, attach a domain, or change Vercel settings without explicit approval from the project owner.
 
 ## 1. Prerequisites
 
-- Node.js 20.9 or newer (Next.js 16 requirement).
-- npm 10 or newer.
-- A Vercel account (recommended) or another Node-compatible host.
-- A Resend account if email delivery is required.
-- Access to DNS for the production domain.
+- Node.js 20.9 or newer and npm.
+- A verified Vercel project connected to this repository.
+- DNS access for the intended production domain.
+- A Resend account and verified sender domain if the consultation form should deliver email.
 
 ## 2. Environment variables
 
-Create `.env.local` for development and set the same variables in the hosting provider for production.
-
 | Variable | Required | Purpose |
 | --- | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Recommended | Canonical origin used by metadata, sitemap, robots, and JSON-LD. Use the final primary domain, no trailing slash. |
-| `RESEND_API_KEY` | For email delivery | Server-side Resend API key. Never expose with `NEXT_PUBLIC_`. |
+| `NEXT_PUBLIC_SITE_URL` | Yes for a release | Canonical origin used by metadata, sitemap, robots, and JSON-LD. |
+| `RESEND_API_KEY` | For email delivery | Server-side Resend API key. Never expose it with a `NEXT_PUBLIC_` prefix. |
 | `CONTACT_TO_EMAIL` | For email delivery | Monitored inbox that receives consultation requests. |
-| `CONTACT_FROM_EMAIL` | For email delivery | Verified sender, for example `PracticeCareSource <website@yourdomain.com>`. |
-| `CONTACT_WEBHOOK_URL` | No | Not used. Legacy placeholder retained only for older environment files. |
-| `CONTACT_WEBHOOK_SECRET` | No | Not used. Legacy placeholder retained only for older environment files. |
+| `CONTACT_FROM_EMAIL` | Recommended | Sender identity verified with Resend. |
 
-Example `.env.local`:
+The repository fallback is currently `https://practice-caresource.vercel.app`. Keep this value until `practicecaresource.com` has been verified in DNS and Vercel. Do not set the official domain merely because it is the intended brand domain.
+
+Example local environment:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://practicecaresource.com
+NEXT_PUBLIC_SITE_URL=https://practice-caresource.vercel.app
 RESEND_API_KEY=re_xxxxxxxxxxxxxxxxx
-CONTACT_TO_EMAIL=inquiries@practicecaresource.com
-CONTACT_FROM_EMAIL="PracticeCareSource <website@practicecaresource.com>"
+CONTACT_TO_EMAIL=info@practicecaresource.com
+CONTACT_FROM_EMAIL="PracticeCareSource <website@verified-sending-domain.com>"
 ```
 
-If `RESEND_API_KEY` and `CONTACT_TO_EMAIL` are not set, the API validates submissions and logs them to the server console instead of sending email. That is useful for local testing but is **not acceptable for production lead capture**.
+Use the actual verified sender address provided by Resend. Store secrets in local environment files or the hosting provider's secret manager. Never commit them or paste them into chat.
 
-## 3. Local setup
+## 3. Contact form behavior
+
+The API validates form submissions and sends email through Resend only when `RESEND_API_KEY` and `CONTACT_TO_EMAIL` are configured. If either is missing, the endpoint returns HTTP 503 and directs the visitor to `info@practicecaresource.com`. Inquiry contents are not written to application logs.
+
+A successful API response means the email provider accepted the message; it does not prove that the recipient inbox delivered or reviewed it. Test delivery using a monitored inbox before launch.
+
+The form requests business information and includes a free-text field. It warns users not to submit patient information or PHI, but cannot technically guarantee that free-text content contains no PHI.
+
+The current rate limiter uses in-memory process state and is not shared across Vercel instances. Add Vercel WAF rate limiting or a durable shared store before relying on it as production-grade protection.
+
+## 4. Local verification
 
 ```bash
-npm install
-npm run dev
-```
-
-Open `http://localhost:3000`.
-
-Production checks:
-
-```bash
+npm ci
 npm run lint
 npm run typecheck
 npm run build
-npm run start
+npm start
 ```
 
-ESLint uses the Next.js flat config in `eslint.config.mjs`. TypeScript strict mode and the production build remain the primary gates; run all three in CI.
+GitHub Actions runs lint, typecheck, and build for pull requests and pushes. Review the workflow result for the exact commit before considering the code verified.
 
-## 4. Deploy to Vercel
+## 5. Vercel release procedure
 
-1. Push the repository to GitHub, GitLab, or Bitbucket.
-2. In Vercel, choose **Add New → Project** and import the repository.
-3. Confirm the framework preset is **Next.js**.
-4. Build command: `npm run build`.
-5. Output: Vercel detects `.next` automatically. Do not override the output directory.
-6. Add the environment variables from section 2 under **Settings → Environment Variables**. Apply them to Production, Preview, and Development as appropriate.
-7. Deploy.
-8. Verify the deployment URL before attaching the production domain.
+Only follow this section after explicit project-owner approval.
 
-### Domain
+1. Confirm the intended commit and successful CI checks.
+2. Confirm the Vercel project is linked to the intended repository and branch.
+3. Review Production, Preview, and Development environment variables.
+4. Configure the email variables and test the form on a preview deployment.
+5. Confirm the official domain is attached and its DNS records match Vercel's instructions.
+6. Choose the canonical www or non-www host and configure the alternate-host redirect.
+7. Set `NEXT_PUBLIC_SITE_URL` to the verified canonical origin.
+8. Deploy only after approval.
+9. Verify HTTPS, canonical tags, sitemap, robots.txt, metadata, security headers, and form delivery on the live host.
 
-1. Add the domain in **Settings → Domains**.
-2. Choose the primary host (non-www or `www`) and redirect the alternate to it.
-3. Update DNS records as instructed by Vercel.
-4. Set `NEXT_PUBLIC_SITE_URL` to the primary host and redeploy so canonical URLs, sitemap entries, and JSON-LD match.
-5. Confirm HTTPS is active and HSTS is served from the application headers.
+No DNS, domain, or production settings should be changed as part of ordinary code review.
 
-Do not launch with `NEXT_PUBLIC_SITE_URL` still pointing at a preview host. Canonical tags and the sitemap would all point to the wrong origin.
+## 6. Post-release verification
 
-## 5. Email delivery with Resend
+- Homepage, navigation, footer, and all published service pages load.
+- Resources, FAQ, blog, contact, and legal routes load.
+- Unconfirmed specialty pages remain excluded from search indexing until reviewed.
+- Unknown routes return the custom 404 response.
+- `/robots.txt` references the correct sitemap.
+- `/sitemap.xml` uses the verified canonical host and excludes noindex or private routes.
+- Canonical tags and Open Graph URLs use the same canonical host.
+- Contact form validation works and successful submissions reach the monitored inbox.
+- Missing email configuration produces a clear failure rather than silent success.
+- No secrets are exposed in client bundles.
+- Security headers and HTTPS behavior are verified on the live deployment.
+- Responsive and accessibility checks are repeated at mobile, tablet, and desktop widths.
 
-1. Create a Resend account and verify the sending domain.
-2. Add the DNS records Resend provides (SPF and DKIM). Wait for verification.
-3. Create an API key with sending permission.
-4. Set `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, and `CONTACT_FROM_EMAIL`.
-5. Redeploy.
-6. Submit a real test through `/contact` and confirm delivery, reply-to behavior, and formatting.
+## 7. Rollback
 
-Notes:
-
-- The default `onboarding@resend.dev` sender can only send to the Resend account owner’s address. Use a verified domain sender before launch.
-- The API currently sends a plain HTML notification. It does not send an auto-reply to the submitter. Add one only if the company can monitor replies.
-- Keep the recipient inbox monitored. The form is a lead channel, not a ticketing system.
-
-## 6. Rate limiting caveat
-
-The contact route uses an in-memory `Map` keyed by client IP. This is best-effort protection:
-
-- It resets on redeploy and cold starts.
-- It is not shared across serverless instances or regions.
-- It does not survive horizontal scaling.
-
-For production-grade protection, use one of:
-
-- Vercel WAF rate limiting rules on `/api/contact`.
-- Upstash Redis (`@upstash/ratelimit`) with environment variables.
-- A managed API gateway or edge middleware with a durable store.
-
-Keep the honeypot and minimum-submission-time checks even after adding durable rate limiting.
-
-## 7. Security headers and CSP
-
-`next.config.ts` sets:
-
-- Content-Security-Policy with `default-src 'self'`.
-- `X-Content-Type-Options: nosniff`.
-- `X-Frame-Options: DENY` and `frame-ancestors 'none'`.
-- Referrer policy `strict-origin-when-cross-origin`.
-- Permissions policy disabling camera, microphone, geolocation, payment, and USB.
-- HSTS for two years with preload.
-- Cross-origin opener and resource policies.
-
-Before adding any third-party script, font, image host, or analytics tool:
-
-1. Update the CSP in `next.config.ts`.
-2. Update the cookie policy and privacy policy if tracking is introduced.
-3. Re-test the contact form and all pages.
-
-`'unsafe-inline'` is currently allowed for scripts because Next.js hydration uses inline bootstrap scripts. Moving to a nonce-based CSP requires middleware/proxy work and should be tested carefully.
-
-## 8. Post-deployment checklist
-
-### Routes
-
-- [ ] `/` loads and the hero, services, FAQ, and footer render.
-- [ ] `/services` and all nine service pages load.
-- [ ] `/specialties` and all eight specialty pages load.
-- [ ] `/blog` and all eight articles load.
-- [ ] `/about`, `/why-choose-us`, `/how-it-works`, `/hipaa-security`, `/faq`, `/resources` load.
-- [ ] `/contact`, `/thank-you`, and the three legal pages load.
-- [ ] An unknown URL returns the custom 404 page with HTTP 404.
-
-### SEO
-
-- [ ] `NEXT_PUBLIC_SITE_URL` matches the live primary domain.
-- [ ] `https://<domain>/robots.txt` returns the sitemap URL.
-- [ ] `https://<domain>/sitemap.xml` lists all published pages and no `/thank-you` or `/api/` URLs.
-- [ ] Canonical tags use the live domain.
-- [ ] Open Graph image resolves at `/opengraph-image`.
-- [ ] Structured data passes the Rich Results Test.
-- [ ] Sitemap submitted to Google Search Console and Bing Webmaster Tools.
-
-### Forms
-
-- [ ] Empty submit shows field-level errors.
-- [ ] Invalid email and invalid phone show errors.
-- [ ] Consent is required.
-- [ ] Valid submit redirects to `/thank-you`.
-- [ ] Email arrives at the monitored inbox with a working reply-to.
-- [ ] Honeypot submissions are not delivered.
-- [ ] More than five submissions in ten minutes from one IP returns HTTP 429.
-- [ ] PHI warning is visible near the form.
-
-### Security and operations
-
-- [ ] HTTPS is enforced.
-- [ ] Security headers are present (`curl -I`).
-- [ ] No secrets are exposed in client bundles (`NEXT_PUBLIC_` is only used for the site URL).
-- [ ] Error monitoring is configured, or server logs are reviewed regularly.
-- [ ] A rollback plan exists (Vercel instant rollback to the previous deployment).
-
-## 9. Rollback
-
-Vercel keeps immutable deployments. To roll back:
-
-1. Open **Deployments**.
-2. Select the last known good deployment.
-3. Choose **Promote to Production**.
-
-If the issue is configuration-related, revert the environment variable change and redeploy.
-
-## 10. Maintenance
-
-- Update blog content on a regular cadence; avoid publishing AI-generated filler without review.
-- Review legal pages annually and whenever tools, vendors, or data practices change.
-- Monitor form deliverability and spam volume.
-- Re-run `npm run lint`, `npm run typecheck`, and `npm run build` before every deployment.
-- Keep Next.js and dependencies patched. Test the contact form after framework upgrades.
-- Revalidate structured data after template changes.
-- Confirm the domain and canonical host remain consistent after any DNS change.
+If an approved production deployment causes a regression, use the Vercel deployment history to restore the last known-good deployment. Confirm the active environment variables and canonical URL after rollback. Do not change or promote deployments without project-owner approval.

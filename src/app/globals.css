@@ -23,8 +23,6 @@
   --color-success: #1F7A4D;
   --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-newsreader), Georgia, serif;
-  --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-newsreader), Georgia, serif;
   --shadow-soft: 0 14px 36px -28px rgb(20 33 43 / .22);
   --shadow-card: 0 8px 24px -22px rgb(20 33 43 / .2);
   --shadow-hover: 0 16px 34px -26px rgb(20 33 43 / .24);

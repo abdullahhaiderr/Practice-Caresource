@@ -73,7 +73,7 @@ export default function HipaaSecurityPage() {
           </div>
 
           <h2 className="mt-12">HIPAA certification</h2>
-          <p className="mt-3 leading-7">PracticeCareSource does not claim HIPAA certification. HIPAA obligations are based on applicable law, the parties' roles, and the actual safeguards and contractual arrangements. Do not treat this website or its content as proof of compliance.</p>
+          <p className="mt-3 leading-7">PracticeCareSource does not claim HIPAA certification. HIPAA obligations are based on applicable law, the parties&apos; roles, and the actual safeguards and contractual arrangements. Do not treat this website or its content as proof of compliance.</p>
 
           <h2 className="mt-12">Authoritative information</h2>
           <ul className="mt-4 space-y-3 text-sm">

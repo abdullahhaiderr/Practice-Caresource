@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X, Phone, Mail } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { business, primaryNav, ctaNav, type NavItem } from "@/config/business";
 
 export function Header() {

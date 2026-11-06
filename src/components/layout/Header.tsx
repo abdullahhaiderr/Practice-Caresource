@@ -88,12 +88,14 @@ export function Header() {
       >
         <div className="container-x flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]">
           <Link href="/" aria-label="PracticeCareSource home" className="shrink-0">
-            <img
+            <Image
               src="/header-logo.svg"
               alt="PracticeCareSource"
-              className="h-8 sm:h-10 w-auto"
-              width="200"
-              height="40"
+              className="h-8 w-auto sm:h-10"
+              width={220}
+              height={40}
+              priority
+              fetchPriority="high"
             />
           </Link>
 

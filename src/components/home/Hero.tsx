@@ -1,74 +1,62 @@
 import Link from "next/link";
-import { ArrowUpRight, CheckCircle2, FileCheck2, ShieldCheck, Stethoscope, Activity, CircleDollarSign, ClipboardCheck } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, ClipboardList, FileCheck2, WalletCards } from "lucide-react";
 import { ctaNav } from "@/config/business";
 
-const capabilities = [
-  "Medical billing and claim submission",
-  "Credentialing and payer enrollment",
-  "Denial follow-up and AR management",
-];
-
-const stages = [
-  { label: "Claims received", detail: "Ready for review", icon: ClipboardCheck, state: "Complete" },
-  { label: "Claim validation", detail: "Coding and payer checks", icon: FileCheck2, state: "In progress" },
-  { label: "Payment follow-up", detail: "Tracking next actions", icon: CircleDollarSign, state: "Monitored" },
+const workAreas = [
+  { title: "Claims and billing", detail: "Organized submission and follow-up workflows", icon: FileCheck2 },
+  { title: "Revenue cycle support", detail: "A clearer view of outstanding billing work", icon: WalletCards },
+  { title: "Practice coordination", detail: "Defined tasks, communication and next steps", icon: ClipboardList },
 ];
 
 export function Hero() {
   return (
-    <section className="hero-shell relative isolate overflow-hidden">
-      <div className="hero-grid" aria-hidden="true" />
-      <div className="hero-orb hero-orb-one" aria-hidden="true" />
-      <div className="hero-orb hero-orb-two" aria-hidden="true" />
-      <div className="container-x relative z-10 grid items-center gap-12 py-16 sm:py-20 lg:min-h-[740px] lg:grid-cols-[.94fr_1.06fr] lg:gap-10 lg:py-24">
-        <div className="hero-copy max-w-2xl">
-          <div className="hero-kicker mb-7"><span className="hero-kicker-dot" />MEDICAL BILLING · PRACTICE OPERATIONS · SMARTER TECHNOLOGY</div>
-          <h1 className="hero-title max-w-[720px]">Everything your practice needs to <span>run, grow and get paid.</span></h1>
-          <p className="mt-7 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
-            From medical billing and revenue cycle management to AI-enabled workflows, virtual assistance, and digital growth support, we help your practice operate with greater clarity while your team stays focused on patient care.
+    <section className="hero-shell relative overflow-hidden">
+      <div className="container-x grid items-center gap-12 py-16 sm:py-20 lg:min-h-[660px] lg:grid-cols-[1.08fr_.92fr] lg:gap-16 lg:py-24">
+        <div className="max-w-2xl">
+          <p className="eyebrow mb-6">Medical billing and revenue cycle support</p>
+          <h1 className="hero-title">
+            Clearer billing workflows for <span>healthcare practices.</span>
+          </h1>
+          <p className="mt-7 max-w-xl text-base leading-8 text-ink-soft sm:text-lg">
+            PracticeCareSource supports the operational work behind medical billing, from claims and credentialing to accounts receivable follow-up. Tell us how your practice works and where you need support.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Link href={ctaNav.href} className="btn btn-primary hero-primary">Talk with our team <ArrowUpRight className="size-4" aria-hidden="true" /></Link>
-            <Link href="/services" className="btn btn-outline hero-secondary">Explore our services</Link>
+            <Link href={ctaNav.href} className="btn btn-primary">
+              Request a consultation <ArrowUpRight className="size-4" aria-hidden="true" />
+            </Link>
+            <Link href="/services" className="btn btn-outline">Explore services</Link>
           </div>
-          <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 border-t border-white/15 pt-6 text-sm text-slate-300">
-            <span className="inline-flex items-center gap-2"><CheckCircle2 className="size-4 text-teal-300" /> Clear workflows</span>
-            <span className="inline-flex items-center gap-2"><CheckCircle2 className="size-4 text-teal-300" /> Responsive communication</span>
-            <span className="inline-flex items-center gap-2"><CheckCircle2 className="size-4 text-teal-300" /> Practice-focused support</span>
-          </div>
+          <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-3 border-t border-border pt-6 text-sm text-ink-soft">
+            <li className="inline-flex items-center gap-2"><CheckCircle2 className="size-4 text-pine" aria-hidden="true" /> Practice-focused support</li>
+            <li className="inline-flex items-center gap-2"><CheckCircle2 className="size-4 text-pine" aria-hidden="true" /> Clear communication</li>
+            <li className="inline-flex items-center gap-2"><CheckCircle2 className="size-4 text-pine" aria-hidden="true" /> Defined workflows</li>
+          </ul>
         </div>
-        <div className="hero-visual relative mx-auto w-full max-w-[610px]">
-          <div className="hero-visual-wash" aria-hidden="true" />
-          <div className="hero-ring hero-ring-one" aria-hidden="true" />
-          <div className="hero-ring hero-ring-two" aria-hidden="true" />
-          <div className="hero-panel relative">
-            <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
-              <div><p className="text-xs font-semibold uppercase tracking-[.16em] text-slate-400">PracticeCareSource / Overview</p><p className="mt-1 font-display text-lg font-bold text-white">Revenue workflow</p></div>
-              <span className="grid size-11 place-items-center rounded-xl bg-teal-300/10 text-teal-200"><Stethoscope className="size-5" aria-hidden="true" /></span>
+        <div className="relative">
+          <div className="hero-workflow border border-rule bg-surface p-6 sm:p-8">
+            <div className="border-b border-rule pb-5">
+              <p className="text-xs font-semibold uppercase tracking-[.12em] text-muted">How the work is organized</p>
+              <h2 className="mt-2 font-display text-2xl font-semibold text-ink sm:text-3xl">A practical view of billing support</h2>
+              <p className="mt-3 max-w-md text-sm leading-6 text-muted">The exact scope is agreed with each practice before work begins.</p>
             </div>
-            <div className="grid grid-cols-2 gap-3 p-5 sm:p-6">
-              <div className="hero-metric"><span className="text-xs text-slate-400">Workflow visibility</span><strong>End to end</strong><small><Activity className="mr-1 inline size-3.5 text-teal-300" /> Connected billing stages</small></div>
-              <div className="hero-metric"><span className="text-xs text-slate-400">Support model</span><strong>Practice-first</strong><small><ShieldCheck className="mr-1 inline size-3.5 text-teal-300" /> Built around your needs</small></div>
-            </div>
-            <div className="space-y-3 px-5 pb-5 sm:px-6 sm:pb-6">
-              <div className="mb-2 flex items-center justify-between"><p className="text-sm font-semibold text-white">A clearer path through billing</p><span className="text-[10px] uppercase tracking-wider text-teal-200">Illustrative workflow</span></div>
-              {stages.map(({ label, detail, icon: Icon, state }, index) => (
-                <div key={label} className="hero-work-row" style={{ animationDelay: `${index * 160}ms` }}>
-                  <span className="hero-work-icon"><Icon className="size-5" aria-hidden="true" /></span>
-                  <span className="min-w-0 flex-1"><strong>{label}</strong><small>{detail}</small></span>
-                  <span className="hero-stage-state">{state}</span>
-                </div>
+            <ol className="mt-2 divide-y divide-rule">
+              {workAreas.map(({ title, detail, icon: Icon }, index) => (
+                <li key={title} className="flex items-start gap-4 py-5">
+                  <span className="grid size-11 shrink-0 place-items-center rounded-md bg-pale-pine text-pine">
+                    <Icon className="size-5" aria-hidden="true" />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-xs font-semibold text-terracotta">0{index + 1}</span>
+                    <strong className="mt-1 block text-base text-ink">{title}</strong>
+                    <span className="mt-1 block text-sm leading-6 text-muted">{detail}</span>
+                  </span>
+                </li>
               ))}
-            </div>
-            <div className="mx-5 mb-5 rounded-xl border border-white/10 bg-white/[.045] px-5 py-4 sm:mx-6 sm:mb-6">
-              <p className="text-sm font-semibold text-white">Support shaped around your practice</p>
-              <ul className="mt-3 grid gap-2 sm:grid-cols-2">{capabilities.map((item) => <li key={item} className="flex items-start gap-2 text-xs leading-5 text-slate-300"><CheckCircle2 className="mt-0.5 size-3.5 shrink-0 text-teal-300" aria-hidden="true" />{item}</li>)}</ul>
-            </div>
+            </ol>
           </div>
-          <div className="hero-note"><span className="hero-note-icon"><ShieldCheck className="size-4" aria-hidden="true" /></span><span><strong>People-first partnership</strong><small>Practical support. Clear communication.</small></span></div>
+          <p className="mt-4 text-xs leading-5 text-muted">Service availability and responsibilities are confirmed during the initial discussion.</p>
         </div>
       </div>
-      <div className="hero-bottom-fade" aria-hidden="true" />
     </section>
   );
 }

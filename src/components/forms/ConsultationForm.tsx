@@ -10,7 +10,6 @@ import {
   contactSchema,
   providerOptions,
   serviceOptions,
-  specialtyOptions,
   type ContactFormValues,
 } from "@/lib/contact-schema";
 
@@ -193,23 +192,16 @@ export function ConsultationForm() {
           <label htmlFor="specialty" className="label">
             Specialty <span className="text-[#C0504D]">*</span>
           </label>
-          <select
+          <input
             id="specialty"
+            type="text"
+            autoComplete="off"
+            placeholder="Enter your practice specialty"
             className="field"
-            defaultValue=""
             aria-invalid={Boolean(errors.specialty)}
             aria-describedby={errors.specialty ? "specialty-error" : undefined}
             {...register("specialty")}
-          >
-            <option value="" disabled>
-              Select a specialty
-            </option>
-            {specialtyOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
+          />
           <FieldError
             id="specialty-error"
             message={errors.specialty?.message}

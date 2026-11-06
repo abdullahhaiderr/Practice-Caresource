@@ -20,13 +20,13 @@ export function CTASection({
         <div className="relative overflow-hidden rounded-lg bg-[#0F1B24] px-6 py-10 sm:px-10 sm:py-12">
           <div className="relative grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div className="max-w-2xl">
-              <span className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.16em] text-[#a8d7d1]"><MessageCircle className="size-4" aria-hidden="true" /> Start a conversation</span>
+              <span className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.16em] text-white/75"><MessageCircle className="size-4" aria-hidden="true" /> Start a conversation</span>
               <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">{title}</h2>
-              <p className="mt-4 max-w-xl text-base leading-7 text-slate-300">{description}</p>
+              <p className="mt-4 max-w-xl text-base leading-7 text-white/75">{description}</p>
             </div>
-            <Link href={buttonHref} className="btn relative w-fit !border-white !bg-white !text-navy hover:!bg-slate-100">{buttonLabel}<ArrowUpRight className="size-4" aria-hidden="true" /></Link>
+            <Link href={buttonHref} className="btn relative w-fit !border-white !bg-white !text-navy hover:!bg-white">{buttonLabel}<ArrowUpRight className="size-4" aria-hidden="true" /></Link>
           </div>
-          <p className="relative mt-8 border-t border-white/15 pt-5 text-xs text-slate-400">For business inquiries only. Please do not submit patient health information.</p>
+          <p className="relative mt-8 border-t border-white/15 pt-5 text-xs text-white/60">For business inquiries only. Please do not submit patient health information.</p>
         </div>
       </div>
     </section>

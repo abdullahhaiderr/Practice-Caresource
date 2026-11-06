@@ -25,6 +25,8 @@ export function Header() {
     if (!open) return;
 
     const previousOverflow = document.body.style.overflow;
+    const backgroundRegions = [document.getElementById("main"), document.getElementById("site-footer")].filter((node): node is HTMLElement => node instanceof HTMLElement);
+    backgroundRegions.forEach((node) => node.setAttribute("inert", ""));
     document.body.style.overflow = "hidden";
 
     const onKeyDown = (event: KeyboardEvent) => {
@@ -62,6 +64,7 @@ export function Header() {
 
     return () => {
       document.body.style.overflow = previousOverflow;
+      backgroundRegions.forEach((node) => node.removeAttribute("inert"));
       window.removeEventListener("keydown", onKeyDown);
       window.clearTimeout(focusTimer);
     };
@@ -104,12 +107,22 @@ export function Header() {
                   className="relative"
                   onMouseEnter={() => setOpenDropdown(item.label)}
                   onMouseLeave={() => setOpenDropdown(null)}
+                  onFocus={() => setOpenDropdown(item.label)}
+                  onBlur={(event) => {
+                    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                      setOpenDropdown(null);
+                    }
+                  }}
+                  onKeyDown={(event) => {
+                    if (event.key === "Escape") setOpenDropdown(null);
+                  }}
                 >
                   <button
                     type="button"
                     className="flex items-center gap-1 text-ink hover:text-blue transition-colors py-2"
                     aria-expanded={openDropdown === item.label}
                     aria-haspopup="true"
+                    aria-controls={`${item.label.toLowerCase()}-menu`}
                     onClick={() =>
                       setOpenDropdown(openDropdown === item.label ? null : item.label)
                     }
@@ -123,7 +136,7 @@ export function Header() {
                     />
                   </button>
                   {openDropdown === item.label && (
-                    <div className="absolute left-0 top-full w-64 bg-white border border-[#dce7eb] rounded-xl shadow-soft backdrop-blur-xl py-2 z-50">
+                    <div id={`${item.label.toLowerCase()}-menu`} className="absolute left-0 top-full w-64 border border-border bg-white py-2 shadow-soft z-50">
                       {item.href !== "#resources" && (
                         <Link
                           href={item.href}

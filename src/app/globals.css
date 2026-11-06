@@ -21,6 +21,9 @@
   --color-navy: #14212B;
   --color-navy-dark: #0F1B24;
   --color-success: #1F7A4D;
+  --color-warning: #A15C00;
+  --color-error: #B3261E;
+  --color-deep-ink: #0F1B24;
   --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-newsreader), Georgia, serif;
   --shadow-soft: none;
@@ -158,6 +161,7 @@ a:hover { color: #0B493E; }
 .bg-white { background-color: var(--surface) !important; }
 .bg-paper { background-color: var(--paper) !important; }
 .bg-bg-secondary { background-color: var(--pale-pine) !important; }
+.bg-deep-ink { background-color: #0F1B24 !important; }
 .border-border { border-color: var(--rule) !important; }
 .bg-teal { background-color: var(--pine) !important; }
 .text-teal { color: var(--pine) !important; }

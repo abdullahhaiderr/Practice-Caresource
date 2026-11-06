@@ -50,9 +50,9 @@ const steps = [
   },
   {
     icon: ShieldCheck,
-    title: "Secure access setup",
-    text: "Access to your EHR, practice management system, clearinghouse, and payer portals is arranged with appropriate permissions and confidentiality requirements.",
-    detail: "Access is limited to the people who need it.",
+    title: "Access and security planning",
+    text: "System compatibility, access requirements, permissions, and any required agreements are reviewed with the practice before access is granted.",
+    detail: "Specific controls must be confirmed before work begins.",
   },
   {
     icon: Settings2,
@@ -76,7 +76,7 @@ export default function HowItWorksPage() {
       <PageHero
         eyebrow="How it works"
         title="A structured path from first conversation to ongoing support"
-        description="Onboarding is designed to reduce disruption and make responsibilities clear. The exact timeline depends on your systems, payer mix, documentation readiness, and the scope you choose."
+        description="The steps below are a proposed engagement framework. The actual workflow, controls, responsibilities, and timeline must be confirmed with each practice before an agreement begins."
         breadcrumbs={[{ label: "How It Works" }]}
       />
 
@@ -148,7 +148,7 @@ export default function HowItWorksPage() {
                   "A written scope before implementation begins.",
                   "Clear communication when information is missing or a payer request needs action.",
                   "Reporting in an agreed format and cadence.",
-                  "Confidential handling of protected health information.",
+                  "Documented requirements for any protected health information handling.",
                   "Honest explanations when an outcome depends on payer behavior.",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">

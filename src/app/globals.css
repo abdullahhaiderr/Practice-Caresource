@@ -155,7 +155,7 @@ a:hover { color: #0B493E; }
 .text-ink { color: var(--ink) !important; }
 .text-ink-soft { color: var(--muted) !important; }
 .text-muted,.text-muted-soft { color: var(--muted) !important; }
-.bg-white,.bg-paper { background-color: var(--surface) !important; }
+.bg-white { background-color: var(--surface) !important; }\n.bg-paper { background-color: var(--paper) !important; }
 .bg-bg-secondary { background-color: var(--pale-pine) !important; }
 .border-border { border-color: var(--rule) !important; }
 .bg-teal { background-color: var(--pine) !important; }

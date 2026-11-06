@@ -24,6 +24,7 @@ export function organizationJsonLd() {
     name: business.name,
     url: business.url,
     description: business.description,
+    logo: absoluteUrl("/header-logo.svg"),
     areaServed: { "@type": "Country", name: "United States" },
     ...(business.email ? { email: business.email } : {}),
   };
@@ -68,6 +69,7 @@ export function articleJsonLd(input: {
   description: string;
   path: string;
   datePublished: string;
+  dateModified?: string;
   category: string;
 }) {
   return {
@@ -76,16 +78,13 @@ export function articleJsonLd(input: {
     headline: input.title,
     description: input.description,
     datePublished: input.datePublished,
-    dateModified: input.datePublished,
+    ...(input.dateModified ? { dateModified: input.dateModified } : {}),
     articleSection: input.category,
     mainEntityOfPage: absoluteUrl(input.path),
-    author: {
-      "@type": "Organization",
-      name: business.name,
-    },
     publisher: {
       "@type": "Organization",
       name: business.name,
+      logo: absoluteUrl("/header-logo.svg"),
     },
   };
 }

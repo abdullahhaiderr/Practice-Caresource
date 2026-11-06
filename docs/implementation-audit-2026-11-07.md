@@ -1,54 +1,57 @@
 # PracticeCareSource implementation audit
 
-Date: 7 November 2026  
+Date: November 7, 2026  
 Repository: abdullahhaiderr/Practice-Caresource  
 Branch: main  
 Production release: intentionally paused. No production deployment or promotion performed.
 
-## Baseline findings
+## Implemented changes
 
-| Area | Initial status on inspected main | Evidence |
-|---|---|---|
-| Contact delivery | Confirmed: form called a Next.js API route and depended on Resend environment variables | src/components/forms/ConsultationForm.tsx, src/app/api/contact/route.ts |
-| Rate limiting | Confirmed: API used an in-memory Map, unsuitable as durable serverless rate limiting | src/app/api/contact/route.ts |
-| Form fields | Confirmed: provider count and service selection were required despite being optional in the approved brief | src/lib/contact-schema.ts, ConsultationForm.tsx |
-| Visual system | Confirmed: global stylesheet contained conflicting light and dark overrides, gradients, blur, orbs, rotating rings and hover tilt | src/app/globals.css |
-| Hero | Confirmed: hero included a dashboard-like illustration and mixed unrelated service claims | src/components/home/Hero.tsx |
-| Typography | Confirmed: previous fonts were Inter and Manrope rather than the specified serif and sans pairing | src/app/layout.tsx |
-| Cursor effect | Confirmed: a cursor-following decorative effect was mounted globally | src/app/layout.tsx, CursorAura.tsx |
-| Contact confirmation | Confirmed: a thank-you route implied that an enquiry had been received after API submission | src/app/thank-you/page.tsx |
-| Public email | Confirmed in business configuration: info@practicecaresource.com | src/config/business.ts |
-| Canonical domain | Needs external verification: business URL falls back to the Vercel hostname until the custom domain is verified | src/config/business.ts |
-| Legal and business facts | Needs external verification: legal identity, physical address, phone, supported specialties, testimonials and credentials are not established by source code | public copy and business configuration |
-| Automated visual QA | Not run in this environment | Browser tooling and screenshots unavailable in this GitHub-only edit session |
+1. Removed the contact API route and Resend integration.
+2. Replaced server-side contact submission with a browser mailto draft addressed to info@practicecaresource.com. The visitor must review and press Send.
+3. Shortened the consultation form to four business fields plus privacy acknowledgement.
+4. Retained a clear PHI warning and limited browser pattern checks. These checks are incomplete and are not a guarantee of PHI detection.
+5. Removed the fake thank-you route and any implication that the website can confirm email delivery.
+6. Applied the flat Paper (#F7F5F0), Surface (#FFFFFF), Pale Pine (#EEF3F0), Ink (#14212B), Muted (#5B6670), Pine (#0F5C4D), Terracotta (#C2512F), Rule (#DDD8CC), Deep Ink (#0F1B24), Success (#1F7A4D), Warning (#A15C00), and Error (#B3261E) palette.
+7. Loaded Newsreader and Public Sans through next/font.
+8. Removed gradients, blur, glass treatment, decorative orbs, cursor effects, hover tilt, and shadow styling from the shared visual system.
+9. Reworked billing challenges as a ruled list, service overview as a semantic responsive table, and workflow as a horizontal timeline.
+10. Structured the homepage into eight sections: hero, engagement principles, billing challenges, services index, workflow timeline, working approach, FAQs, and final CTA.
+11. Standardized primary CTA wording to “Request a Consultation”.
+12. Removed the unverified specialties landing page. No specialty list, staff biography, credential, testimonial, case study, or performance metric has been invented.
+13. Added and connected the pricing and glossary pages.
+14. Added homepage FAQ structured data and retained Organization, WebSite, Service, BreadcrumbList, FAQPage, and Article structured data where applicable.
+15. Removed misleading sitemap last-modified timestamps for pages whose actual modification dates are not maintained.
+16. Corrected the cookie policy and privacy disclosures to reflect the mailto workflow.
+17. Removed invented governing-jurisdiction assumptions from the terms draft.
+18. Updated the favicon colors to the approved palette.
+19. Updated documentation, security notes, and launch-readiness gates.
 
-## Changes committed
+## Contact behavior
 
-1. Replaced the contact API submission with a browser email draft addressed to info@practicecaresource.com.
-2. Removed the Resend API route and the server-side contact delivery dependency.
-3. Removed the false thank-you route. The form now explains that the visitor must press Send in their own email application.
-4. Made provider count, phone and service selection optional.
-5. Added basic client-side checks for a few obvious patient identifier patterns and retained the explicit business-enquiry-only warning.
-6. Replaced the homepage hero's fake dashboard treatment with a plain-language description of billing support workflows.
-7. Replaced the conflicting global styling with the approved paper, pine, ink and terracotta palette, a serif/sans typography pairing, restrained borders and reduced-motion handling.
-8. Removed the decorative cursor effect.
-9. Updated README.md and SECURITY.md to accurately describe the new email-draft behaviour and its limitations.
+The website does not send email in the background. It opens the visitor's configured email application with a prepared message addressed to info@practicecaresource.com. The visitor must review and send it. If no email application is configured, a direct email link is provided. The website cannot confirm that the message was sent or delivered.
 
-## Important email behaviour
+There is no contact API route, Resend integration, server-side email provider, contact database, or lead storage.
 
-This implementation does not send mail in the background. It opens the visitor's configured email application with a prepared message addressed to info@practicecaresource.com. The visitor must review and send it. If the visitor has no email application configured, they can use the direct email link. The website cannot confirm that the message was sent or delivered.
+## Not yet verified
 
-## Limitations and approval items
+- GitHub Actions lint, typecheck, and production build on the latest main commit.
+- Responsive browser rendering across the required viewport matrix.
+- Keyboard, screen-reader, zoom, and axe accessibility checks.
+- Lighthouse performance and accessibility measurements.
+- WebAIM contrast measurements for all interaction states.
+- Actual mailto behavior across supported desktop and mobile browsers.
+- Structured-data validation in Google and schema testing tools.
+- Final social preview and Apple touch assets.
+- Final domain DNS, HTTPS, and canonical host.
+- Legal policy review and business proof/credential verification.
 
-1. Test the mailto flow in current desktop and mobile browsers with configured email applications.
-2. Verify that info@practicecaresource.com is active and monitored.
-3. Confirm business legal identity, public phone, address, specialties, actual service catalogue, credentials and final CTA.
-4. Review legal policies with qualified counsel.
-5. Verify custom-domain ownership and Vercel domain configuration before changing canonical URLs.
-6. Run lint, typecheck, production build, browser screenshots, accessibility scans and Lighthouse after checkout in a full Node.js environment.
-7. Review all remaining pages and service copy against the approved business scope.\n8. Create or approve a 1200x630 Open Graph image and an Apple touch icon. The repository currently has an App Router SVG icon and existing header/footer logo files, but no verified Open Graph image or Apple touch PNG.\n9. Complete per-page Twitter metadata, final metadata image checks, and validate structured data with Google's Rich Results Test and Schema Markup Validator.\n10. Run automated tests, browser screenshots, axe accessibility checks, Lighthouse, responsive checks, and a real mailto browser test. These have not been run in this editing environment.
-8. No claim of HIPAA compliance or complete PHI detection is made.
+## External constraints
 
-## Release safety
+The Vercel ignore-build safeguard remains active. Recent production deployment attempts on main were canceled by that safeguard. A Vercel status check reports an account build-limit/upgrade response. Production has not been promoted.
 
-The existing Vercel production deployment safeguard remains in place. Changes on main are not approved for production release. No domain, DNS, production alias, or production environment-variable settings were changed.
+The custom domain remains subject to DNS and Vercel verification. The canonical fallback remains https://practice-caresource.vercel.app.
+
+## Owner QA handoff
+
+The site is ready for the owner to begin a QA pass on the current main branch, but it is not certified launch-ready. Follow docs/launch-readiness.md, record issues, and do not release to production until the owner explicitly approves.

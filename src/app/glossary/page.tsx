@@ -57,7 +57,7 @@ export default function GlossaryPage() {
               <li><a className="inline-flex items-center gap-2 font-semibold underline underline-offset-4" href="https://www.cms.gov/medicare/coding-billing/electronic-billing/health-care-payment-remittance-advice" target="_blank" rel="noreferrer">CMS: Health Care Payment and Remittance Advice <ArrowUpRight className="size-4" /></a></li>
               <li><a className="inline-flex items-center gap-2 font-semibold underline underline-offset-4" href="https://www.cms.gov/priorities/key-initiatives/burden-reduction/administrative-simplification/transactions/health-care-payment-remittance-advice-electronic-funds-transfer" target="_blank" rel="noreferrer">CMS: EFT and ERA transaction overview <ArrowUpRight className="size-4" /></a></li>
             </ul>
-            <p className="mt-4 text-xs leading-5 text-muted">Some operational terms have no single universal definition. Metrics should be accompanied by the organization's calculation method and payer or contract context.</p>
+            <p className="mt-4 text-xs leading-5 text-muted">Some operational terms have no single universal definition. Metrics should be accompanied by the organization&apos;s calculation method and payer or contract context.</p>
           </div>
         </div>
       </section>

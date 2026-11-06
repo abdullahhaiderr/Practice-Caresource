@@ -64,6 +64,8 @@ export const footerNav = {
     { label: "Blog", href: "/blog" },
     { label: "FAQ", href: "/faq" },
     { label: "How It Works", href: "/how-it-works" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Billing Glossary", href: "/glossary" },
     { label: "Why Choose Us", href: "/why-choose-us" },
     { label: "HIPAA & Security", href: "/hipaa-security" },
   ],

@@ -3,12 +3,11 @@ import { TrustHighlights } from "@/components/home/TrustHighlights";
 import { BillingChallenges } from "@/components/home/BillingChallenges";
 import { ServicesOverview } from "@/components/home/ServicesOverview";
 import { Workflow } from "@/components/home/Workflow";
-import { HomepageFAQ } from "@/components/home/FAQ";
+import { HomepageFAQ, homepageFaqs } from "@/components/home/FAQ";
 import { FinalCTA } from "@/components/home/FinalCTA";
 import { PracticeApproach } from "@/components/home/PracticeApproach";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { organizationJsonLd, websiteJsonLd, faqJsonLd } from "@/lib/seo";
-import { homepageFaqs } from "@/components/home/FAQ";
 
 export const metadata = {
   title: { absolute: "Medical Billing and Revenue Cycle Management | PracticeCareSource" },

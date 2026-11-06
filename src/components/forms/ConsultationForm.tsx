@@ -30,6 +30,7 @@ function containsLikelyPhi(value: string) {
 export function ConsultationForm() {
   const [notice, setNotice] = useState<string | null>(null);
   const [warning, setWarning] = useState<string | null>(null);
+  const [prepared, setPrepared] = useState(false);
   const {
     register,
     handleSubmit,
@@ -80,6 +81,7 @@ export function ConsultationForm() {
     const subject = `PracticeCareSource enquiry: ${values.practiceName}`;
     const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
 
+    setPrepared(true);
     setNotice("Your email app should open with the enquiry prepared. Review it and press Send to deliver it to PracticeCareSource. If no email app opens, use the email link below.");
     window.location.href = mailto;
   });
@@ -171,9 +173,9 @@ export function ConsultationForm() {
 
       <div className="flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-muted">Fields marked <span className="text-[#B3261E]">*</span> are required.</p>
-        <button type="submit" className="btn btn-primary w-full sm:w-auto">
+        <button type="submit" disabled={prepared} className="btn btn-primary w-full sm:w-auto">
           <Mail className="size-4" aria-hidden="true" />
-          Prepare email enquiry
+          {prepared ? "Email draft prepared" : "Prepare email enquiry"}
         </button>
       </div>
       <p className="text-xs leading-relaxed text-muted">

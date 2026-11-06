@@ -47,7 +47,7 @@ export default function ContactPage() {
             </div>
 
             <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
-              <div className="rounded-2xl border border-white/70 bg-white/80 p-6 shadow-[0_18px_50px_-35px_rgba(23,59,86,.28)] backdrop-blur-xl">
+              <div className="rounded-lg border border-border bg-white p-6">
                 <h2 className="font-display text-lg font-bold text-navy">Contact our team</h2>
                 <div className="mt-4 space-y-4 text-sm">
                   <a href={business.emailHref} className="flex items-start gap-3 text-ink-soft hover:text-blue"><Mail className="mt-0.5 size-4 shrink-0 text-teal" />{business.email}</a>

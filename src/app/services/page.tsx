@@ -70,7 +70,7 @@ export default function ServicesPage() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/contact" className="btn btn-primary">
-                Request a consultation
+                Request a Consultation
               </Link>
               <Link href="/services/medical-billing-audits" className="btn btn-outline">
                 Explore billing audits
@@ -109,7 +109,7 @@ export default function ServicesPage() {
       </section>
 
       <CTASection
-        title="Request a consultation"
+        title="Explore medical billing support"
         description="Tell us about your practice and the billing tasks that are taking the most time. We will follow up to discuss options."
       />
 

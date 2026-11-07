@@ -311,7 +311,7 @@ a:hover { color:#1d4ed8; }
 
 /* Final brand enforcement: royal blue accents only, including legacy mint/teal UI details. */
 :root { --color-teal:#2563eb; --color-teal-dark:#1d4ed8; --color-success:#2563eb; }
-.text-\\[\\#a8d7d1\\], .text-\\[\\#9ccac8\\], .text-\\[\\#b7ded8\\] { color:#bfdbfe !important; }
-.bg-\\[\\#edf5f5\\] { background-color:#eff6ff !important; }
-.bg-\\[\\#f3f9fa\\] { background-color:#f4f8ff !important; }
-.bg-\\[\\#eef7f7\\] { background-color:#eef4ff !important; }
+.text-\[\#a8d7d1\], .text-\[\#9ccac8\], .text-\[\#b7ded8\] { color:#bfdbfe !important; }
+.bg-\[\#edf5f5\] { background-color:#eff6ff !important; }
+.bg-\[\#f3f9fa\] { background-color:#f4f8ff !important; }
+.bg-\[\#eef7f7\] { background-color:#eef4ff !important; }

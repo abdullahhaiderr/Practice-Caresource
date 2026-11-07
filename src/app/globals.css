@@ -182,3 +182,52 @@ a:hover { color: #0B493E; }
     scroll-behavior: auto !important;
   }
 }
+
+
+/* PROMBS-inspired blue and teal visual direction; existing component animations remain intact. */
+:root {
+  --brand-blue: #0877B9;
+  --brand-blue-deep: #075487;
+  --brand-cyan: #13B8C8;
+  --brand-teal: #087F83;
+}
+.payer-section { background: #F2F8FB; }
+.payer-kicker { color: var(--brand-blue); font-size: .75rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.payer-section h2 { color: #12334A; }
+.payer-marquee { overflow: hidden; width: 100%; mask-image: linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); }
+.payer-track { display: flex; width: max-content; gap: 1rem; padding: .5rem 0; animation: payer-scroll-left 46s linear infinite; }
+.payer-marquee:hover .payer-track { animation-play-state: paused; }
+.payer-logo-card { width: 205px; height: 104px; flex: 0 0 205px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.45rem; padding:1rem; border:1px solid #D9E8EF; border-radius:12px; background:#fff; }
+.payer-logo-card img { display:block; width:100%; height:44px; object-fit:contain; }
+.payer-logo-card span { color:#40596A; font-size:.72rem; font-weight:650; text-align:center; line-height:1.2; }
+@keyframes payer-scroll-left { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+.audit-overlay { position:fixed; inset:0; z-index:100; display:grid; place-items:center; padding:1.25rem; background:rgba(7,27,43,.68); backdrop-filter:blur(5px); }
+.audit-dialog { position:relative; display:grid; width:min(900px,100%); max-height:min(680px,calc(100dvh - 2.5rem)); overflow:auto; grid-template-columns:1.05fr .95fr; border-radius:18px; background:#fff; }
+.audit-close { position:absolute; z-index:2; top:14px; right:14px; display:grid; place-items:center; width:38px; height:38px; border:1px solid rgba(255,255,255,.45); border-radius:50%; background:rgba(255,255,255,.16); color:white; cursor:pointer; }
+.audit-visual { position:relative; isolation:isolate; overflow:hidden; padding:3rem 2.5rem; color:white; background:linear-gradient(140deg,#075487 0%,#0877B9 48%,#10AEBB 100%); }
+.audit-eyebrow,.audit-form-kicker { color:inherit; font-size:.72rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+.audit-visual h2 { position:relative; margin-top:1.2rem; max-width:12ch; color:white; font-family:var(--font-newsreader),Georgia,serif; font-size:clamp(2rem,3.4vw,2.8rem); line-height:1.08; }
+.audit-visual>p { position:relative; margin-top:1.1rem; max-width:34ch; color:rgba(255,255,255,.86); font-size:.95rem; }
+.audit-visual ul { position:relative; display:grid; gap:1rem; margin-top:2rem; padding:0; list-style:none; }
+.audit-visual li { display:flex; align-items:center; gap:.7rem; color:white; font-size:.88rem; font-weight:600; }
+.audit-visual li svg { flex:none; }
+.audit-orbit { position:absolute; z-index:-1; display:block; border:1px solid rgba(255,255,255,.22); border-radius:50%; }
+.audit-orbit-one { width:270px;height:270px;right:-120px;bottom:-110px; }
+.audit-orbit-two { width:390px;height:390px;right:-180px;bottom:-170px; }
+.audit-form-panel { display:flex; flex-direction:column; justify-content:center; padding:3rem 2.25rem; }
+.audit-form-kicker { color:var(--brand-blue); }
+.audit-form-panel h3 { margin-top:.7rem; color:#17394E; font-size:1.8rem; }
+.audit-form-panel>p:not(.audit-form-kicker) { margin-top:.65rem; font-size:.9rem; }
+.audit-submit { display:flex; align-items:center; justify-content:center; gap:.65rem; margin-top:1.6rem; min-height:50px; border-radius:8px; background:linear-gradient(100deg,#0877B9,#0A9FAE); color:white; font-size:.9rem; font-weight:700; text-decoration:none; }
+.audit-submit:hover { color:white; filter:brightness(.96); }
+.audit-form-panel small { margin-top:1rem; color:#667987; font-size:.72rem; line-height:1.55; }
+@media (max-width:680px) {
+  .payer-logo-card { width:170px; flex-basis:170px; height:94px; }
+  .audit-dialog { grid-template-columns:1fr; }
+  .audit-visual { padding:2.5rem 1.5rem 1.75rem; }
+  .audit-visual h2 { max-width:16ch; font-size:2rem; }
+  .audit-visual ul { grid-template-columns:1fr; margin-top:1.25rem; gap:.65rem; }
+  .audit-form-panel { padding:1.75rem 1.5rem 2rem; }
+  .audit-close { border-color:rgba(255,255,255,.5); }
+}
+@media (prefers-reduced-motion:reduce) { .payer-track { animation:none; transform:none; } }

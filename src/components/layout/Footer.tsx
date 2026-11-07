@@ -2,12 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, Mail } from "lucide-react";
 import { business, footerNav } from "@/config/business";
 
-const socialLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/creativehaider/" },
-  { label: "TikTok", href: "https://www.tiktok.com/" },
-  { label: "Instagram", href: "https://www.instagram.com/" },
-  { label: "Facebook", href: "https://www.facebook.com/" },
-];
+const socialLinks: { label: string; href: string }[] = [];
 
 const companyLinks = [
   { label: "About us", href: "/about" },

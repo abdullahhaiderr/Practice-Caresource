@@ -15,13 +15,13 @@ export function CTASection({
   buttonHref = "/contact",
 }: CTASectionProps) {
   return (
-    <section className="bg-[#f3f8f9]">
+    <section className="bg-[#f4f8ff]">
       <div className="container-x py-14 sm:py-16">
         <div className="relative overflow-hidden rounded-2xl bg-[#173b55] px-6 py-10 sm:px-10 sm:py-12">
           <div className="pointer-events-none absolute -right-16 -top-24 size-72 rounded-full border border-white/10" aria-hidden="true" />
           <div className="relative grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div className="max-w-2xl">
-              <span className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.16em] text-[#a8d7d1]"><MessageCircle className="size-4" aria-hidden="true" /> Start a conversation</span>
+              <span className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.16em] text-[#bfdbfe]"><MessageCircle className="size-4" aria-hidden="true" /> Start a conversation</span>
               <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">{title}</h2>
               <p className="mt-4 max-w-xl text-base leading-7 text-slate-300">{description}</p>
             </div>

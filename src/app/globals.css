@@ -128,7 +128,7 @@ html,body { background:#fff; color:#263b49; }
 .hero-kicker { color:#2563eb; }
 .hero-kicker-dot { background:#2563eb; box-shadow:0 0 0 5px rgba(37,99,235,.12),0 0 22px rgba(37,99,235,.32); }
 .hero-title { color:#173b56; }
-.hero-title span { background:linear-gradient(100deg,#238c88,#2563eb 70%,#58a9b5);background-clip:text;-webkit-text-fill-color:transparent; }
+.hero-title span { background:linear-gradient(100deg,#2563eb,#2563eb 70%,#60a5fa);background-clip:text;-webkit-text-fill-color:transparent; }
 .hero-panel { border-color:rgba(255,255,255,.8); background:linear-gradient(145deg,rgba(255,255,255,.88),rgba(247,252,252,.76)); box-shadow:0 35px 90px -45px rgba(27,74,91,.32),inset 0 1px rgba(255,255,255,.95); }
 .hero-panel .text-white,.hero-panel strong { color:#173b56 !important; }
 .hero-panel .text-slate-400,.hero-panel .text-slate-300,.hero-panel small { color:#637986 !important; }
@@ -307,3 +307,11 @@ a:hover { color:#1d4ed8; }
 .field:focus { border-color:#3b82f6; box-shadow:0 0 0 3px rgb(59 130 246 / .13); }
 .hero-secondary:hover:not(:disabled),.btn-outline:hover:not(:disabled) { color:#1d4ed8; border-color:#93c5fd; }
 .pcs-popup { /* Popup retains its existing blue treatment. */ }
+
+
+/* Final brand enforcement: royal blue accents only, including legacy mint/teal UI details. */
+:root { --color-teal:#2563eb; --color-teal-dark:#1d4ed8; --color-success:#2563eb; }
+.text-\\[\\#a8d7d1\\], .text-\\[\\#9ccac8\\], .text-\\[\\#b7ded8\\] { color:#bfdbfe !important; }
+.bg-\\[\\#edf5f5\\] { background-color:#eff6ff !important; }
+.bg-\\[\\#f3f9fa\\] { background-color:#f4f8ff !important; }
+.bg-\\[\\#eef7f7\\] { background-color:#eef4ff !important; }

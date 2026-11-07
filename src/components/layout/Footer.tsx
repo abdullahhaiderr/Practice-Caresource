@@ -35,7 +35,7 @@ export function Footer() {
               Medical billing, coding, credentialing, and revenue cycle support
               for healthcare practices in the United States only.
             </p>
-            <span className="mt-5 inline-flex items-center rounded-full border border-[#77cfc4]/30 bg-[#77cfc4]/10 px-3 py-1.5 text-xs font-semibold text-[#9be0d5]">
+            <span className="mt-5 inline-flex items-center rounded-full border border-[#93c5fd]/35 bg-[#3b82f6]/15 px-3 py-1.5 text-xs font-semibold text-[#bfdbfe]">
               Serving U.S. healthcare practices
             </span>
             <div className="mt-6 flex items-center gap-2.5">
@@ -46,7 +46,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="grid size-10 place-items-center rounded-full border border-white/15 bg-white/[.04] text-[#c2d2db] transition-colors hover:border-[#77cfc4]/60 hover:bg-[#77cfc4]/10 hover:text-[#9be0d5]"
+                  className="grid size-10 place-items-center rounded-full border border-white/15 bg-white/[.04] text-[#c2d2db] transition-colors hover:border-[#93c5fd]/70 hover:bg-[#3b82f6]/15 hover:text-[#bfdbfe]"
                 >
                   <svg viewBox="0 0 24 24" className="size-[18px]" fill="currentColor" aria-hidden="true">
                     {label === "LinkedIn" ? (
@@ -73,7 +73,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[#c2d2db] transition-colors hover:text-[#9be0d5]"
+                    className="text-sm text-[#c2d2db] transition-colors hover:text-[#bfdbfe]"
                   >
                     {link.label}
                   </Link>
@@ -91,7 +91,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[#c2d2db] transition-colors hover:text-[#9be0d5]"
+                    className="text-sm text-[#c2d2db] transition-colors hover:text-[#bfdbfe]"
                   >
                     {link.label}
                   </Link>
@@ -107,7 +107,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm text-[#c2d2db]">
               {business.emailHref && business.email ? (
                 <li className="flex items-start gap-2">
-                  <Mail className="mt-0.5 size-4 shrink-0 text-[#79d4c7]" aria-hidden="true" />
+                  <Mail className="mt-0.5 size-4 shrink-0 text-[#93c5fd]" aria-hidden="true" />
                   <a href={business.emailHref} className="break-all transition-colors hover:text-white">
                     {business.email}
                   </a>
@@ -116,7 +116,7 @@ export function Footer() {
             </ul>
             <Link
               href="/contact"
-              className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-lg bg-[#79d4c7] px-4 py-2.5 text-sm font-bold text-[#102f45] transition-colors hover:bg-[#a0e5d9]"
+              className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-lg bg-[#2563eb] px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#1d4ed8]"
             >
               Schedule a Consultation
               <ArrowUpRight className="size-4" aria-hidden="true" />

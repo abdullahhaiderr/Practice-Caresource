@@ -9,9 +9,9 @@ type PageHeroProps = {
 
 export function PageHero({ eyebrow, title, description, breadcrumbs }: PageHeroProps) {
   return (
-    <section className="relative isolate overflow-hidden border-b border-border bg-[#f3f8f9]">
-      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[42%] bg-gradient-to-l from-[#e6f0f1] to-transparent lg:block" aria-hidden="true" />
-      <div className="pointer-events-none absolute -right-24 -top-36 hidden size-[34rem] rounded-full border border-[#d7e5e8] lg:block" aria-hidden="true" />
+    <section className="relative isolate overflow-hidden border-b border-border bg-[#f4f8ff]">
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[42%] bg-gradient-to-l from-[#eaf2ff] to-transparent lg:block" aria-hidden="true" />
+      <div className="pointer-events-none absolute -right-24 -top-36 hidden size-[34rem] rounded-full border border-[#dbeafe] lg:block" aria-hidden="true" />
       <div className="container-x relative py-12 sm:py-14 lg:py-[4.5rem]">
         <div className="max-w-3xl">
           {breadcrumbs ? <div className="mb-7"><Breadcrumbs items={breadcrumbs} /></div> : null}

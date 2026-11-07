@@ -1,4 +1,6 @@
 import { Hero } from "@/components/home/Hero";
+import { InsuranceMarquee } from "@/components/home/InsuranceMarquee";
+import { AuditPopup } from "@/components/home/AuditPopup";
 import { TrustHighlights } from "@/components/home/TrustHighlights";
 import { BillingChallenges } from "@/components/home/BillingChallenges";
 import { ServicesOverview } from "@/components/home/ServicesOverview";
@@ -19,6 +21,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <InsuranceMarquee />
       <TrustHighlights />
       <BillingChallenges />
       <ServicesOverview />
@@ -26,6 +29,7 @@ export default function HomePage() {
       <PracticeApproach />
       <HomepageFAQ />
       <FinalCTA />
+      <AuditPopup />
       <JsonLd data={organizationJsonLd()} />
       <JsonLd data={websiteJsonLd()} />
       <JsonLd data={faqJsonLd(homepageFaqs)} />

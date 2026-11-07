@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SkipLink } from "@/components/shared/SkipLink";
 import { CursorAura } from "@/components/shared/CursorAura";
+import { ConsultationPopup } from "@/components/shared/ConsultationPopup";
 import { business } from "@/config/business";
 
 const inter = Inter({
@@ -97,6 +98,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-paper text-ink antialiased">
         <SkipLink />
         <CursorAura />
+        <ConsultationPopup />
         <Header />
         <main id="main" tabIndex={-1}>
           {children}

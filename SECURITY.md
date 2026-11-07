@@ -26,14 +26,17 @@ Configured in `next.config.ts` and applied to every route:
 - Zod validation on the server using the same schema as the client.
 - Honeypot field (`website`) and a minimum fill-time check.
 - Sanitization of control characters and whitespace; explicit length limits.
-- Fixed-window rate limiting (5 requests / 10 minutes / IP) with HTTP 429 and
-  `Retry-After`.
+- Best-effort in-memory fixed-window rate limiting (5 requests / 10 minutes / IP)
+  with HTTP 429 and `Retry-After`. This is not shared or durable across serverless
+  instances and must not be treated as production-grade protection.
 - Consent required before submission.
-- PHI warning displayed next to the form.
-- Optional Resend delivery with reply-to set to the submitter.
-- If Resend is not configured, submissions are logged to the server console for
-  local testing. Production deployments must configure email delivery and
-  should review server logging practices.
+- The API rejects several common structured identifiers (such as SSNs, labelled
+  dates of birth, MRNs, and member IDs). Pattern checks cannot reliably identify
+  patient names or all PHI; the form must never be used to submit PHI.
+- Resend delivery requires `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, and a verified
+  `CONTACT_FROM_EMAIL`. If any are missing, the endpoint returns HTTP 503.
+- Inquiry contents are not written to application logs. Provider failures log
+  only the HTTP status code.
 
 ### Application
 

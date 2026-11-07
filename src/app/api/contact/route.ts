@@ -22,6 +22,15 @@ function clean(value: string): string {
     .trim();
 }
 
+function containsLikelyPhi(value: string): boolean {
+  const patterns = [
+    /\b\d{3}-\d{2}-\d{4}\b/,
+    /\b(?:DOB|date of birth|birth date)\s*[:#-]?\s*\d{1,2}[/-]\d{1,2}[/-]\d{2,4}\b/i,
+    /\b(?:MRN|medical record number|patient ID|member ID|insurance ID|policy number)\s*[:#-]?\s*[A-Z0-9-]{4,}\b/i,
+  ];
+  return patterns.some((pattern) => pattern.test(value));
+}
+
 function escapeHtml(value: string): string {
   return value
     .replace(/&/g, "&amp;")
@@ -85,7 +94,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const data = parsed.data;
+  const data = parsed.data;\n\n  const freeText = [data.practiceName, data.specialty, data.message].join(" ");\n  if (containsLikelyPhi(freeText)) {\n    return NextResponse.json(\n      { ok: false, message: "Please remove patient identifiers or health information and submit a business inquiry only." },\n      { status: 400 },\n    );\n  }
 
   // Silently accept obvious bots so they do not retry.
   if (data.website) {
@@ -99,7 +108,7 @@ export async function POST(request: NextRequest) {
   const submission = {
     fullName: clean(data.fullName),
     email: clean(data.email).toLowerCase(),
-    phone: clean(data.phone),
+    phone: clean(data.phone ?? ""),
     practiceName: clean(data.practiceName),
     specialty: clean(data.specialty),
     providers: clean(data.providers),
@@ -112,7 +121,7 @@ export async function POST(request: NextRequest) {
   const fromEmail =
     process.env.CONTACT_FROM_EMAIL ?? "PracticeCareSource <onboarding@resend.dev>";
 
-  if (apiKey && toEmail) {
+  if (apiKey && toEmail && fromEmail) {
     const html = `
       <h2>New consultation request</h2>
       <p><strong>Name:</strong> ${escapeHtml(submission.fullName)}</p>

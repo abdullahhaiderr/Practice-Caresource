@@ -18,7 +18,7 @@ export const metadata = {
     absolute: "Medical Billing, RCM & Practice Support | PracticeCareSource",
   },
   description:
-    "PracticeCareSource helps US medical practices with medical billing, revenue cycle management, credentialing, AR recovery, denial management, medical coding, virtual assistant support, digital marketing, and responsible AI-enabled workflows.",
+    "PracticeCareSource provides medical billing and revenue cycle support for U.S. healthcare practices, including credentialing, accounts receivable support, denial management, and medical coding.",
   alternates: { canonical: "/" },
 };
 

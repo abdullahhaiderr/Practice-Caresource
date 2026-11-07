@@ -14,19 +14,19 @@ export function Workflow() {
     <section className="bg-[#173b55]">
       <div className="container-x section">
         <div className="mx-auto mb-14 max-w-2xl text-center">
-          <span className="eyebrow mb-4 block !text-[#a8d7d1]">How the work moves</span>
+          <span className="eyebrow mb-4 block !text-[#bfdbfe]">How the work moves</span>
           <h2 className="mb-5 !text-white">A clear process for every stage of the claim.</h2>
           <p className="!text-slate-300">From the first review through payment and follow-up, each step has a purpose and a next action.</p>
         </div>
         <div className="grid gap-px overflow-hidden rounded-2xl border border-white/15 bg-white/15 sm:grid-cols-2 lg:grid-cols-3">
           {steps.map(({ step, title, text, icon: Icon }) => (
             <article key={step} className="bg-[#1b465f] p-6 sm:p-7">
-              <div className="mb-7 flex items-center justify-between"><span className="text-xs font-bold tracking-[.18em] text-[#9ccac8]">{step}</span><Icon className="size-5 text-[#9ccac8]" aria-hidden="true" /></div>
+              <div className="mb-7 flex items-center justify-between"><span className="text-xs font-bold tracking-[.18em] text-[#93c5fd]">{step}</span><Icon className="size-5 text-[#93c5fd]" aria-hidden="true" /></div>
               <h3 className="text-lg !text-white">{title}</h3><p className="mt-2 text-sm leading-6 !text-slate-300">{text}</p>
             </article>
           ))}
         </div>
-        <p className="mt-6 flex items-center justify-center gap-2 text-center text-sm text-slate-300"><ArrowRight className="size-4 text-[#9ccac8]" aria-hidden="true" /> Workflows are adapted to your practice, systems, and agreed scope.</p>
+        <p className="mt-6 flex items-center justify-center gap-2 text-center text-sm text-slate-300"><ArrowRight className="size-4 text-[#93c5fd]" aria-hidden="true" /> Workflows are adapted to your practice, systems, and agreed scope.</p>
       </div>
     </section>
   );

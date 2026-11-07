@@ -8,7 +8,7 @@ const points = [
 
 export function Technology() {
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(135deg,#f3f9fa_0%,#ffffff_55%,#eef7f7_100%)]">
+    <section className="relative overflow-hidden bg-[linear-gradient(135deg,#f4f8ff_0%,#ffffff_55%,#eef4ff_100%)]">
       <div className="container-x section">
         <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
           <div>
@@ -23,7 +23,7 @@ export function Technology() {
                 key={title}
                 className="technology-card rounded-2xl border border-[#dce7eb] bg-white p-5 shadow-card transition duration-300 sm:p-6"
               >
-                <span className="mb-5 grid size-10 place-items-center rounded-xl bg-[#edf5f5] text-teal">
+                <span className="mb-5 grid size-10 place-items-center rounded-xl bg-[#eff6ff] text-teal">
                   <Icon className="size-5" aria-hidden="true" />
                 </span>
                 <h3 className="text-base leading-snug">{title}</h3>

@@ -23,13 +23,18 @@ export function Footer() {
         <div className="grid gap-10 border-b border-white/15 pb-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr] lg:gap-12">
           <div className="flex flex-col items-start">
             <Link href="/" aria-label="PracticeCareSource home" className="shrink-0">
-            <img
-              src="/footer-logo.png"
-              alt="PracticeCareSource"
-              className="w-[280px] max-w-full h-auto object-contain sm:w-[320px]"
-              width="396"
-              height="110"
-            />
+            <picture>
+              <source media="(max-width: 639px)" srcSet="/footer-logo-mobile.png" />
+              <source media="(min-width: 640px) and (max-width: 1023px)" srcSet="/footer-logo-tablet.png" />
+              <source media="(min-width: 1024px)" srcSet="/footer-logo-desktop.png" />
+              <img
+                src="/footer-logo-desktop.png"
+                alt="PracticeCareSource"
+                className="h-auto w-[230px] max-w-full object-contain sm:w-[275px] lg:w-[320px]"
+                width="396"
+                height="110"
+              />
+            </picture>
           </Link>
             <p className="mt-4 max-w-sm text-sm leading-7 text-[#c2d2db]">
               Medical billing, coding, credentialing, and revenue cycle support

@@ -84,13 +84,18 @@ export function Header() {
       >
         <div className="container-x flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]">
           <Link href="/" aria-label="PracticeCareSource home" className="shrink-0">
-            <img
-              src="/header-logo.svg"
-              alt="PracticeCareSource"
-              className="w-[210px] max-w-full h-auto object-contain sm:w-[250px]"
-              width="440"
-              height="123"
-            />
+            <picture>
+              <source media="(max-width: 639px)" srcSet="/header-logo-mobile.png" />
+              <source media="(min-width: 640px) and (max-width: 1023px)" srcSet="/header-logo-tablet.png" />
+              <source media="(min-width: 1024px)" srcSet="/header-logo-desktop.png" />
+              <img
+                src="/header-logo-desktop.png"
+                alt="PracticeCareSource"
+                className="h-auto w-[180px] max-w-full object-contain sm:w-[220px] lg:w-[250px]"
+                width="440"
+                height="123"
+              />
+            </picture>
           </Link>
 
           <nav

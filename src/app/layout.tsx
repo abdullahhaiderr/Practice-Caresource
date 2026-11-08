@@ -79,6 +79,11 @@ export const metadata: Metadata = {
     },
   },
   category: "Healthcare business services",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export const viewport: Viewport = {

@@ -24,7 +24,7 @@ export function Footer() {
           <div className="flex flex-col items-start">
             <Link href="/" aria-label="PracticeCareSource home" className="shrink-0">
             <img
-              src="/footer-logo.webp"
+              src="/footer-logo.png"
               alt="PracticeCareSource"
               className="w-[280px] max-w-full h-auto object-contain sm:w-[320px]"
               width="396"

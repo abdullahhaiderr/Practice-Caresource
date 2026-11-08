@@ -91,7 +91,7 @@ export function Header() {
               <img
                 src="/header-logo-desktop.png"
                 alt="PracticeCareSource"
-                className="h-auto w-[180px] max-w-full object-contain sm:w-[220px] lg:w-[250px]"
+                className="block h-[36px] w-auto max-w-[min(54vw,190px)] object-contain sm:h-[40px] sm:max-w-[220px] lg:h-[44px] lg:max-w-[230px]"
                 width="440"
                 height="123"
               />
@@ -191,9 +191,17 @@ export function Header() {
         >
           <div className="min-h-full">
             <div className="container-x flex h-16 items-center justify-between border-b border-border">
-              <span className="font-display text-lg font-bold text-navy tracking-tight">
-                PracticeCareSource
-              </span>
+              <picture>
+                <source media="(max-width: 639px)" srcSet="/header-logo-mobile.png" />
+                <source media="(min-width: 640px)" srcSet="/header-logo-tablet.png" />
+                <img
+                  src="/header-logo-mobile.png"
+                  alt="PracticeCareSource"
+                  className="block h-[38px] w-auto max-w-[min(62vw,220px)] object-contain"
+                  width="440"
+                  height="123"
+                />
+              </picture>
               <button
                 ref={closeButtonRef}
                 type="button"

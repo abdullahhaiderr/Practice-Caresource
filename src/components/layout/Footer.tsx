@@ -24,11 +24,11 @@ export function Footer() {
           <div className="flex flex-col items-start">
             <Link href="/" aria-label="PracticeCareSource home" className="shrink-0">
             <img
-              src="/footer-logo.png"
+              src="/footer-logo.webp"
               alt="PracticeCareSource"
-              className="h-12 w-auto max-w-[260px] object-contain sm:h-14 sm:max-w-[290px]"
-              width="260"
-              height="56"
+              className="w-[280px] max-w-full h-auto object-contain sm:w-[320px]"
+              width="396"
+              height="110"
             />
           </Link>
             <p className="mt-4 max-w-sm text-sm leading-7 text-[#c2d2db]">

@@ -87,9 +87,9 @@ export function Header() {
             <img
               src="/header-logo.svg"
               alt="PracticeCareSource"
-              className="h-9 w-auto max-w-[190px] object-contain sm:h-11 sm:max-w-[220px]"
-              width="220"
-              height="44"
+              className="w-[210px] max-w-full h-auto object-contain sm:w-[250px]"
+              width="440"
+              height="123"
             />
           </Link>
 

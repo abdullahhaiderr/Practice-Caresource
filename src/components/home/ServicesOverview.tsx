@@ -1,38 +1,30 @@
 import Link from "next/link";
-import { ArrowUpRight, BadgeCheck, Code2, FileSearch, ReceiptText, ShieldAlert, Workflow } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { services } from "@/data/services";
-
-const serviceIcons: Record<string, typeof ReceiptText> = {
-  "medical-billing": ReceiptText,
-  "revenue-cycle-management": Workflow,
-  credentialing: BadgeCheck,
-  "ar-recovery": FileSearch,
-  "denial-management": ShieldAlert,
-  "medical-coding": Code2,
-};
 
 export function ServicesOverview() {
   return (
-    <section>
+    <section className="home-services-section">
       <div className="container-x section">
-        <div className="mb-12 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-2xl">
-            <span className="eyebrow mb-4 block">Services</span>
-            <h2 className="mb-5">Revenue cycle support, connected from start to finish.</h2>
-            <p className="max-w-xl text-base leading-8">Choose focused support for a specific challenge or bring more of your billing workflow together with one coordinated partner.</p>
+        <div className="home-section-intro home-services-intro">
+          <div>
+            <span className="eyebrow mb-4 block">WHAT WE HELP WITH</span>
+            <h2>Focused support for the work behind patient care.</h2>
           </div>
-          <Link href="/services" className="btn btn-outline w-fit">Explore all services <ArrowUpRight className="size-4" aria-hidden="true" /></Link>
+          <div>
+            <p>Start with the part of your revenue cycle that needs attention, or discuss a broader scope that fits your practice.</p>
+            <Link href="/services" className="home-editorial-link">View all services <ArrowUpRight className="size-4" aria-hidden="true" /></Link>
+          </div>
         </div>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => {
-            const Icon = serviceIcons[service.id] ?? ReceiptText;
-            return <Link key={service.id} href={service.href} className="card service-overview-card group flex min-h-52 flex-col p-6">
-              <span className="card-icon mb-5"><Icon className="size-5" aria-hidden="true" /></span>
-              <h3 className="text-lg tracking-tight group-hover:text-blue">{service.title}</h3>
-              <p className="mt-2 flex-1 text-sm leading-6">{service.summary}</p>
-              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue">Learn about this service <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" /></span>
-            </Link>;
-          })}
+        <div className="home-service-list">
+          {services.map((service, index) => (
+            <Link key={service.id} href={service.href} className="home-service-row">
+              <span className="home-service-index">{String(index + 1).padStart(2, "0")}</span>
+              <span className="home-service-title">{service.title}</span>
+              <span className="home-service-summary">{service.summary}</span>
+              <ArrowUpRight className="home-service-arrow" aria-hidden="true" />
+            </Link>
+          ))}
         </div>
       </div>
     </section>

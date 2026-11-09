@@ -25,7 +25,7 @@ export function Specialties() {
           {specialties.map((specialty) => {
             const Icon = icons[specialty.id] ?? Stethoscope;
             return <Link key={specialty.id} href={specialty.href} className="card group flex items-center gap-4 p-5">
-              <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-[#edf5f5] text-teal"><Icon className="size-5" aria-hidden="true" /></span>
+              <span className="card-icon"><Icon className="size-5" aria-hidden="true" /></span>
               <span className="min-w-0 flex-1 text-sm font-semibold text-navy group-hover:text-blue">{specialty.title}</span>
               <ArrowUpRight className="size-4 shrink-0 text-slate-400 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
             </Link>;

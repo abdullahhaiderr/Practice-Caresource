@@ -1,11 +1,25 @@
 import Link from "next/link";
-import { ArrowRight, Check, ChevronRight, ShieldCheck } from "lucide-react";
+import { ArrowRight, BadgeCheck, Banknote, Check, ChevronRight, Code2, FileSearch, ReceiptText, ShieldAlert, ShieldCheck, UsersRound, Wallet, Workflow } from "lucide-react";
 import { PageHero } from "@/components/shared/PageHero";
 import { CTASection } from "@/components/shared/CTASection";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { serviceDetails, type ServiceDetail } from "@/data/service-details";
 import { serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { ctaNav } from "@/config/business";
+
+const serviceIcons: Record<string, typeof ReceiptText> = {
+  "medical-billing": ReceiptText,
+  "medical-coding": Code2,
+  "revenue-cycle-management": Workflow,
+  credentialing: BadgeCheck,
+  "ar-management": Wallet,
+  "denial-management": ShieldAlert,
+  "eligibility-prior-authorization": ShieldCheck,
+  "payment-posting-reporting": Banknote,
+  "medical-billing-audits": FileSearch,
+  "virtual-assistant": UsersRound,
+  "marketing-digital-presence": UsersRound,
+};
 
 export function ServicePage({ service }: { service: ServiceDetail }) {
   const related = service.related
@@ -166,12 +180,15 @@ export function ServicePage({ service }: { service: ServiceDetail }) {
               Related services
             </h2>
             <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {related.map((item) => (
+              {related.map((item) => {
+                const Icon = serviceIcons[item.id] ?? ReceiptText;
+                return (
                 <Link
                   key={item.id}
                   href={item.href}
                   className="card group flex flex-col"
                 >
+                  <span className="card-icon mb-4"><Icon aria-hidden="true" /></span>
                   <h3 className="font-display text-lg font-semibold text-navy group-hover:text-blue transition-colors">
                     {item.title}
                   </h3>
@@ -186,7 +203,8 @@ export function ServicePage({ service }: { service: ServiceDetail }) {
                     />
                   </span>
                 </Link>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

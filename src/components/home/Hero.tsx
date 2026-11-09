@@ -20,7 +20,7 @@ export function Hero() {
       <div className="hero-grid" aria-hidden="true" />
       <div className="hero-orb hero-orb-one" aria-hidden="true" />
       <div className="hero-orb hero-orb-two" aria-hidden="true" />
-      <div className="container-x relative z-10 grid items-center gap-12 py-16 sm:py-20 lg:min-h-[740px] lg:grid-cols-[.94fr_1.06fr] lg:gap-10 lg:py-24">
+      <div className="container-x relative z-10 grid items-center gap-10 py-10 sm:py-12 lg:min-h-[680px] lg:grid-cols-[.94fr_1.06fr] lg:gap-10 lg:py-16">
         <div className="hero-copy max-w-2xl">
           <div className="hero-kicker mb-7"><span className="hero-kicker-dot" />MEDICAL BILLING · PRACTICE OPERATIONS · SMARTER TECHNOLOGY</div>
           <h1 className="hero-title max-w-[720px]">Everything your practice needs to <span>run, grow and get paid.</span></h1>
@@ -37,7 +37,7 @@ export function Hero() {
             <span className="inline-flex items-center gap-2"><CheckCircle2 className="size-4 text-teal-300" /> Practice-focused support</span>
           </div>
         </div>
-        <div className="hero-visual relative mx-auto w-full max-w-[610px]">
+        <div className="hero-visual relative mx-auto min-w-0 w-full max-w-[610px]">
           <div className="hero-visual-wash" aria-hidden="true" />
           <div className="hero-ring hero-ring-one" aria-hidden="true" />
           <div className="hero-ring hero-ring-two" aria-hidden="true" />

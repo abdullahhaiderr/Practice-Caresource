@@ -1,33 +1,24 @@
-import { BarChart3, BrainCircuit, Sparkles, Workflow } from "lucide-react";
-
 const points = [
-  { icon: BarChart3, title: "Reporting that answers questions", text: "Practical visibility into claim status, denial activity, collections, and accounts receivable." },
-  { icon: Workflow, title: "Workflows that fit your systems", text: "Coordinated processes designed around your existing practice management and billing tools." },
-  { icon: BrainCircuit, title: "AI-assisted operational insight", text: "We explore responsible AI and automation to help organize information, surface patterns, and reduce repetitive administrative work, with human review where it matters." },
+  { number: "01", title: "Useful reporting", text: "Clearer visibility into claim status, denial activity, collections, and accounts receivable." },
+  { number: "02", title: "Existing systems first", text: "Workflows are planned around the practice management and billing tools your team already uses." },
+  { number: "03", title: "Automation with oversight", text: "Where appropriate, automation can help organize repetitive administrative work. Important decisions remain subject to human review." },
 ];
 
 export function Technology() {
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(135deg,#f4f8ff_0%,#ffffff_55%,#eef4ff_100%)]">
+    <section className="home-technology-section">
       <div className="container-x section">
-        <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
+        <div className="home-technology-layout">
           <div>
-            <span className="eyebrow mb-4 block">Technology with a purpose</span>
-            <h2 className="mb-5">Smarter operations, supported by people and technology.</h2>
-            <p className="text-base leading-8">We are building a modern service model that combines experienced operational support with carefully selected automation and AI capabilities. Technology should make work clearer, not replace sound judgment or personal service.</p>
-            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-teal/20 bg-white/80 px-4 py-2 text-sm font-semibold text-teal shadow-sm"><Sparkles className="size-4" /> Human-led. Technology-enabled.</div>
+            <span className="eyebrow mb-4 block">TOOLS IN SERVICE OF THE WORK</span>
+            <h2>Technology should make the process clearer, not louder.</h2>
+            <p>We focus on practical systems, useful reporting, and carefully considered automation. The tools should support the agreed workflow and the people responsible for it.</p>
           </div>
-          <div className="grid items-start gap-4 sm:grid-cols-3">
-            {points.map(({ icon: Icon, title, text }) => (
-              <article
-                key={title}
-                className="card technology-card p-5 sm:p-6"
-              >
-                <span className="card-icon mb-5">
-                  <Icon className="size-5" aria-hidden="true" />
-                </span>
-                <h3 className="text-base leading-snug">{title}</h3>
-                <p className="mt-3 text-sm leading-6">{text}</p>
+          <div className="home-technology-list">
+            {points.map((item) => (
+              <article key={item.number} className="home-technology-row">
+                <span>{item.number}</span>
+                <div><h3>{item.title}</h3><p>{item.text}</p></div>
               </article>
             ))}
           </div>

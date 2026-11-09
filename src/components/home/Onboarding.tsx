@@ -1,60 +1,31 @@
 export function Onboarding() {
   const steps = [
-    {
-      title: "Initial consultation",
-      text: "We discuss your practice, billing challenges, and goals.",
-    },
-    {
-      title: "Practice assessment",
-      text: "We review your current billing workflow and payer mix.",
-    },
-    {
-      title: "Scope and workflow planning",
-      text: "We define the services and processes that fit your practice.",
-    },
-    {
-      title: "Secure access and documentation",
-      text: "We arrange secure access to your systems and records.",
-    },
-    {
-      title: "Service implementation",
-      text: "Billing operations begin under a structured workflow.",
-    },
-    {
-      title: "Ongoing support and reporting",
-      text: "Continued billing support with regular performance reports.",
-    },
+    { title: "Initial conversation", text: "Discuss your practice, current process, and the support you are looking for." },
+    { title: "Workflow assessment", text: "Review the billing workflow, systems, payer mix, and operational priorities." },
+    { title: "Scope and responsibilities", text: "Agree on services, handoffs, reporting, access, and pricing." },
+    { title: "Setup and preparation", text: "Complete the agreed onboarding steps and prepare the working process." },
+    { title: "Service begins", text: "Start the agreed work with clear points of contact and escalation paths." },
+    { title: "Ongoing review", text: "Review activity, outstanding items, and opportunities to improve the workflow." },
   ];
 
   return (
-    <section>
+    <section className="home-onboarding-section">
       <div className="container-x section">
-        <div className="text-center mb-12">
-          <span className="eyebrow mb-4 block">Onboarding</span>
-          <h2 className="mb-6">How onboarding works</h2>
-          <p className="max-w-2xl mx-auto text-lg text-ink-soft">
-            A simple, structured transition designed around your practice.
-          </p>
+        <div className="home-section-intro">
+          <div>
+            <span className="eyebrow mb-4 block">GETTING STARTED</span>
+            <h2>A considered start, not a one-size-fits-all handoff.</h2>
+          </div>
+          <p>We establish the scope and working process with you before ongoing service begins. Timing depends on your systems and agreed requirements.</p>
         </div>
-
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {steps.map((step, i) => (
-            <div key={step.title} className="card">
-              <div className="mx-auto mb-4 size-10 rounded-full bg-bg-secondary flex items-center justify-center text-lg font-bold text-navy">
-                {i + 1}
-              </div>
-              <h3 className="mb-2 text-lg font-display font-semibold text-navy">
-                {step.title}
-              </h3>
-              <p className="text-sm text-ink-soft">{step.text}</p>
-            </div>
+        <ol className="home-onboarding-track">
+          {steps.map((step, index) => (
+            <li key={step.title} className="home-onboarding-step">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div><h3>{step.title}</h3><p>{step.text}</p></div>
+            </li>
           ))}
-        </div>
-
-        <p className="mt-10 max-w-2xl mx-auto text-sm text-muted-soft text-center">
-          Implementation timing depends on your practice&rsquo;s systems,
-          requirements, and agreed scope.
-        </p>
+        </ol>
       </div>
     </section>
   );

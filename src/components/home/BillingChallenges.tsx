@@ -22,8 +22,8 @@ export function BillingChallenges() {
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {challenges.map(({ icon: Icon, title, text }) => (
-              <article key={title} className="rounded-xl border border-border bg-white p-5">
-                <span className="mb-4 grid size-10 place-items-center rounded-lg bg-[#edf5f5] text-teal"><Icon className="size-5" aria-hidden="true" /></span>
+              <article key={title} className="card">
+                <span className="card-icon mb-4"><Icon className="size-5" aria-hidden="true" /></span>
                 <h3 className="text-base tracking-tight">{title}</h3><p className="mt-2 text-sm leading-6">{text}</p>
               </article>
             ))}

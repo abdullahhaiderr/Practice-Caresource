@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BadgeCheck, Banknote, Check, ChevronRight, Code2, FileSearch, ReceiptText, ShieldAlert, ShieldCheck, UsersRound, Wallet, Workflow } from "lucide-react";
+import { ArrowRight, BadgeCheck, Banknote, Check, ChevronRight, Code2, FileSearch, Megaphone, ReceiptText, ShieldAlert, ShieldCheck, UsersRound, Wallet, Workflow } from "lucide-react";
 import { PageHero } from "@/components/shared/PageHero";
 import { CTASection } from "@/components/shared/CTASection";
 import { JsonLd } from "@/components/shared/JsonLd";
@@ -18,7 +18,7 @@ const serviceIcons: Record<string, typeof ReceiptText> = {
   "payment-posting-reporting": Banknote,
   "medical-billing-audits": FileSearch,
   "virtual-assistant": UsersRound,
-  "marketing-digital-presence": UsersRound,
+  "marketing-digital-presence": Megaphone,
 };
 
 export function ServicePage({ service }: { service: ServiceDetail }) {

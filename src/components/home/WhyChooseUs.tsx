@@ -1,28 +1,28 @@
-import { BadgeCheck, ChartNoAxesCombined, Headset, Layers3, MessagesSquare, Stethoscope } from "lucide-react";
-
-const reasons = [
-  { icon: Headset, title: "A team that stays connected", text: "Clear communication and an accountable point of contact keep day-to-day work moving." },
-  { icon: Layers3, title: "Support that fits your workflow", text: "Services can be scoped around your existing team, systems, and operational priorities." },
-  { icon: BadgeCheck, title: "Attention to billing detail", text: "A consistent review process helps catch missing information and avoidable errors before submission." },
-  { icon: Stethoscope, title: "Specialty-aware operations", text: "Billing support considers the documentation, coding, and payer workflows relevant to your specialty." },
-  { icon: ChartNoAxesCombined, title: "Reporting with context", text: "Understand claim activity, receivables, and denial themes with useful operational updates." },
-  { icon: MessagesSquare, title: "A practical partnership", text: "We focus on understanding your current process before recommending changes or next steps." },
+const principles = [
+  { number: "01", title: "Understand before recommending", text: "We begin by learning how your practice works, what systems you use, and where support is needed." },
+  { number: "02", title: "Agree on clear responsibilities", text: "Services, handoffs, reporting, and scope should be understood before work begins." },
+  { number: "03", title: "Keep communication practical", text: "Useful updates help your team understand progress, exceptions, and next actions." },
+  { number: "04", title: "Review the work with context", text: "Billing activity and receivables are more useful when discussed alongside the process behind them." },
 ];
 
 export function WhyChooseUs() {
   return (
-    <section>
+    <section className="home-partnership-section">
       <div className="container-x section">
-        <div className="mb-12 max-w-2xl">
-          <span className="eyebrow mb-4 block">Why PracticeCareSource</span>
-          <h2 className="mb-5">A billing partner that understands the practice behind the claims.</h2>
-          <p className="text-base leading-8">Good billing support is more than processing transactions. It takes consistency, communication, and a clear understanding of how your practice works.</p>
-        </div>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {reasons.map(({ icon: Icon, title, text }) => <article key={title} className="card">
-            <span className="card-icon mb-5"><Icon className="size-5" aria-hidden="true" /></span>
-            <h3 className="text-lg">{title}</h3><p className="mt-2 text-sm leading-7">{text}</p>
-          </article>)}
+        <div className="home-partnership-layout">
+          <div className="home-partnership-lead">
+            <span className="eyebrow mb-4 block">A PRACTICAL PARTNERSHIP</span>
+            <h2>Good billing support starts with understanding your practice.</h2>
+            <p>There is no one-size-fits-all workflow. We focus on the people, systems, and priorities behind your billing operation before agreeing on the work.</p>
+          </div>
+          <div className="home-principles-list">
+            {principles.map((item) => (
+              <article key={item.number} className="home-principle-row">
+                <span>{item.number}</span>
+                <div><h3>{item.title}</h3><p>{item.text}</p></div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

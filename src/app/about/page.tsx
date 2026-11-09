@@ -109,7 +109,7 @@ export default function AboutPage() {
             </div>
 
             <aside className="lg:pt-2">
-              <div className="rounded-xl border border-border bg-bg-secondary p-7">
+              <div className="card">
                 <h2 className="font-display text-lg font-bold text-navy">
                   At a glance
                 </h2>
@@ -166,7 +166,7 @@ export default function AboutPage() {
             {principles.map((principle) => (
               <div key={principle.title} className="card">
                 <principle.icon
-                  className="size-6 text-teal"
+                  className="card-icon size-11 p-2 text-teal"
                   aria-hidden="true"
                   strokeWidth={1.75}
                 />
@@ -206,7 +206,7 @@ export default function AboutPage() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-xl border border-border bg-paper p-7 shadow-card">
+            <div className="card">
               <h2 className="font-display text-xl font-bold text-navy">
                 Start with a conversation
               </h2>

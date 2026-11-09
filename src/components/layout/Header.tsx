@@ -91,7 +91,7 @@ export function Header() {
               <img
                 src="/header-logo-desktop.png"
                 alt="PracticeCareSource"
-                className="block h-[36px] w-auto max-w-[min(54vw,190px)] object-contain sm:h-[40px] sm:max-w-[220px] lg:h-[44px] lg:max-w-[230px]"
+                className="block h-[40px] w-auto max-w-[min(56vw,200px)] object-contain sm:h-[45px] sm:max-w-[230px] lg:h-[49px] lg:max-w-[250px]"
                 width="440"
                 height="123"
               />
@@ -197,7 +197,7 @@ export function Header() {
                 <img
                   src="/header-logo-mobile.png"
                   alt="PracticeCareSource"
-                  className="block h-[38px] w-auto max-w-[min(62vw,220px)] object-contain"
+                  className="block h-[42px] w-auto max-w-[min(64vw,230px)] object-contain"
                   width="440"
                   height="123"
                 />

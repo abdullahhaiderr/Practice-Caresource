@@ -50,7 +50,7 @@ export default function FAQPage() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 rounded-xl border border-border bg-bg-secondary p-5">
+              <div className="card mt-8">
                 <p className="text-sm text-ink-soft">
                   Still have a question? Ask it directly during a consultation.
                 </p>
@@ -75,7 +75,7 @@ export default function FAQPage() {
                 </section>
               ))}
 
-              <div className="rounded-xl border border-border bg-bg-secondary p-7">
+              <div className="card">
                 <h2 className="font-display text-xl font-bold text-navy">
                   Have a question that is not listed?
                 </h2>

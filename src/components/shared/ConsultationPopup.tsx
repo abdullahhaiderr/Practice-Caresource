@@ -12,11 +12,11 @@ export function ConsultationPopup() {
   const [open, setOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
-  const [startedAt, setStartedAt] = useState(0);
+  const startedAtRef = useRef<number | null>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    setStartedAt(Date.now());
+    startedAtRef.current = Date.now();
     try {
       if (sessionStorage.getItem(STORAGE_KEY)) return;
     } catch {
@@ -67,7 +67,7 @@ export function ConsultationPopup() {
       message: String(form.get("message") ?? ""),
       consent: form.get("consent") === "on",
       website: String(form.get("website") ?? ""),
-      formStartedAt: startedAt,
+      formStartedAt: startedAtRef.current ?? Date.now(),
     };
 
     try {

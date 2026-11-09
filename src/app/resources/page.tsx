@@ -88,7 +88,7 @@ export default function ResourcesPage() {
             {resourceCards.map((card) => (
               <Link key={card.href} href={card.href} className="card group">
                 <card.icon
-                  className="size-6 text-teal"
+                  className="card-icon size-11 p-2 text-teal"
                   aria-hidden="true"
                   strokeWidth={1.75}
                 />

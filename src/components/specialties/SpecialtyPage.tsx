@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Check, ChevronRight, AlertCircle } from "lucide-react";
+import { Activity, AlertCircle, ArrowRight, Bone, Brain, Check, ChevronRight, Dumbbell, HandHeart, HeartPulse, ScanFace, Stethoscope } from "lucide-react";
 import { PageHero } from "@/components/shared/PageHero";
 import { CTASection } from "@/components/shared/CTASection";
 import { JsonLd } from "@/components/shared/JsonLd";
@@ -7,6 +7,17 @@ import { serviceDetails } from "@/data/service-details";
 import { specialtyDetails, type SpecialtyDetail } from "@/data/specialty-details";
 import { serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { ctaNav } from "@/config/business";
+
+const specialtyIcons: Record<string, typeof Stethoscope> = {
+  "family-practice": Stethoscope,
+  "internal-medicine": Activity,
+  cardiology: HeartPulse,
+  orthopedics: Bone,
+  dermatology: ScanFace,
+  "behavioral-health": Brain,
+  "physical-therapy": Dumbbell,
+  "pain-management": HandHeart,
+};
 
 export function SpecialtyPage({ specialty }: { specialty: SpecialtyDetail }) {
   const otherSpecialties = specialtyDetails.filter(
@@ -201,18 +212,22 @@ export function SpecialtyPage({ specialty }: { specialty: SpecialtyDetail }) {
             </Link>
           </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {otherSpecialties.slice(0, 6).map((item) => (
+            {otherSpecialties.slice(0, 6).map((item) => {
+              const Icon = specialtyIcons[item.id] ?? Stethoscope;
+              return (
               <Link
                 key={item.id}
                 href={item.href}
-                className="group rounded-lg border border-border bg-paper p-5 transition-colors hover:border-blue"
+                className="card group"
               >
+                <span className="card-icon mb-4"><Icon aria-hidden="true" /></span>
                 <h3 className="font-display font-semibold text-navy group-hover:text-blue transition-colors">
                   {item.title}
                 </h3>
                 <p className="mt-1.5 text-sm text-ink-soft">{item.summary}</p>
               </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

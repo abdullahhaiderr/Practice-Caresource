@@ -14,7 +14,7 @@ export function TrustHighlights() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {highlights.map(({ icon: Icon, label, text }) => (
             <div key={label} className="flex items-start gap-3">
-              <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-[#edf5f5] text-teal"><Icon className="size-5" aria-hidden="true" /></span>
+              <span className="card-icon"><Icon className="size-5" aria-hidden="true" /></span>
               <div><h2 className="text-sm font-bold tracking-normal">{label}</h2><p className="mt-1 text-sm leading-6">{text}</p></div>
             </div>
           ))}

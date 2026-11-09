@@ -46,7 +46,7 @@ export default function BlogPage() {
           {featured ? (
             <Link
               href={`/blog/${featured.slug}`}
-              className="group block rounded-xl border border-border bg-bg-secondary p-7 transition-colors hover:border-blue sm:p-10"
+              className="card group block p-7 sm:p-10"
             >
               <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-wider text-muted">
                 <span className="rounded-full bg-paper px-3 py-1 text-blue">

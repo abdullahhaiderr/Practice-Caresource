@@ -19,8 +19,8 @@ export function WhyChooseUs() {
           <p className="text-base leading-8">Good billing support is more than processing transactions. It takes consistency, communication, and a clear understanding of how your practice works.</p>
         </div>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {reasons.map(({ icon: Icon, title, text }) => <article key={title} className="rounded-xl border border-border bg-white p-6">
-            <span className="mb-5 grid size-11 place-items-center rounded-xl bg-[#edf5f5] text-teal"><Icon className="size-5" aria-hidden="true" /></span>
+          {reasons.map(({ icon: Icon, title, text }) => <article key={title} className="card">
+            <span className="card-icon mb-5"><Icon className="size-5" aria-hidden="true" /></span>
             <h3 className="text-lg">{title}</h3><p className="mt-2 text-sm leading-7">{text}</p>
           </article>)}
         </div>

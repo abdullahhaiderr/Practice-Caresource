@@ -21,9 +21,9 @@ export function Technology() {
             {points.map(({ icon: Icon, title, text }) => (
               <article
                 key={title}
-                className="technology-card rounded-2xl border border-[#dce7eb] bg-white p-5 shadow-card transition duration-300 sm:p-6"
+                className="card technology-card p-5 sm:p-6"
               >
-                <span className="mb-5 grid size-10 place-items-center rounded-xl bg-[#eff6ff] text-teal">
+                <span className="card-icon mb-5">
                   <Icon className="size-5" aria-hidden="true" />
                 </span>
                 <h3 className="text-base leading-snug">{title}</h3>

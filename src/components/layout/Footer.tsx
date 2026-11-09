@@ -30,7 +30,7 @@ export function Footer() {
               <img
                 src="/footer-logo-desktop.png"
                 alt="PracticeCareSource"
-                className="h-auto w-[230px] max-w-full object-contain sm:w-[275px] lg:w-[320px]"
+                className="block h-[48px] w-auto max-w-full object-contain sm:h-[54px] lg:h-[58px]"
                 width="396"
                 height="110"
               />

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, BadgeCheck, Banknote, CheckCircle2, ClipboardCheck, Code2, FileSearch, Megaphone, ReceiptText, ShieldAlert, ShieldCheck, UsersRound, Wallet, Workflow } from "lucide-react";
 import { PageHero } from "@/components/shared/PageHero";
 import { CTASection } from "@/components/shared/CTASection";
 import { JsonLd } from "@/components/shared/JsonLd";
@@ -20,6 +20,20 @@ export const metadata: Metadata = {
   },
 };
 
+const serviceIcons: Record<string, typeof ReceiptText> = {
+  "medical-billing": ReceiptText,
+  "medical-coding": Code2,
+  "revenue-cycle-management": Workflow,
+  credentialing: BadgeCheck,
+  "ar-management": Wallet,
+  "denial-management": ShieldAlert,
+  "eligibility-prior-authorization": ShieldCheck,
+  "payment-posting-reporting": Banknote,
+  "medical-billing-audits": FileSearch,
+  "virtual-assistant": UsersRound,
+  "marketing-digital-presence": Megaphone,
+};
+
 export default function ServicesPage() {
   return (
     <>
@@ -33,12 +47,15 @@ export default function ServicesPage() {
       <section className="section">
         <div className="container-x">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {serviceDetails.map((service, index) => (
+            {serviceDetails.map((service, index) => {
+              const Icon = serviceIcons[service.id] ?? ClipboardCheck;
+              return (
               <Link
                 key={service.id}
                 href={service.href}
                 className="card group flex flex-col"
               >
+                <span className="card-icon mb-2"><Icon aria-hidden="true" /></span>
                 <span className="font-display text-sm font-bold text-muted-soft">
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -56,7 +73,8 @@ export default function ServicesPage() {
                   />
                 </span>
               </Link>
-            ))}
+            );
+            })}
           </div>
 
           <div className="mt-14 rounded-xl border border-border bg-bg-secondary p-7 sm:p-9">

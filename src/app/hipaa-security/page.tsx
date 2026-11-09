@@ -97,7 +97,7 @@ export default function HipaaSecurityPage() {
                 {safeguards.map((item) => (
                   <div key={item.title} className="card">
                     <item.icon
-                      className="size-6 text-teal"
+                      className="card-icon size-11 p-2 text-teal"
                       aria-hidden="true"
                       strokeWidth={1.75}
                     />
@@ -165,7 +165,7 @@ export default function HipaaSecurityPage() {
 
             <aside className="lg:sticky lg:top-28 lg:self-start">
               <div className="rounded-xl border border-border bg-paper p-6 shadow-card">
-                <ShieldCheck className="size-7 text-teal" aria-hidden="true" />
+                <ShieldCheck className="card-icon size-12 p-2.5 text-teal" aria-hidden="true" />
                 <h2 className="mt-4 font-display text-lg font-bold text-navy">
                   Security questions?
                 </h2>

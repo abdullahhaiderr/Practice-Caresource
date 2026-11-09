@@ -86,7 +86,7 @@ export default function HowItWorksPage() {
             {steps.map((step, index) => (
               <li
                 key={step.title}
-                className="relative rounded-xl border border-border bg-paper p-6 sm:p-8"
+                className="card relative p-6 sm:p-8"
               >
                 <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
                   <div className="flex items-center gap-4 sm:w-48 sm:shrink-0">
@@ -94,7 +94,7 @@ export default function HowItWorksPage() {
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <step.icon
-                      className="size-6 text-teal"
+                      className="card-icon size-11 p-2 text-teal"
                       aria-hidden="true"
                       strokeWidth={1.75}
                     />
@@ -116,7 +116,7 @@ export default function HowItWorksPage() {
           </ol>
 
           <div className="mt-14 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-xl border border-border bg-bg-secondary p-7">
+            <div className="card">
               <h2 className="font-display text-xl font-bold text-navy">
                 What we need from your practice
               </h2>
@@ -139,7 +139,7 @@ export default function HowItWorksPage() {
               </ul>
             </div>
 
-            <div className="rounded-xl border border-border bg-paper p-7 shadow-card">
+            <div className="card">
               <h2 className="font-display text-xl font-bold text-navy">
                 What you should expect from us
               </h2>

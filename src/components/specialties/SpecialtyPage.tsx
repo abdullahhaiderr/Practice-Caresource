@@ -205,7 +205,7 @@ export function SpecialtyPage({ specialty }: { specialty: SpecialtyDetail }) {
               <Link
                 key={item.id}
                 href={item.href}
-                className="group rounded-lg border border-border bg-paper p-5 transition-colors hover:border-blue"
+                className="card group"
               >
                 <h3 className="font-display font-semibold text-navy group-hover:text-blue transition-colors">
                   {item.title}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BadgeCheck, Banknote, ChartNoAxesCombined, CheckCircle2, ClipboardCheck, Code2, FileSearch, Megaphone, ReceiptText, ShieldAlert, ShieldCheck, UsersRound, Wallet, Workflow } from "lucide-react";
+import { ArrowRight, BadgeCheck, Banknote, CheckCircle2, ClipboardCheck, Code2, FileSearch, Megaphone, ReceiptText, ShieldAlert, ShieldCheck, UsersRound, Wallet, Workflow } from "lucide-react";
 import { PageHero } from "@/components/shared/PageHero";
 import { CTASection } from "@/components/shared/CTASection";
 import { JsonLd } from "@/components/shared/JsonLd";

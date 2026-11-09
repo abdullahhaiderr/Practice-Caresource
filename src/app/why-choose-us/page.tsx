@@ -76,7 +76,7 @@ export default function WhyChooseUsPage() {
             {differentiators.map((item) => (
               <div key={item.title} className="card flex flex-col">
                 <item.icon
-                  className="size-6 text-teal"
+                  className="card-icon size-11 p-2 text-teal"
                   aria-hidden="true"
                   strokeWidth={1.75}
                 />
@@ -122,7 +122,7 @@ export default function WhyChooseUsPage() {
               </ul>
             </div>
 
-            <div className="rounded-xl border border-border bg-bg-secondary p-7 sm:p-9">
+            <div className="card">
               <h2 className="font-display text-xl font-bold text-navy sm:text-2xl">
                 A realistic view of what changes
               </h2>
